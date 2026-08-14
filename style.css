@@ -161,6 +161,7 @@ body {
   box-shadow: 0 20px 60px rgba(0,0,0,.7); overflow: hidden;
   display: flex; flex-direction: column;
 }
+.widget[hidden] { display: none !important; }
 .widget-head {
   display: flex; justify-content: space-between; align-items: center;
   padding: 14px 16px; border-bottom: 1px solid var(--border); background: #0d0d0d;

@@ -1,5 +1,5 @@
 /* Babuba web chat widget — talks to the Babuba gateway via admin-chat API */
-const GATEWAY = "https://marker-increase-testimonials-produces.trycloudflare.com"; // swap for https://babuba.chaya.in later
+const GATEWAY = "https://rhode-header-beef-mouth.trycloudflare.com"; // quick tunnel (dies on restart) — TODO: stable https://babuba.chaya.in via named tunnel + CNAME
 
 const $ = (s) => document.querySelector(s);
 const state = { sessionId: null, busy: false };
