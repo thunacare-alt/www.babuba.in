@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Babuba — Your AI Workforce, Self-Hosted</title>
+<meta name="description" content="Babuba is a self-hosted multi-agent AI framework. Deploy an AI workforce that runs your business operations over Telegram, WhatsApp, Gmail and the web." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23ffffff'/><circle cx='50' cy='50' r='18' fill='%23000'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Background grid + glow -->
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+
+<!-- Nav -->
+<nav class="nav">
+  <a class="logo" href="#top">BABUBA<span class="logo-dot">.</span></a>
+  <div class="nav-links">
+    <a href="#bot">Bot</a>
+    <a href="#platform">Platform</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="nav-cta" href="#bot" id="navCta">Talk to Babuba</a>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="top">
+  <div class="hero-badge">SELF-HOSTED · MULTI-AGENT AI</div>
+  <h1 class="hero-title">Your AI workforce,<br /><span class="grad">running your business.</span></h1>
+  <p class="hero-sub">Babuba is a multi-agent AI framework that operates across your channels — Telegram, WhatsApp, Gmail, Slack and the web. Agents answer customers, automate departments and handle workflows, all on your own infrastructure.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="#bot">Talk to Babuba</a>
+    <a class="btn btn-ghost" href="#platform">Explore the platform</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">1</div><div class="stat-label">Gateway, many agents</div></div>
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Channels connected</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Your data, your servers</div></div>
+  </div>
+</header>
+
+<!-- Bot section -->
+<section class="section" id="bot">
+  <div class="section-label">01 — THE BOT</div>
+  <h2 class="section-title">It's real. Ask it anything.</h2>
+  <p class="section-sub">This isn't a contact form. This is a live Babuba agent answering you right now through the same engine that runs customer support, back-office and operations for businesses.</p>
+  <div class="bot-demo">
+    <div class="demo-chat" id="demoChat">
+      <div class="msg msg-bot">Hi, I'm Babuba 👋 — the AI that runs this company's operations. Ask me about what I can do for yours.</div>
+    </div>
+    <div class="demo-input">
+      <input type="text" id="demoInput" placeholder="Ask Babuba anything…" autocomplete="off" />
+      <button id="demoSend" aria-label="Send">➤</button>
+    </div>
+  </div>
+</section>
+
+<!-- Platform -->
+<section class="section" id="platform">
+  <div class="section-label">02 — THE PLATFORM</div>
+  <h2 class="section-title">One brain. Every channel. Total control.</h2>
+  <div class="features">
+    <div class="feature">
+      <div class="feat-icon">◉</div>
+      <h3>Multi-Agent Orchestration</h3>
+      <p>Dedicated AI agents per department — sales, support, finance, HR, IT — routed automatically to the right specialist.</p>
+    </div>
+    <div class="feature">
+      <div class="feat-icon">◉</div>
+      <h3>Every Channel</h3>
+      <p>Your agents live where your customers are: Telegram, WhatsApp Web, Gmail, Slack and web chat — one conversation memory across all.</p>
+    </div>
+    <div class="feature">
+      <div class="feat-icon">◉</div>
+      <h3>Memory & Knowledge</h3>
+      <p>Long-term memory, shared knowledge bases and RAG over your documents. Babuba learns your business and never forgets.</p>
+    </div>
+    <div class="feature">
+      <div class="feat-icon">◉</div>
+      <h3>Workflows & Approvals</h3>
+      <p>Automated department workflows with human approval gates. Payments, onboarding, procurement — governed, audited, compliant.</p>
+    </div>
+    <div class="feature">
+      <div class="feat-icon">◉</div>
+      <h3>RBAC & Guardrails</h3>
+      <p>Role-based access control, guardrails and compliance rules (GDPR, SOX, HIPAA). Safety is built in, not bolted on.</p>
+    </div>
+    <div class="feature">
+      <div class="feat-icon">◉</div>
+      <h3>Self-Hosted</h3>
+      <p>Runs on your own VM, your own model keys. No SaaS lock-in, no data leaving your infrastructure. Ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+  <div class="section-label">03 — CONTACT</div>
+  <h2 class="section-title">Deploy Babuba for your company.</h2>
+  <p class="section-sub">Chat with the bot above, or reach us directly.</p>
+  <div class="contact-row">
+    <a class="btn btn-primary" href="#bot">Open the bot</a>
+    <a class="btn btn-ghost" href="mailto:hello@chaya.in">hello@chaya.in</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© 2026 Chaya · chaya.in</span>
+    <span>Powered by <b>Babuba</b> — this site runs on the framework it sells.</span>
+  </div>
+</footer>
+
+<!-- Floating chat widget -->
+<button class="fab" id="fab" aria-label="Open chat">✦</button>
+<div class="widget" id="widget" hidden>
+  <div class="widget-head">
+    <div class="widget-title"><span class="pulse"></span> Babuba</div>
+    <button class="widget-close" id="widgetClose">✕</button>
+  </div>
+  <div class="widget-body" id="widgetBody">
+    <div class="msg msg-bot">👋 Hey — I'm Babuba. Ask me anything about the platform.</div>
+  </div>
+  <div class="widget-input">
+    <input type="text" id="widgetInput" placeholder="Type a message…" autocomplete="off" />
+    <button id="widgetSend" aria-label="Send">➤</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
