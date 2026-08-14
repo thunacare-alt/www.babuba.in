@@ -190,3 +190,42 @@ body {
   .hero-stats { gap: 28px; }
   .widget { bottom: 80px; right: 16px; }
 }
+
+/* ── New sections: video, what-is, use cases, steps ── */
+.video-wrap { max-width: 860px; margin: 48px auto 0; }
+.video {
+  width: 100%; border-radius: 16px; border: 1px solid var(--border);
+  box-shadow: 0 30px 80px rgba(0,0,0,.6); background: #000; display: block;
+}
+.video-caption { color: var(--muted); font-size: 13px; margin-top: 14px; text-align: center; font-weight: 300; }
+
+.whatis { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; max-width: 1000px; margin: 48px auto 0; text-align: left; align-items: start; }
+.whatis-text p { color: var(--muted); font-size: 16px; font-weight: 300; margin-bottom: 18px; }
+.whatis-text b { color: var(--text); font-weight: 500; }
+.whatis-list { display: flex; flex-direction: column; gap: 18px; }
+.hi { display: flex; gap: 14px; padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--panel); }
+.hi-ic { font-size: 20px; line-height: 1.4; }
+.hi b { font-size: 14px; }
+.hi p { color: var(--muted); font-size: 13px; font-weight: 300; margin-top: 2px; }
+
+.usecases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1000px; margin: 48px auto 0; }
+.ucase { padding: 24px; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); text-align: left; transition: border-color .2s; }
+.ucase:hover { border-color: #3a3a3a; }
+.uc-ic { font-size: 24px; }
+.ucase h3 { font-size: 16px; margin: 12px 0 6px; font-weight: 600; }
+.ucase p { color: var(--muted); font-size: 13.5px; font-weight: 300; }
+
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1000px; margin: 48px auto 0; }
+.step { padding: 28px 24px; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); text-align: left; position: relative; }
+.step-num {
+  width: 34px; height: 34px; border-radius: 50%; background: #fff; color: #000;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; margin-bottom: 16px;
+}
+.step h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.step p { color: var(--muted); font-size: 13.5px; font-weight: 300; }
+
+@media (max-width: 760px) {
+  .whatis { grid-template-columns: 1fr; gap: 28px; }
+  .usecases { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+}
