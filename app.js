@@ -71,7 +71,7 @@
       key: "company", type: "text", next: "auto",
     },
     {
-      q: `Nice to meet you, ${() => answers.company || "friend"}! 🎉\n\nWhat should your agent be called? (or type "same" to use ${() => answers.company || "your company name"})`,
+      q: () => `Nice to meet you, ${answers.company || "friend"}! 🎉\n\nWhat should your agent be called? (or type "same" to use ${answers.company || "your company name"})`,
       key: "agentName", type: "text",
       transform: (v) => (v.toLowerCase() === "same" ? answers.company : v),
       next: "auto",
