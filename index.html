@@ -3,192 +3,190 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Babuba — Your AI Workforce, Self-Hosted</title>
-<meta name="description" content="Babuba is a self-hosted multi-agent AI framework. Deploy an AI workforce that answers customers, automates back-office and runs operations — over WhatsApp, Telegram, Gmail and the web." />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23ffffff'/><circle cx='50' cy='50' r='18' fill='%23000'/></svg>" />
+<title>Babuba — Your AI Workforce, as a Service</title>
+<meta name="description" content="Babuba is the enterprise AI agent platform. Deploy an AI workforce that answers customers, automates back-office and runs operations — over WhatsApp, Telegram, Gmail and the web. Self-serve, pay monthly, live in minutes." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%2300e5a0'/><circle cx='50' cy='50' r='18' fill='%23000'/></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Background grid + glow -->
 <div class="bg-grid"></div>
 <div class="bg-glow"></div>
+<canvas id="hero-canvas"></canvas>
 
-<!-- Nav -->
+<!-- ═══════════ NAV ═══════════ -->
 <nav class="nav">
   <a class="logo" href="#top">BABUBA<span class="logo-dot">.</span></a>
   <div class="nav-links">
-    <a href="#video">Watch it work</a>
-    <a href="#what">What is Babuba</a>
-    <a href="#platform">Platform</a>
-    <a href="#usecases">Use cases</a>
-    <a href="#contact">Contact</a>
+    <a href="#what">Platform</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
   </div>
-  <a class="nav-cta" href="#bot" id="navCta">Talk to Babuba</a>
+  <a class="btn btn-primary nav-cta" href="#" id="nav-launch">Launch your agent →</a>
 </nav>
 
-<!-- Hero -->
+<!-- ═══════════ HERO ═══════════ -->
 <header class="hero" id="top">
-  <div class="hero-badge">SELF-HOSTED · MULTI-AGENT AI · LIVE RIGHT NOW</div>
-  <h1 class="hero-title">Meet Babuba.<br /><span class="grad">Your AI workforce, running your business.</span></h1>
-  <p class="hero-sub">Babuba is a multi-agent AI framework that answers your customers, automates your back-office and runs your operations — over WhatsApp, Telegram, Gmail and the web. Self-hosted on your servers, with your data.</p>
-  <div class="hero-ctas">
-    <a class="btn btn-primary" href="#bot">Talk to Babuba — it's live</a>
-    <a class="btn btn-ghost" href="#video">Watch it work</a>
+  <div class="hero-badge"><span class="pulse-dot"></span> Self-serve · Pay monthly · Live in minutes</div>
+  <h1 class="hero-title">Your AI workforce,<br/><span class="grad">as a service.</span></h1>
+  <p class="hero-sub">Babuba spins up a dedicated AI agent for your business — trained on your policies, wired to your channels, governed by your guardrails. No code. No infra. No waiting.</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary btn-lg" href="#" id="hero-launch">⚡ Build my agent — 2 minutes</a>
+    <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">1</div><div class="stat-label">Brain, many specialist agents</div></div>
-    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Channels connected</div></div>
-    <div class="stat"><div class="stat-num">150+</div><div class="stat-label">Tools at your agents' fingertips</div></div>
-    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Your data, your servers</div></div>
+    <div class="stat"><div class="stat-n">60s</div><div class="stat-l">to a live agent</div></div>
+    <div class="stat"><div class="stat-n">4</div><div class="stat-l">channels</div></div>
+    <div class="stat"><div class="stat-n">0</div><div class="stat-l">code required</div></div>
+    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">your data, your rules</div></div>
   </div>
 </header>
 
-<!-- Video demo -->
-<section class="section" id="video">
-  <div class="section-label">01 — WATCH IT WORK</div>
-  <h2 class="section-title">This is real. Not a mockup — a live agent.</h2>
-  <p class="section-sub">The video below was recorded on this website. That chat bubble is a real Babuba agent answering in real time — the same engine that runs support, back-office and operations for businesses.</p>
-  <div class="video-wrap">
-    <video class="video" src="babuba-demo.webm" controls autoplay muted loop playsinline poster="poster.png"></video>
-    <div class="video-caption">A visitor asks Babuba what it is — the agent answers live, on the website.</div>
-  </div>
-</section>
+<!-- ═══════════ TRUST STRIP ═══════════ -->
+<div class="trust-strip">
+  <span>Powering teams across</span>
+  <div class="trust-logos"><span>HOTEL SEA BREEZE</span><span>GREENLEAF</span><span>THUNA.CARE</span><span>CHAYA</span></div>
+</div>
 
-<!-- What is Babuba -->
+<!-- ═══════════ WHAT IS ═══════════ -->
 <section class="section" id="what">
-  <div class="section-label">02 — WHAT IS BABUBA</div>
-  <h2 class="section-title">One brain. A team of agents. Your business, automated.</h2>
-  <div class="whatis">
-    <div class="whatis-text">
-      <p><b>Babuba is an AI workforce you can deploy in an afternoon.</b> Not a single chatbot — a team of specialist agents, one per department: support, sales, finance, HR, IT. A smart router sends every message to the right expert automatically.</p>
-      <p>Your agents live where your customers and team already are — <b>WhatsApp, Telegram, Gmail, Slack and your website</b> — with one shared conversation memory across all of them.</p>
-      <p>Babuba doesn't just talk. It <b>acts</b>: it creates documents, analyses spreadsheets, runs scheduled reports, triggers workflows — with human approval gates where it matters. And it <b>learns your business</b>: long-term memory, knowledge bases, RAG over your own documents.</p>
-      <p>Because it's <b>self-hosted</b>, it runs on your VM with your model keys. No SaaS lock-in. No data leaving your infrastructure. Ever.</p>
+  <div class="section-label">01 — THE PLATFORM</div>
+  <h2 class="section-title">One agent. Every department. Total control.</h2>
+  <p class="section-sub">Babuba is a multi-agent framework that runs a dedicated AI employee for your company. It remembers your context, follows your policies and acts on your channels — all inside an isolated tenant.</p>
+
+  <div class="feature-grid">
+    <div class="feature">
+      <div class="feat-ic">🧠</div>
+      <h3>Long-term memory</h3>
+      <p>Your agent learns your business. Customers, orders, policies — it remembers across conversations and gets smarter every day.</p>
     </div>
-    <div class="whatis-list">
-      <div class="hi"><span class="hi-ic">💬</span><div><b>Chats on every channel</b><p>WhatsApp, Telegram, Gmail, Slack, web — one memory, all channels.</p></div></div>
-      <div class="hi"><span class="hi-ic">🧠</span><div><b>Specialist agents per department</b><p>Support, sales, finance, HR, IT — routed automatically.</p></div></div>
-      <div class="hi"><span class="hi-ic">⚙️</span><div><b>Takes action, with approvals</b><p>Workflows, documents, reports, cron automation — governed and audited.</p></div></div>
-      <div class="hi"><span class="hi-ic">🔒</span><div><b>Self-hosted &amp; secure</b><p>Your VM, your keys, your data. RBAC, guardrails, compliance rules.</p></div></div>
+    <div class="feature">
+      <div class="feat-ic">🛡️</div>
+      <h3>Guardrails &amp; policy</h3>
+      <p>Set risk thresholds, deny topics, enforce compliance (GDPR/SOX/HIPAA). Your agent knows exactly where the line is.</p>
+    </div>
+    <div class="feature">
+      <div class="feat-ic">🔐</div>
+      <h3>RBAC &amp; approvals</h3>
+      <p>Who can do what — admins, managers, users. Sensitive actions route to humans for approval, with a full audit trail.</p>
+    </div>
+    <div class="feature">
+      <div class="feat-ic">📱</div>
+      <h3>Every channel</h3>
+      <p>WhatsApp, Telegram, Gmail, Slack or your website. One brain, everywhere your customers are.</p>
+    </div>
+    <div class="feature">
+      <div class="feat-ic">⚙️</div>
+      <h3>Workflow automation</h3>
+      <p>Onboarding, expense reports, invoices, approvals — graph-based workflows with human-in-the-loop checkpoints.</p>
+    </div>
+    <div class="feature">
+      <div class="feat-ic">🔒</div>
+      <h3>Isolated tenant</h3>
+      <p>Your own gateway, your own data, your own keys. A private instance — never shared, never mixed.</p>
     </div>
   </div>
 </section>
 
-<!-- Platform -->
-<section class="section" id="platform">
-  <div class="section-label">03 — THE PLATFORM</div>
-  <h2 class="section-title">Everything a company needs to run on AI.</h2>
-  <div class="features">
-    <div class="feature">
-      <div class="feat-icon">◉</div>
-      <h3>Multi-Agent Orchestration</h3>
-      <p>Dedicated AI agents per department — sales, support, finance, HR, IT — routed automatically to the right specialist.</p>
-    </div>
-    <div class="feature">
-      <div class="feat-icon">◉</div>
-      <h3>Every Channel</h3>
-      <p>Your agents live where your customers are: Telegram, WhatsApp Web, Gmail, Slack and web chat — one conversation memory across all.</p>
-    </div>
-    <div class="feature">
-      <div class="feat-icon">◉</div>
-      <h3>Memory &amp; Knowledge</h3>
-      <p>Long-term memory, shared knowledge bases and RAG over your documents. Babuba learns your business and never forgets.</p>
-    </div>
-    <div class="feature">
-      <div class="feat-icon">◉</div>
-      <h3>Workflows &amp; Approvals</h3>
-      <p>Automated department workflows with human approval gates. Payments, onboarding, procurement — governed, audited, compliant.</p>
-    </div>
-    <div class="feature">
-      <div class="feat-icon">◉</div>
-      <h3>RBAC &amp; Guardrails</h3>
-      <p>Role-based access control, guardrails and compliance rules (GDPR, SOX, HIPAA). Safety is built in, not bolted on.</p>
-    </div>
-    <div class="feature">
-      <div class="feat-icon">◉</div>
-      <h3>Self-Hosted</h3>
-      <p>Runs on your own VM, your own model keys. No SaaS lock-in, no data leaving your infrastructure. Ever.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Use cases -->
-<section class="section" id="usecases">
-  <div class="section-label">04 — USE CASES</div>
-  <h2 class="section-title">Where companies deploy Babuba.</h2>
-  <div class="usecases">
-    <div class="ucase"><div class="uc-ic">🎧</div><h3>Customer Support</h3><p>Instant, 24/7 answers on web chat, WhatsApp and Telegram — with your policies, not generic AI.</p></div>
-    <div class="ucase"><div class="uc-ic">📈</div><h3>Sales &amp; Marketing</h3><p>A product expert on your website that qualifies leads, answers questions and follows up.</p></div>
-    <div class="ucase"><div class="uc-ic">🧾</div><h3>Finance &amp; Accounts</h3><p>Invoice processing, expense reports, payment approvals — automated with audit trails.</p></div>
-    <div class="ucase"><div class="uc-ic">🤝</div><h3>HR &amp; People</h3><p>Onboarding, leave requests, policy Q&amp;A — every employee gets an instant HR desk.</p></div>
-    <div class="ucase"><div class="uc-ic">🛠️</div><h3>IT &amp; Operations</h3><p>Monitoring, alerting, scheduled reports, routine ops — run on autopilot.</p></div>
-    <div class="ucase"><div class="uc-ic">📄</div><h3>Documents &amp; Data</h3><p>Generate PDFs, fill documents, analyse spreadsheets, answer questions over your files.</p></div>
-  </div>
-</section>
-
-<!-- How it works -->
+<!-- ═══════════ HOW IT WORKS ═══════════ -->
 <section class="section" id="how">
-  <div class="section-label">05 — HOW IT WORKS</div>
-  <h2 class="section-title">From zero to automated in three steps.</h2>
+  <div class="section-label">02 — HOW IT WORKS</div>
+  <h2 class="section-title">From zero to automated in four steps.</h2>
   <div class="steps">
-    <div class="step"><div class="step-num">1</div><h3>Connect your channels</h3><p>Link Telegram, WhatsApp, Gmail, Slack or your website. Your agents are instantly reachable where your customers are.</p></div>
-    <div class="step"><div class="step-num">2</div><h3>Deploy your agents</h3><p>Create one agent per department, give it memory and your knowledge — it learns your business from day one.</p></div>
-    <div class="step"><div class="step-num">3</div><h3>Automate your operations</h3><p>Turn processes into workflows with approval gates, schedule reports, let agents act while humans approve.</p></div>
+    <div class="step"><div class="step-num">1</div><h3>Answer 10 questions</h3><p>A guided chat asks what your agent should do, which channels to connect, and your policy, guardrail and access rules.</p></div>
+    <div class="step"><div class="step-num">2</div><h3>Pay monthly</h3><p>Pick a plan that fits. No setup fee, no contract, cancel anytime.</p></div>
+    <div class="step"><div class="step-num">3</div><h3>We provision instantly</h3><p>Your isolated tenant gateway spins up automatically with your agent, policies and roles applied.</p></div>
+    <div class="step"><div class="step-num">4</div><h3>Connect &amp; go live</h3><p>Link WhatsApp, Telegram, Gmail or your website. Your workforce is online.</p></div>
   </div>
 </section>
 
-<!-- Bot section -->
-<section class="section" id="bot">
-  <div class="section-label">06 — TALK TO BABUBA</div>
-  <h2 class="section-title">It's real. Ask it anything.</h2>
-  <p class="section-sub">This isn't a contact form. This is a live Babuba agent answering you right now through the same engine that runs customer support, back-office and operations for businesses.</p>
-  <div class="bot-demo">
-    <div class="demo-chat" id="demoChat">
-      <div class="msg msg-bot">Hi, I'm Babuba 👋 — the AI that runs businesses. Ask me what I can do for yours.</div>
+<!-- ═══════════ PRICING ═══════════ -->
+<section class="section" id="pricing">
+  <div class="section-label">03 — PRICING</div>
+  <h2 class="section-title">Simple pricing. One agent, one tenant.</h2>
+  <div class="pricing-grid" id="pricing-grid">
+    <div class="price-card" data-plan="starter">
+      <div class="price-name">Starter</div>
+      <div class="price-amount">₹1,499<span>/mo</span></div>
+      <ul>
+        <li>1 agent + isolated tenant</li>
+        <li>1 channel</li>
+        <li>Core guardrails &amp; RBAC</li>
+        <li>Community support</li>
+      </ul>
+      <a class="btn btn-outline" href="#" data-choose="starter">Choose Starter</a>
     </div>
-    <div class="demo-input">
-      <input type="text" id="demoInput" placeholder="Ask Babuba anything…" autocomplete="off" />
-      <button id="demoSend" aria-label="Send">➤</button>
+    <div class="price-card popular" data-plan="growth">
+      <div class="price-tag">MOST POPULAR</div>
+      <div class="price-name">Growth</div>
+      <div class="price-amount">₹3,999<span>/mo</span></div>
+      <ul>
+        <li>3 agents + isolated tenant</li>
+        <li>3 channels</li>
+        <li>Full guardrails, compliance &amp; approvals</li>
+        <li>Workflow automation</li>
+        <li>Priority support</li>
+      </ul>
+      <a class="btn btn-primary" href="#" data-choose="growth">Choose Growth</a>
+    </div>
+    <div class="price-card" data-plan="enterprise">
+      <div class="price-name">Enterprise</div>
+      <div class="price-amount">₹9,999<span>/mo</span></div>
+      <ul>
+        <li>10 agents + isolated tenant</li>
+        <li>Unlimited channels</li>
+        <li>Everything in Growth</li>
+        <li>Custom integrations</li>
+        <li>Dedicated onboarding</li>
+      </ul>
+      <a class="btn btn-outline" href="#" data-choose="enterprise">Choose Enterprise</a>
     </div>
   </div>
 </section>
 
-<!-- Contact -->
-<section class="section" id="contact">
-  <div class="section-label">07 — CONTACT</div>
-  <h2 class="section-title">Deploy Babuba for your company.</h2>
-  <p class="section-sub">Chat with Babuba above, or reach the team directly. We reply fast.</p>
-  <div class="contact-row">
-    <a class="btn btn-primary" href="#bot">Open the bot</a>
-    <a class="btn btn-ghost" href="mailto:hello@chaya.in">hello@chaya.in</a>
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="section" id="faq">
+  <div class="section-label">04 — FAQ</div>
+  <h2 class="section-title">Questions, answered.</h2>
+  <div class="faq-list">
+    <details><summary>Is my agent really isolated?</summary><p>Yes. Every client gets a private tenant gateway — your own instance, database, memory and channels. Nothing is shared between tenants.</p></details>
+    <details><summary>Do I need to know how to code?</summary><p>No. The guided chat configures everything — purpose, policies, guardrails, roles. If you can answer questions, you can deploy an agent.</p></details>
+    <details><summary>What channels can I connect?</summary><p>WhatsApp, Telegram, Gmail, Slack and your website. Connect one or all — the same agent answers everywhere.</p></details>
+    <details><summary>Can I cancel anytime?</summary><p>Yes. Month-to-month, cancel in one click. Your data is exported and deleted on request.</p></details>
+    <details><summary>What happens if the agent hits something sensitive?</summary><p>Your guardrails define the line. Anything flagged routes to a human approver on WhatsApp/Telegram — nothing slips through.</p></details>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="footer-inner">
-    <span>© 2026 Chaya · chaya.in</span>
-    <span>Powered by <b>Babuba</b> — this site runs on the framework it sells.</span>
-  </div>
+  <div class="footer-logo">BABUBA<span class="logo-dot">.</span></div>
+  <p>Enterprise AI agents, as a service. © 2026 Babuba · chaya.in</p>
 </footer>
 
-<!-- Floating chat widget -->
-<button class="fab" id="fab" aria-label="Open chat">💬</button>
-<div class="widget" id="widget" hidden>
-  <div class="widget-head">
-    <div class="widget-title"><span class="pulse"></span> Babuba</div>
-    <button class="widget-close" id="widgetClose">✕</button>
-  </div>
-  <div class="widget-body" id="widgetBody">
-    <div class="msg msg-bot">Hi! I'm Babuba 👋 — ask me what I can do for your business.</div>
-  </div>
-  <div class="widget-input">
-    <input type="text" id="widgetInput" placeholder="Type a message…" autocomplete="off" />
-    <button id="widgetSend" aria-label="Send">➤</button>
+<!-- ═══════════ WIZARD OVERLAY ═══════════ -->
+<div class="wizard-overlay" id="wizard" hidden>
+  <div class="wizard-shell">
+    <div class="wizard-head">
+      <div class="wizard-title">🤖 Babuba Setup Concierge</div>
+      <div class="wizard-progress"><div class="wizard-progress-bar" id="wiz-progress"></div></div>
+      <button class="wizard-close" id="wiz-close">✕</button>
+    </div>
+    <div class="wizard-chat" id="wiz-chat"></div>
+    <div class="wizard-input">
+      <input id="wiz-text" type="text" placeholder="Type your answer…" autocomplete="off" />
+      <button id="wiz-send">➤</button>
+    </div>
+    <div class="wizard-pay" id="wiz-pay" hidden>
+      <div class="pay-summary" id="pay-summary"></div>
+      <button class="btn btn-primary btn-lg" id="pay-btn">Pay now</button>
+      <div class="pay-note" id="pay-note"></div>
+    </div>
   </div>
 </div>
+
+<div class="toast" id="toast" hidden></div>
 
 <script src="app.js"></script>
 </body>
