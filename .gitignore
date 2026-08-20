@@ -1,0 +1,3 @@
+# Screen-recording artifacts (browser-extension takes: page@*.webm) — never commit
+page@*.webm
+*.webm
