@@ -1,12 +1,14 @@
-# Babuba SaaS — chaya.in
+# Babuba — www.babuba.in
 
-The Babuba SaaS landing + onboarding site. Serves the chat-based agent builder wizard.
+Your AI operations department. Running on your own server.
 
-**Architecture:**
-- `index.html` / `style.css` / `app.js` — landing page + onboarding wizard
-- `/app/saas-api/server.js` — API server (serves the site + payment + provisioning)
-- `/app/saas-api/provision.js` — provisions agent in super-admin dashboard + tenant gateway
+Official marketing site for Babuba — the self-hosted multi-agent operations framework. Vanilla HTML/CSS/JS, zero build step, served statically.
 
-**Flow:** visitor → wizard (purpose, channels, guardrails, RBAC, compliance) → plan → payment (Razorpay, test-mode fallback) → webhook → agent auto-created in super-admin dashboard + isolated tenant gateway (Agent = Tenant = Client).
+- `index.html` — homepage (hero ops console, architecture, pricing, FAQ)
+- `style.css` — Linear-grade design system (tokens, motion)
+- `app.js` — scroll reveals, counters, console animation, slider
+- `redeem.html` — legacy license-redeem page (kept from the old SaaS site)
 
-**Run:** `node /app/saas-api/server.js` (port 80). Config: `/app/saas-api/config.json`.
+**Deploy:** GitHub Pages (this repo) with custom domain `www.babuba.in` (CNAME). DNS at Hostinger: CNAME `www` → `thunacare-alt.github.io`, A `@` → GitHub Pages IPs.
+
+**Policy:** All data on this site is sanitized/illustrative. Never publish real AFR figures, plant names, or client data.
