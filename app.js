@@ -103,25 +103,6 @@
     updateBA();
   }
 
-  /* ── Pricing toggle ──────────────────────────────────────── */
-  const toggle = $("#priceToggle");
-  if (toggle) {
-    toggle.addEventListener("click", (e) => {
-      const btn = e.target.closest(".tg-btn");
-      if (!btn) return;
-      $$(".tg-btn", toggle).forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      const period = btn.dataset.period;
-      $$(".price").forEach((p) => {
-        p.style.opacity = 0;
-        setTimeout(() => {
-          p.textContent = p.dataset[period];
-          p.style.opacity = 1;
-        }, 180);
-      });
-    });
-  }
-
   /* ── Ops console demo loop ───────────────────────────────── */
   const consoleEl = $("#opsConsole");
   if (consoleEl) {

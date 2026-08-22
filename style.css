@@ -307,6 +307,7 @@ button { font-family: var(--mono); }
 .tg-btn { background: transparent; border: none; color: var(--dim); font-size: 11px; letter-spacing: 0.1em; padding: 11px 18px; cursor: pointer; transition: all 200ms; }
 .tg-btn.active { background: var(--volt); color: #000; font-weight: 700; }
 .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+.plans-single { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
 .plan { border: 1px solid var(--line); background: var(--panel); padding: 30px; border-radius: var(--r); display: flex; flex-direction: column; position: relative; }
 .plan-hot { border-color: var(--volt); box-shadow: 0 0 40px var(--volt-dim); }
 .plan-tag { position: absolute; top: -11px; left: 24px; background: var(--volt); color: #000; font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em; padding: 4px 10px; border-radius: var(--r); }
