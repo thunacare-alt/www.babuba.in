@@ -206,6 +206,10 @@
     <div class="console-body">
       <div class="console-col incoming" id="incomingCol">
         <div class="col-label">INBOX · WHATSAPP</div>
+        <div class="msg"><b>Unit A</b> 23.5 MT<span class="t">INV-1041 · WhatsApp</span></div>
+        <div class="msg"><b>Unit B</b> 18.2 MT<span class="t">INV-1042 · WhatsApp</span></div>
+        <div class="msg"><b>Unit C</b> 31.6 MT<span class="t">INV-1043 · WhatsApp</span></div>
+        <div class="msg"><b>Unit D</b> 12.9 MT<span class="t">INV-1044 · WhatsApp</span></div>
       </div>
       <div class="console-col mid">
         <div class="col-label">AGENT CORE</div>
@@ -215,7 +219,12 @@
         <div class="col-label">OUTPUT · INVOICE LIST</div>
         <table class="list-table" id="afrTable">
           <thead><tr><th>INV</th><th>QTY</th><th>STATUS</th></tr></thead>
-          <tbody></tbody>
+          <tbody>
+            <tr><td>INV-1041</td><td>23.5 MT</td><td><span class="chip ok">MATCHED</span></td></tr>
+            <tr><td>INV-1042</td><td>18.2 MT</td><td><span class="chip ok">MATCHED</span></td></tr>
+            <tr><td>INV-1043</td><td>31.6 MT</td><td><span class="chip flag">FLAGGED</span></td></tr>
+            <tr><td>INV-1044</td><td>12.9 MT</td><td><span class="chip ok">MATCHED</span></td></tr>
+          </tbody>
         </table>
         <button class="approve-btn" id="approveBtn">APPROVE <span id="approveCount">0</span> ▸</button>
       </div>

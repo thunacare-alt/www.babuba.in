@@ -128,9 +128,8 @@
     let running = false;
 
     function clearConsole() {
-      incomingCol.querySelectorAll(".msg").forEach((n) => n.remove());
-      tableBody.innerHTML = "";
-      $$(".list-table tr", consoleEl).forEach((r) => r.classList.remove("in"));
+      incomingCol.querySelectorAll(".msg").forEach((n) => n.classList.remove("in"));
+      tableBody.querySelectorAll("tr").forEach((r) => r.classList.remove("in"));
       approveBtn.classList.remove("ready");
       approveCount.textContent = "0";
       agentState.textContent = "idle";
@@ -142,10 +141,7 @@
       const step = 900;
       messages.forEach((m, i) => {
         setTimeout(() => {
-          const el = document.createElement("div");
-          el.className = "msg";
-          el.innerHTML = "<b>" + m.from + "</b> " + m.qty + "<span class='t'>" + m.no + " · WhatsApp</span>";
-          incomingCol.appendChild(el);
+          const el = incomingCol.querySelectorAll(".msg")[i];
           requestAnimationFrame(() => el.classList.add("in"));
         }, t + i * step);
       });
@@ -154,10 +150,7 @@
       agentStates.slice(0, 4).forEach((s, i) => setTimeout(() => (agentState.textContent = s), stateTimes[i]));
       rows.forEach((r, i) => {
         setTimeout(() => {
-          const tr = document.createElement("tr");
-          tr.innerHTML =
-            "<td>" + r.no + "</td><td>" + r.qty + "</td><td><span class='chip " + (r.ok ? "ok" : "flag") + "'>" + (r.ok ? "MATCHED" : "FLAGGED") + "</span></td>";
-          tableBody.appendChild(tr);
+          const tr = tableBody.rows[i];
           requestAnimationFrame(() => tr.classList.add("in"));
         }, 1500 + i * step);
       });
@@ -172,18 +165,8 @@
 
     if (reduced) {
       // static filled state for reduced-motion users
-      messages.forEach((m, i) => {
-        const el = document.createElement("div");
-        el.className = "msg in";
-        el.innerHTML = "<b>" + m.from + "</b> " + m.qty + "<span class='t'>" + m.no + " · WhatsApp</span>";
-        incomingCol.appendChild(el);
-      });
-      rows.forEach((r) => {
-        const tr = document.createElement("tr");
-        tr.className = "in";
-        tr.innerHTML = "<td>" + r.no + "</td><td>" + r.qty + "</td><td><span class='chip " + (r.ok ? "ok" : "flag") + "'>" + (r.ok ? "MATCHED" : "FLAGGED") + "</span></td>";
-        tableBody.appendChild(tr);
-      });
+      incomingCol.querySelectorAll(".msg").forEach((n) => n.classList.add("in"));
+      tableBody.querySelectorAll("tr").forEach((r) => r.classList.add("in"));
       agentState.textContent = "ready";
       approveBtn.classList.add("ready");
       approveCount.textContent = rows.length - 1;
