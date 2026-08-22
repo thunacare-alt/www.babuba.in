@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -12,6 +12,18 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body id="top">
+
+<div class="boot-ov" id="bootOv" aria-hidden="true">
+  <div class="boot-ov-inner">
+    <p class="bo-line">BABUBA//OS <span class="dim">— v1.0</span></p>
+    <p class="bo-line">POST ......... <span class="ok">OK</span></p>
+    <p class="bo-line">kernel ....... <span class="volt">babuba.core</span></p>
+    <p class="bo-line">router ....... <span class="ok">OK</span></p>
+    <p class="bo-line">agents ....... <span class="ok">4 ONLINE</span></p>
+    <p class="bo-line">gateway ...... <span class="volt">127.0.0.1:18793</span></p>
+    <p class="bo-line">▸ <span class="volt">SYSTEM READY</span><span class="cursor"></span></p>
+  </div>
+</div>
 
 <div class="scanlines" aria-hidden="true"></div>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -387,14 +399,14 @@
     <h2 class="section-title reveal">QUESTIONS, <span class="volt">ANSWERED.</span></h2>
   </div>
   <div class="faq">
-    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --data<span class="chev">+</span></summary><p>Does my data leave my server?</p><p class="ans">No. The gateway, agents and database run on your machine. Your data never goes to our cloud — you can even run it fully air-gapped.</p></details>
-    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --model<span class="chev">+</span></summary><p>Which LLM does it use?</p><p class="ans">Bring your own — OpenAI, Anthropic, DeepSeek, Ollama, or any OpenAI-compatible endpoint. No lock-in; swap models per agent.</p></details>
-    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --install<span class="chev">+</span></summary><p>How long does deployment take?</p><p class="ans">About fifteen minutes on a standard server or desktop. One install command, then connect your channels and boot agents.</p></details>
-    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --agents<span class="chev">+</span></summary><p>Can agents really approve things?</p><p class="ans">They prepare, verify and flag. Humans approve — every action requiring approval lands on your phone with the full picture. One tap to approve, one tap to reject.</p></details>
-    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --limit<span class="chev">+</span></summary><p>What if an agent does something wrong?</p><p class="ans">Guardrails, role-based access and approval gates contain it. Every action is logged and searchable — roll back, fix the rule, move on.</p></details>
-    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --why<span class="chev">+</span></summary><p>Why an OS and not an app?</p><p class="ans">Because agents aren't a feature — they become the way your company works. That needs a system layer: one router, many processes, shared memory, full audit. That's what an OS is.</p></details>
-    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --license<span class="chev">+</span></summary><p>What does the ₹5,50,000 license include?</p><p class="ans">The full OS — unlimited agents (make as many as you need), workflows, approvals, guardrails, RBAC, every channel, on your own server. Build anything on top of it: no restrictions, no conditions, no per-seat fees, no renewal. One payment, yours for life.</p></details>
-    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --users<span class="chev">+</span></summary><p>How many users can use one agent?</p><p class="ans">As many as you need — unlimited. One agent serves the whole team, each user with their own role and permissions. No seating costs, no per-user fees, ever. The license covers the OS, not heads.</p></details>
+    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --data<span class="chev">+</span></summary><div class="faq-body"><div><p>Does my data leave my server?</p><p class="ans">No. The gateway, agents and database run on your machine. Your data never goes to our cloud — you can even run it fully air-gapped.</p></div></div></details>
+    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --model<span class="chev">+</span></summary><div class="faq-body"><div><p>Which LLM does it use?</p><p class="ans">Bring your own — OpenAI, Anthropic, DeepSeek, Ollama, or any OpenAI-compatible endpoint. No lock-in; swap models per agent.</p></div></div></details>
+    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --install<span class="chev">+</span></summary><div class="faq-body"><div><p>How long does deployment take?</p><p class="ans">About fifteen minutes on a standard server or desktop. One install command, then connect your channels and boot agents.</p></div></div></details>
+    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --agents<span class="chev">+</span></summary><div class="faq-body"><div><p>Can agents really approve things?</p><p class="ans">They prepare, verify and flag. Humans approve — every action requiring approval lands on your phone with the full picture. One tap to approve, one tap to reject.</p></div></div></details>
+    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --limit<span class="chev">+</span></summary><div class="faq-body"><div><p>What if an agent does something wrong?</p><p class="ans">Guardrails, role-based access and approval gates contain it. Every action is logged and searchable — roll back, fix the rule, move on.</p></div></div></details>
+    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --why<span class="chev">+</span></summary><div class="faq-body"><div><p>Why an OS and not an app?</p><p class="ans">Because agents aren't a feature — they become the way your company works. That needs a system layer: one router, many processes, shared memory, full audit. That's what an OS is.</p></div></div></details>
+    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --license<span class="chev">+</span></summary><div class="faq-body"><div><p>What does the ₹5,50,000 license include?</p><p class="ans">The full OS — unlimited agents (make as many as you need), workflows, approvals, guardrails, RBAC, every channel, on your own server. Build anything on top of it: no restrictions, no conditions, no per-seat fees, no renewal. One payment, yours for life.</p></div></div></details>
+    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --users<span class="chev">+</span></summary><div class="faq-body"><div><p>How many users can use one agent?</p><p class="ans">As many as you need — unlimited. One agent serves the whole team, each user with their own role and permissions. No seating costs, no per-user fees, ever. The license covers the OS, not heads.</p></div></div></details>
   </div>
 </section>
 
@@ -409,6 +421,8 @@
   </div>
   <p class="footer-copy dim">© 2026 BABUBA SYSTEMS · ALL DATA STAYS ON YOUR HARDWARE</p>
 </footer>
+
+<a class="to-top" id="toTop" href="#top" aria-label="Back to top">▲ TOP</a>
 
 <script src="app.js"></script>
 </body>

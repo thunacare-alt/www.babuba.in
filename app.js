@@ -219,7 +219,7 @@
   /* ── Demo chat sequence ──────────────────────────────────── */
   const demo = $("#demoChat");
   if (demo) {
-    const msgs = $$(".demo-msg", demo);
+    const msgs = $(".demo-msg", demo);
     if (reduced) {
       msgs.forEach((m) => m.classList.add("in"));
     } else {
@@ -236,5 +236,51 @@
       );
       io.observe(demo);
     }
+  }
+
+  /* ── First-load boot overlay ─────────────────────────────── */
+  const bootOv = $("#bootOv");
+  if (bootOv && !reduced && !sessionStorage.getItem("babuba_booted")) {
+    sessionStorage.setItem("babuba_booted", "1");
+    const dismiss = () => {
+      bootOv.classList.add("hide");
+      bootOv.removeEventListener("click", dismiss);
+      setTimeout(() => bootOv.remove(), 500);
+    };
+    bootOv.addEventListener("click", dismiss);
+    setTimeout(dismiss, 1400);
+  } else if (bootOv) {
+    bootOv.remove();
+  }
+
+  /* ── Scroll-spy: highlight active section in nav ─────────── */
+  const navAnchors = document.querySelectorAll(".nav-links a");
+  const sections = document.querySelectorAll("section[id]");
+  if (navAnchors.length && sections.length && "IntersectionObserver" in window) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          const id = en.target.id;
+          navAnchors.forEach((a) => {
+            a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+          });
+        });
+      },
+      { rootMargin: "-30% 0px -60% 0px" }
+    );
+    sections.forEach((s) => spy.observe(s));
+  }
+
+  /* ── Back-to-top ─────────────────────────────────────────── */
+  const toTop = $("#toTop");
+  if (toTop) {
+    const onSc = () => toTop.classList.toggle("show", (document.documentElement.scrollTop || document.body.scrollTop) > 600);
+    window.addEventListener("scroll", onSc, { passive: true });
+    onSc();
+    toTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+    });
   }
 })();
