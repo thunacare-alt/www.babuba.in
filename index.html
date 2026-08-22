@@ -182,13 +182,13 @@
   <div class="section-head">
     <p class="eyebrow reveal">// 03 — LIVE DESK</p>
     <h2 class="section-title reveal">YOUR DESK. <span class="volt">RUN BY AGENTS.</span></h2>
-    <p class="section-sub reveal">A live loop of what an agent desk looks like mid-morning. Sample data, real pipeline.</p>
+    <p class="section-sub reveal">A live loop of what an agent desk looks like mid-morning. Real pipeline, real numbers — anonymized.</p>
   </div>
 
   <div class="console reveal" data-delay="200" id="opsConsole">
     <div class="console-head">
       <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-      <span class="console-title">ops@desk — <em>live demo, sample data</em></span>
+      <span class="console-title">ops@desk — <em>live pipeline, anonymized</em></span>
       <span class="console-status"><span class="pulse-dot"></span> processing</span>
     </div>
     <div class="console-body">
@@ -301,10 +301,42 @@
   </div>
 </section>
 
+<!-- ═══════════ CONTROL PLANE ═══════════ -->
+<section class="section" id="control">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 06 — CONTROL PLANE</p>
+    <h2 class="section-title reveal">THE AGENTS WORK.<br /><span class="volt">THE HUMANS RULE.</span></h2>
+    <p class="section-sub reveal">Every agent runs inside a control plane you define — who can do what, what an agent may never do, and what must come back to a human before it ships.</p>
+  </div>
+
+  <div class="control-grid">
+    <div class="ctrl-card reveal">
+      <div class="ctrl-id">RBAC.MATRIX</div>
+      <h3>WHO CAN DO WHAT</h3>
+      <p>Role-based access per agent — super_admin, admin, manager, user, viewer. Scope access to departments, agents and actions. One agent, whole team, exact permissions each.</p>
+    </div>
+    <div class="ctrl-card reveal" data-delay="100">
+      <div class="ctrl-id">GUARDRAIL.RULES</div>
+      <h3>WHAT AGENTS MAY NEVER DO</h3>
+      <p>Hard allow / deny / warn rules per agent. Deny payments above a limit. Deny deleting records. Deny sending without approval. The rule is enforced in code, not in the prompt.</p>
+    </div>
+    <div class="ctrl-card reveal" data-delay="200">
+      <div class="ctrl-id">APPROVAL.CHAIN</div>
+      <h3>NOTHING SHIPS SILENTLY</h3>
+      <p>Agent prepares and verifies. The action lands on your phone with the full picture — one tap to approve, one tap to reject. Approval gates on payments, exports, sends.</p>
+    </div>
+    <div class="ctrl-card reveal" data-delay="300">
+      <div class="ctrl-id">AUDIT.LOG</div>
+      <h3>EVERY ACTION, RECORDED</h3>
+      <p>Every agent action is logged and searchable — who, what, when, which rule allowed it. Export the log any time. Roll back, fix the rule, move on.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ PRICING ═══════════ -->
 <section class="section" id="pricing">
   <div class="section-head">
-    <p class="eyebrow reveal">// 06 — LICENSES</p>
+    <p class="eyebrow reveal">// 07 — LICENSES</p>
     <h2 class="section-title reveal">ONE LICENSE.<br /><span class="volt">THE WHOLE OS. NOTHING ELSE.</span></h2>
   </div>
 
@@ -316,21 +348,42 @@
       <p class="plan-price"><span class="price">₹5,50,000</span><span class="plan-cur">one-time</span></p>
       <ul>
         <li>Unlimited agents — make as many as you need</li>
+        <li>Unlimited users on every agent — no seating costs</li>
         <li>Build anything on top — no restrictions, no conditions</li>
         <li>Workflows, approvals, guardrails, RBAC</li>
         <li>All channels: WhatsApp / Telegram / Gmail / web</li>
         <li>Your own server. Your data never leaves.</li>
         <li>Updates + priority support, for life</li>
       </ul>
-      <a class="btn btn-primary btn-lg" href="#faq">DEPLOY ▸</a>
+      <a class="btn btn-primary btn-lg" href="#buy">DEPLOY ▸</a>
     </div>
+  </div>
+
+  <div class="own-compare reveal">
+    <div class="oc-head">THE 5-YEAR MATH — SAAS RENT <span class="oc-vs">VS</span> ONE-TIME OS</div>
+    <table class="oc-table">
+      <thead><tr><th></th><th>SAAS SUBSCRIPTION</th><th>BABUBA OS</th></tr></thead>
+      <tbody>
+        <tr><td>COST OVER 5 YEARS</td><td>6 agents × ₹1,499/mo ≈ ₹5.4L — forever rent</td><td>₹5,50,000 — once</td></tr>
+        <tr><td>AGENTS</td><td>You pay per agent you add</td><td>Unlimited — make as many as you need</td></tr>
+        <tr><td>USERS</td><td>Per-seat fees on top</td><td>Unlimited users, no seating costs</td></tr>
+        <tr><td>DATA</td><td>Sits in their cloud</td><td>On your server. Yours.</td></tr>
+        <tr><td>OWNERSHIP</td><td>Rent that ends when you stop paying</td><td>Yours for life</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="buy-path reveal" id="buy">
+    <div class="bp-step"><span class="bp-num">01</span><h3>GET THE LICENSE</h3><p>Email <a class="bp-link" href="mailto:support@babuba.ai">support@babuba.ai</a> or message us — one payment, one license code.</p></div>
+    <div class="bp-step"><span class="bp-num">02</span><h3>WE DEPLOY WITH YOU</h3><p>A 20-minute guided install on your server. Channels connected, first agent booted.</p></div>
+    <div class="bp-step"><span class="bp-num">03</span><h3>ACTIVATE &amp; BUILD</h3><p>Redeem your code on <a class="bp-link" href="redeem.html">redeem.babuba.in</a> — then build anything on top. No restrictions.</p></div>
   </div>
 </section>
 
 <!-- ═══════════ FAQ ═══════════ -->
 <section class="section" id="faq">
   <div class="section-head">
-    <p class="eyebrow reveal">// 07 — MAN BABUBA</p>
+    <p class="eyebrow reveal">// 08 — MAN BABUBA</p>
     <h2 class="section-title reveal">QUESTIONS, <span class="volt">ANSWERED.</span></h2>
   </div>
   <div class="faq">
@@ -341,6 +394,7 @@
     <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --limit<span class="chev">+</span></summary><p>What if an agent does something wrong?</p><p class="ans">Guardrails, role-based access and approval gates contain it. Every action is logged and searchable — roll back, fix the rule, move on.</p></details>
     <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --why<span class="chev">+</span></summary><p>Why an OS and not an app?</p><p class="ans">Because agents aren't a feature — they become the way your company works. That needs a system layer: one router, many processes, shared memory, full audit. That's what an OS is.</p></details>
     <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --license<span class="chev">+</span></summary><p>What does the ₹5,50,000 license include?</p><p class="ans">The full OS — unlimited agents (make as many as you need), workflows, approvals, guardrails, RBAC, every channel, on your own server. Build anything on top of it: no restrictions, no conditions, no per-seat fees, no renewal. One payment, yours for life.</p></details>
+    <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --users<span class="chev">+</span></summary><p>How many users can use one agent?</p><p class="ans">As many as you need — unlimited. One agent serves the whole team, each user with their own role and permissions. No seating costs, no per-user fees, ever. The license covers the OS, not heads.</p></details>
   </div>
 </section>
 

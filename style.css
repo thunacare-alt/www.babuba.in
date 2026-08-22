@@ -382,9 +382,38 @@ button { font-family: var(--mono); }
   .console-body { grid-template-columns: 1fr; min-height: 0; }
   .console-col { border-right: none; border-bottom: 1px solid var(--line); }
   .console-col:last-child { border-bottom: none; }
-  .grid, .kernels, .plans, .stats { grid-template-columns: 1fr; }
+  .grid, .kernels, .plans, .stats, .control-grid, .buy-path { grid-template-columns: 1fr; }
   .spec-row { flex-direction: column; gap: 6px; }
   .spec-val { text-align: left; }
   .spec-dots { display: none; }
   .footer-bar { flex-direction: column; gap: 8px; align-items: flex-start; }
 }
+
+/* ═══════════════ CONTROL PLANE ═══════════════ */
+.control-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 980px; margin: 0 auto; }
+.ctrl-card { border: 1px solid var(--line); background: var(--panel); padding: 26px; border-radius: var(--r); position: relative; }
+.ctrl-card:hover { border-color: var(--line2); }
+.ctrl-id { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; color: var(--volt); margin-bottom: 14px; }
+.ctrl-card h3 { font-size: 14px; letter-spacing: 0.06em; margin-bottom: 10px; }
+.ctrl-card p { font-family: var(--sans); font-size: 13px; line-height: 1.65; color: var(--dim); }
+
+/* ═══════════════ COST COMPARISON ═══════════════ */
+.own-compare { max-width: 900px; margin: 44px auto 0; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.oc-head { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; color: var(--faint); padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--bg2); }
+.oc-vs { color: var(--volt); }
+.oc-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 12px; }
+.oc-table th { text-align: left; font-size: 10px; letter-spacing: 0.16em; color: var(--faint); padding: 14px 20px; border-bottom: 1px solid var(--line); }
+.oc-table td { padding: 13px 20px; border-bottom: 1px solid var(--line); color: var(--dim); }
+.oc-table tr:last-child td { border-bottom: none; }
+.oc-table td:first-child { color: var(--faint); font-size: 10px; letter-spacing: 0.14em; white-space: nowrap; }
+.oc-table th:last-child, .oc-table td:last-child { color: var(--volt); }
+.oc-table th:nth-child(2), .oc-table td:nth-child(2) { color: var(--dim); border-right: 1px solid var(--line); }
+
+/* ═══════════════ BUY PATH ═══════════════ */
+.buy-path { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 980px; margin: 44px auto 0; }
+.bp-step { border: 1px solid var(--line); background: var(--panel); padding: 24px; border-radius: var(--r); }
+.bp-num { font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--volt); display: block; margin-bottom: 12px; }
+.bp-step h3 { font-size: 13px; letter-spacing: 0.08em; margin-bottom: 8px; }
+.bp-step p { font-family: var(--sans); font-size: 13px; line-height: 1.6; color: var(--dim); }
+.bp-link { color: var(--volt); text-decoration: underline; text-underline-offset: 3px; }
+.bp-link:hover { color: var(--ink); }
