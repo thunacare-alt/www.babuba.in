@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Activate Babuba — Redeem your license</title>
+<meta name="description" content="Enter your Babuba license code to unlock your download and install your AI workforce." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%2300e5a0'/><circle cx='50' cy='50' r='18' fill='%23000'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<style>
+  body { background: #05080f; color: #e8eef7; font-family: "Inter", system-ui, sans-serif; min-height: 100vh; }
+  .bg-grid { position: fixed; inset: 0; z-index: -2;
+    background-image: linear-gradient(rgba(120,160,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(120,160,255,.05) 1px, transparent 1px);
+    background-size: 44px 44px; }
+  .bg-glow { position: fixed; inset: 0; z-index: -1; background: radial-gradient(600px 400px at 20% 0%, rgba(0,229,160,.10), transparent 60%), radial-gradient(600px 400px at 80% 100%, rgba(77,124,254,.10), transparent 60%); }
+  .wrap { max-width: 620px; margin: 0 auto; padding: 56px 20px 80px; }
+  .logo { font-size: 20px; font-weight: 800; letter-spacing: .02em; color: #fff; text-decoration: none; }
+  .logo-dot { color: #00e5a0; }
+  .card { background: rgba(13,18,30,.85); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; padding: 40px 36px; margin-top: 28px; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+  h1 { font-size: 26px; margin: 0 0 8px; letter-spacing: -.01em; }
+  .sub { color: #9fb0c8; font-size: 14.5px; margin: 0 0 26px; line-height: 1.6; }
+  label { display: block; font-size: 12.5px; font-weight: 600; color: #c6d2e4; margin: 16px 0 6px; text-transform: uppercase; letter-spacing: .08em; }
+  input { width: 100%; box-sizing: border-box; background: #0a0f1a; border: 1px solid rgba(255,255,255,.14); border-radius: 10px; color: #fff; font-family: "JetBrains Mono", monospace; font-size: 17px; letter-spacing: .14em; padding: 13px 14px; outline: none; transition: border-color .15s; }
+  input:focus { border-color: #00e5a0; }
+  input::placeholder { color: #4a5872; letter-spacing: .02em; font-family: "Inter", sans-serif; font-size: 14px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: none; border-radius: 10px; font-weight: 700; font-size: 15px; padding: 13px 22px; cursor: pointer; text-decoration: none; transition: transform .12s, box-shadow .12s, background .12s; }
+  .btn-primary { background: linear-gradient(135deg, #00e5a0, #00c48a); color: #04140d; box-shadow: 0 8px 28px rgba(0,229,160,.28); }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 34px rgba(0,229,160,.36); }
+  .btn-primary:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+  .btn-block { width: 100%; margin-top: 22px; }
+  .msg { margin-top: 16px; border-radius: 10px; padding: 12px 14px; font-size: 14px; line-height: 1.5; display: none; }
+  .msg.err { display: block; background: rgba(255,80,80,.10); border: 1px solid rgba(255,80,80,.35); color: #ffb3b3; }
+  .msg.ok { display: block; background: rgba(0,229,160,.08); border: 1px solid rgba(0,229,160,.35); color: #7df0c8; }
+  .success { display: none; margin-top: 24px; text-align: center; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.08); }
+  .success .check { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg,#00e5a0,#00c48a); color: #04140d; font-size: 28px; line-height: 56px; margin: 0 auto 14px; font-weight: 800; }
+  .success h2 { margin: 0 0 6px; font-size: 20px; }
+  .success p { color: #9fb0c8; font-size: 14px; margin: 0 0 18px; }
+  .steps { text-align: left; margin: 22px 0 0; padding: 0; list-style: none; counter-reset: st; }
+  .steps li { counter-increment: st; display: flex; gap: 12px; padding: 10px 0; color: #c6d2e4; font-size: 14px; line-height: 1.55; border-bottom: 1px solid rgba(255,255,255,.05); }
+  .steps li::before { content: counter(st); flex: 0 0 24px; height: 24px; border-radius: 50%; background: rgba(0,229,160,.14); color: #00e5a0; font-weight: 700; font-size: 13px; text-align: center; line-height: 24px; }
+  .steps b { color: #fff; }
+  .dl { margin-top: 24px; font-size: 13.5px; color: #9fb0c8; }
+  .dl a { color: #00e5a0; text-decoration: none; font-weight: 600; }
+  .foot { text-align: center; margin-top: 26px; font-size: 13px; color: #5d6d87; }
+  .foot a { color: #8ba0bd; text-decoration: none; }
+  .spin { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(4,20,13,.35); border-top-color: #04140d; border-radius: 50%; animation: spin .7s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+<div class="wrap">
+  <a class="logo" href="/">BABUBA<span class="logo-dot">.</span></a>
+  <div class="card">
+    <h1>Activate your Babuba license</h1>
+    <p class="sub">Enter the license code you received after purchase. One code unlocks one install — after activation you'll get your download and install guide.</p>
+
+    <label for="code">License code</label>
+    <input id="code" inputmode="text" autocomplete="off" spellcheck="false" placeholder="BABU-XXXX-XXXX-XXXX" maxlength="19" />
+    <label for="email">Your email (optional, for support)</label>
+    <input id="email" type="email" placeholder="you@company.com" style="letter-spacing:0;font-family:Inter,sans-serif;font-size:15px;" />
+
+    <button class="btn btn-primary btn-block" id="redeem-btn">Activate &amp; unlock download</button>
+    <div class="msg" id="msg"></div>
+
+    <div class="success" id="success">
+      <div class="check">✓</div>
+      <h2>License activated!</h2>
+      <p>Your code is locked to this install. Download Babuba Desktop below.</p>
+      <button class="btn btn-primary btn-block" id="dl-btn">⬇ Download Babuba Desktop</button>
+      <ol class="steps">
+        <li><span>Run <b>Babuba Desktop</b> and complete the <b>Setup Wizard</b> — it walks you through the DeepSeek key, company profile, departments, agents and channels.</span></li>
+        <li><span>In the wizard's <b>License</b> phase, enter your code: <b id="shown-code" style="letter-spacing:.08em"></b></span></li>
+        <li><span>Enter your <b>server details</b> (IP, SSH user, key) — the desktop app deploys your Babuba gateway to <b>your own server</b>, so it runs 24/7.</span></li>
+        <li><span>Pair the <b>browser extension</b> and you're live — your AI workforce runs on your infrastructure, forever.</span></li>
+      </ol>
+      <p class="dl">Need help? <a href="mailto:support@babuba.ai">support@babuba.ai</a></p>
+    </div>
+  </div>
+  <div class="foot"><a href="/">← Back to babuba.ai</a> &nbsp;·&nbsp; One-time payment · Yours forever</div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const codeEl = $("code"), emailEl = $("email"), btn = $("redeem-btn"), msg = $("msg"), success = $("success");
+
+  // auto-format BABU-XXXX-XXXX-XXXX as you type
+  codeEl.addEventListener("input", () => {
+    let v = codeEl.value.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 16);
+    let out = "";
+    for (let i = 0; i < v.length; i++) {
+      if (i > 0 && i % 4 === 0) out += "-";
+      out += v[i];
+    }
+    codeEl.value = out;
+  });
+  codeEl.addEventListener("keydown", (e) => { if (e.key === "Enter") redeem(); });
+
+  async function redeem() {
+    const code = codeEl.value.trim();
+    if (code.length < 19) { showMsg("err", "Enter the full license code — format BABU-XXXX-XXXX-XXXX."); return; }
+    btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Validating…';
+    try {
+      const r = await fetch("/api/license/redeem", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code, email: emailEl.value.trim() || null }),
+      });
+      const j = await r.json();
+      if (!j.success) { showMsg("err", j.error || "Activation failed. Check the code and try again."); return; }
+      showMsg("ok", "Validated! Unlocking download…");
+      $("shown-code").textContent = code;
+      success.style.display = "block";
+      $("dl-btn").onclick = () => { window.location.href = j.download || "/api/downloads/latest"; };
+      $("dl-btn").hidden = false;
+      msg.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    } catch (e) {
+      showMsg("err", "Could not reach the activation server. Try again in a moment.");
+    } finally {
+      btn.disabled = false; btn.innerHTML = "Activate &amp; unlock download";
+    }
+  }
+
+  function showMsg(kind, text) {
+    msg.className = "msg " + kind;
+    msg.textContent = text;
+  }
+
+  btn.addEventListener("click", redeem);
+})();
+</script>
+</body>
+</html>

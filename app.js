@@ -336,18 +336,29 @@
     }
   };
 
-  function finish(pr) {
+  async function finish(pr) {
     $("wiz-pay").hidden = true;
     chat.innerHTML = "";
+    const agentId = pr.agent?.id || "agent-" + (answers.agentName || "x").toLowerCase().replace(/\s+/g, "-");
+    const tenantUrl = pr.tenant?.url || pr.tenant?.gateway || "";
     const ok = el("div", "msg bot",
       `🎉 <b>Your agent is live!</b>\n\n` +
       `- Agent: <b>${escapeHtml(pr.agent?.name || answers.agentName)}</b>\n` +
-      `- ID: <code>${pr.agent?.id || "agent-" + (answers.agentName || "x").toLowerCase().replace(/\\s+/g, "-")}</code>\n` +
-      `- Tenant: <b>${pr.tenant ? pr.tenant.slug + " (port " + pr.tenant.port + ")" : "main gateway"}</b>\n` +
+      `- ID: <code>${escapeHtml(agentId)}</code>\n` +
+      `- Tenant: <b>${escapeHtml(pr.tenant?.slug || agentId)}</b>\n` +
       `- Dashboard: <a href="${pr.dashboardUrl || "/admin"}" target="_blank" style="color:var(--acc)">${pr.dashboardUrl || "/admin"}</a>\n\n` +
-      `Our team has been notified. You'll receive login credentials at <b>${escapeHtml(answers.email || "your email")}</b> shortly. Welcome to Babuba! 🚀`
+      `⬇️ <b>Download the desktop app</b> to chat with your agent from your tray and keep an eye on your dashboard:`
     );
     chat.appendChild(ok); scroll();
+    const dl = el("div", "msg bot");
+    const btn = el("a", "btn btn-primary", "⬇ Download Babuba Desktop");
+    btn.href = "/downloads/latest";
+    btn.style.cssText = "display:inline-block;margin-top:6px;padding:10px 18px;border-radius:10px;background:var(--acc,#00e5a0);color:#02120d;font-weight:700;text-decoration:none;";
+    dl.appendChild(btn);
+    if (tenantUrl) {
+      dl.appendChild(el("div", "", `\n🔗 Desktop connects to: <code>${escapeHtml(tenantUrl)}</code> (paste in Settings if prompted)`));
+    }
+    chat.appendChild(dl); scroll();
     toast("🎉 Agent provisioned successfully!", "ok");
   }
 
