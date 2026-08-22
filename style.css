@@ -35,7 +35,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   background: var(--bg);
   color: var(--ink);
@@ -355,54 +355,6 @@ button { font-family: var(--mono); }
 /* ═══════════ BLINK ═══════════ */
 @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
 
-/* ═══════════ RESPONSIVE ═══════════ */
-@media (max-width: 1020px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 44px; }
-  .desk { max-width: 560px; }
-  .boot { grid-template-columns: 1fr; }
-  .boot-arrow { transform: rotate(90deg); justify-content: center; padding: 6px 0; }
-  .grid, .kernels, .plans { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 760px) {
-  .statusbar { padding: 0 16px; gap: 12px; }
-  .sysinfo { display: none; }
-  .nav-links {
-    position: fixed; top: 52px; left: 0; right: 0;
-    flex-direction: column; gap: 0; background: var(--bg);
-    border-bottom: 1px solid var(--line);
-    max-height: 0; overflow: hidden; transition: max-height 400ms var(--ease);
-  }
-  .nav-links.open { max-height: 320px; }
-  .nav-links a { padding: 15px 20px; border-top: 1px solid var(--line); }
-  .nav-burger { display: block; }
-  .nav-cta { display: none; }
-  .hero { padding: 110px 18px 50px; }
-  .section { padding: 80px 18px; }
-  .hero-title { font-size: clamp(34px, 9vw, 48px); }
-  .console-body { grid-template-columns: 1fr; min-height: 0; }
-  .console-col { border-right: none; border-bottom: 1px solid var(--line); }
-  .console-col:last-child { border-bottom: none; }
-  .grid, .kernels, .plans, .stats, .control-grid, .buy-path { grid-template-columns: 1fr; }
-  .spec-row { flex-direction: column; gap: 6px; }
-  .spec-val { text-align: left; }
-  .spec-dots { display: none; }
-  .footer-bar { flex-direction: column; gap: 8px; align-items: flex-start; }
-
-  /* comparison table: stack into labeled blocks so nothing clips */
-  .own-compare { overflow: visible; }
-  .oc-table, .oc-table thead, .oc-table tbody, .oc-table tr, .oc-table td { display: block; width: 100%; }
-  .oc-table thead { display: none; }
-  .oc-table tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
-  .oc-table tr:last-child { border-bottom: none; }
-  .oc-table td { border: none; padding: 8px 14px; }
-  .oc-table td:first-child { white-space: normal; font-size: 11px; }
-  .oc-table td:nth-child(2), .oc-table td:last-child { border-right: none; }
-  .oc-table td:nth-child(2)::before { content: "SAAS SUBSCRIPTION — "; color: var(--dim); }
-  .oc-table td:last-child::before { content: "BABUBA OS — "; color: var(--volt); }
-  .oc-table td:nth-child(2), .oc-table td:last-child { color: var(--dim); }
-  .oc-table td:last-child { color: var(--volt); }
-}
-
 /* ═══════════════ CONTROL PLANE ═══════════════ */
 .control-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 980px; margin: 0 auto; }
 .ctrl-card { border: 1px solid var(--line); background: var(--panel); padding: 26px; border-radius: var(--r); position: relative; }
@@ -486,4 +438,55 @@ button { font-family: var(--mono); }
   .kernel:hover, .ctrl-card:hover, .bp-step:hover, .boot-step:hover { transform: none; }
   .boot-ov { display: none; }
   .to-top { transition: none; }
+}
+
+/* ═══════════ RESPONSIVE ═══════════ */
+/* Base layout rules are defined above; these media queries MUST stay at the end
+   of the stylesheet so they win over same-specificity base rules (source order).
+   If a new section is added, keep its base rules ABOVE this block. */
+@media (max-width: 1020px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+  .desk { max-width: 560px; }
+  .boot { grid-template-columns: 1fr; }
+  .boot-arrow { transform: rotate(90deg); justify-content: center; padding: 6px 0; }
+  .grid, .kernels, .plans { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .statusbar { padding: 0 16px; gap: 12px; }
+  .sysinfo { display: none; }
+  .nav-links {
+    position: fixed; top: 52px; left: 0; right: 0;
+    flex-direction: column; gap: 0; background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    max-height: 0; overflow: hidden; transition: max-height 400ms var(--ease);
+  }
+  .nav-links.open { max-height: 320px; }
+  .nav-links a { padding: 15px 20px; border-top: 1px solid var(--line); }
+  .nav-burger { display: block; }
+  .nav-cta { display: none; }
+  .hero { padding: 110px 18px 50px; }
+  .section { padding: 80px 18px; }
+  .hero-title { font-size: clamp(34px, 9vw, 48px); }
+  .console-body { grid-template-columns: 1fr; min-height: 0; }
+  .console-col { border-right: none; border-bottom: 1px solid var(--line); }
+  .console-col:last-child { border-bottom: none; }
+  .grid, .kernels, .plans, .stats, .control-grid, .buy-path { grid-template-columns: 1fr; }
+  .spec-row { flex-direction: column; gap: 6px; }
+  .spec-val { text-align: left; }
+  .spec-dots { display: none; }
+  .footer-bar { flex-direction: column; gap: 8px; align-items: flex-start; }
+
+  /* comparison table: stack into labeled blocks so nothing clips */
+  .own-compare { overflow: visible; }
+  .oc-table, .oc-table thead, .oc-table tbody, .oc-table tr, .oc-table td { display: block; width: 100%; }
+  .oc-table thead { display: none; }
+  .oc-table tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+  .oc-table tr:last-child { border-bottom: none; }
+  .oc-table td { border: none; padding: 8px 14px; }
+  .oc-table td:first-child { white-space: normal; font-size: 11px; }
+  .oc-table td:nth-child(2), .oc-table td:last-child { border-right: none; }
+  .oc-table td:nth-child(2)::before { content: "SAAS SUBSCRIPTION — "; color: var(--dim); }
+  .oc-table td:last-child::before { content: "BABUBA OS — "; color: var(--volt); }
+  .oc-table td:nth-child(2), .oc-table td:last-child { color: var(--dim); }
+  .oc-table td:last-child { color: var(--volt); }
 }
