@@ -387,6 +387,20 @@ button { font-family: var(--mono); }
   .spec-val { text-align: left; }
   .spec-dots { display: none; }
   .footer-bar { flex-direction: column; gap: 8px; align-items: flex-start; }
+
+  /* comparison table: stack into labeled blocks so nothing clips */
+  .own-compare { overflow: visible; }
+  .oc-table, .oc-table thead, .oc-table tbody, .oc-table tr, .oc-table td { display: block; width: 100%; }
+  .oc-table thead { display: none; }
+  .oc-table tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+  .oc-table tr:last-child { border-bottom: none; }
+  .oc-table td { border: none; padding: 8px 14px; }
+  .oc-table td:first-child { white-space: normal; font-size: 11px; }
+  .oc-table td:nth-child(2), .oc-table td:last-child { border-right: none; }
+  .oc-table td:nth-child(2)::before { content: "SAAS SUBSCRIPTION — "; color: var(--dim); }
+  .oc-table td:last-child::before { content: "BABUBA OS — "; color: var(--volt); }
+  .oc-table td:nth-child(2), .oc-table td:last-child { color: var(--dim); }
+  .oc-table td:last-child { color: var(--volt); }
 }
 
 /* ═══════════════ CONTROL PLANE ═══════════════ */
