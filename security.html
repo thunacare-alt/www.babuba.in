@@ -159,6 +159,17 @@
     </div>
   </section>
 
+  <!-- Orchestration -->
+  <section class="section">
+    <p class="eyebrow reveal">// AUDITABLE BY DESIGN</p>
+    <h2 class="reveal">EVERY AGENT <span class="volt">SHOWS ITS WORK.</span></h2>
+    <p class="section-sub reveal">Each hop is logged on your server — who routed what, which agent did what, and what it asked before anything shipped.</p>
+    <div class="orch reveal" data-delay="150">
+      <canvas class="agent-canvas" role="img" aria-label="Animated diagram of the Babuba gateway routing one task to four agents working in parallel; each agent shows its work, then the results merge into one answer."></canvas>
+      <div class="orch-caption"><span class="pulse-dot"></span> ROUTER ▸ 4 AGENTS IN PARALLEL ▸ MERGE ▸ ONE ANSWER</div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <div class="cta-band reveal">
     <p class="eyebrow">// NEXT</p>
@@ -184,5 +195,6 @@
 <a class="to-top" id="toTop" href="#top" aria-label="Back to top">▲ TOP</a>
 
 <script src="app.js"></script>
+<script src="agent-canvas.js"></script>
 </body>
 </html>
