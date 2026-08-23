@@ -45,6 +45,48 @@
 .term-body .ok { color: var(--ok); }
 .term-body .dim { color: var(--faint); }
 .term-body .cursor { display: inline-block; width: 8px; height: 14px; background: var(--volt); vertical-align: -2px; animation: blink 1s steps(1) infinite; }
+
+/* ── Product definition line (hero) ───────────────────────── */
+.hero-def {
+  max-width: 720px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  color: var(--dim);
+  margin: -8px 0 24px;
+}
+.hero-def .volt { color: var(--volt); }
+
+/* ── Terminal demo: staggered line reveal ─────────────────── */
+.term-body p { opacity: 0; }
+.term.reveal.in .term-body p,
+.term:not(.reveal) .term-body p { animation: bootline 0.45s var(--ease) forwards; }
+.term.reveal.in .term-body p:nth-child(1),  .term:not(.reveal) .term-body p:nth-child(1)  { animation-delay: 0.15s; }
+.term.reveal.in .term-body p:nth-child(2),  .term:not(.reveal) .term-body p:nth-child(2)  { animation-delay: 0.40s; }
+.term.reveal.in .term-body p:nth-child(3),  .term:not(.reveal) .term-body p:nth-child(3)  { animation-delay: 0.65s; }
+.term.reveal.in .term-body p:nth-child(4),  .term:not(.reveal) .term-body p:nth-child(4)  { animation-delay: 0.90s; }
+.term.reveal.in .term-body p:nth-child(5),  .term:not(.reveal) .term-body p:nth-child(5)  { animation-delay: 1.15s; }
+.term.reveal.in .term-body p:nth-child(6),  .term:not(.reveal) .term-body p:nth-child(6)  { animation-delay: 1.40s; }
+.term.reveal.in .term-body p:nth-child(7),  .term:not(.reveal) .term-body p:nth-child(7)  { animation-delay: 1.65s; }
+.term.reveal.in .term-body p:nth-child(8),  .term:not(.reveal) .term-body p:nth-child(8)  { animation-delay: 1.90s; }
+.term.reveal.in .term-body p:nth-child(9),  .term:not(.reveal) .term-body p:nth-child(9)  { animation-delay: 2.15s; }
+.term.reveal.in .term-body p:nth-child(10), .term:not(.reveal) .term-body p:nth-child(10) { animation-delay: 2.40s; }
+.term.reveal.in .term-body p:nth-child(11), .term:not(.reveal) .term-body p:nth-child(11) { animation-delay: 2.65s; }
+.term.reveal.in .term-body p:nth-child(12), .term:not(.reveal) .term-body p:nth-child(12) { animation-delay: 2.90s; }
+
+/* ── Accessibility: skip link ─────────────────────────────── */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 999;
+  background: var(--volt); color: #0A0A0B;
+  font-family: var(--mono); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.08em; padding: 10px 16px; text-decoration: none;
+}
+.skip-link:focus { left: 12px; top: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .term-body p { opacity: 1; animation: none; }
+}
 @keyframes blink { 50% { opacity: 0; } }
 
 /* ── Stat grid ────────────────────────────────────────────── */

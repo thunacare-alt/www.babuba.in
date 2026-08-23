@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Babuba — Make your own AI agents. Any number of users.</title>
 <meta name="description" content="Make your own AI agents — one per department — and give any number of users access. Babuba runs on your server: agents that read your mail, build your reports, reconcile your invoices, and ask before anything ships. No per-seat fees." />
+<link rel="canonical" href="https://www.babuba.in/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Babuba" />
+<meta property="og:title" content="Babuba — Make your own AI agents. Any number of users." />
+<meta property="og:description" content="Self-hosted AI agent gateway: make one agent per department, unlimited users, no per-seat fees. Agents read your mail, build reports, reconcile invoices — and ask before anything ships." />
+<meta property="og:url" content="https://www.babuba.in/" />
+<meta property="og:image" content="https://www.babuba.in/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Babuba — Make your own AI agents. Any number of users." />
+<meta name="twitter:description" content="Self-hosted AI agent gateway: make one agent per department, unlimited users, no per-seat fees. Your data stays on your server." />
+<meta name="twitter:image" content="https://www.babuba.in/og.png" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0B'/><path d='M20 50 H80 M50 20 V80' stroke='%23C9F24B' stroke-width='14'/><rect x='18' y='18' width='64' height='64' fill='none' stroke='%23E8E8E2' stroke-width='4'/></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,9 +25,11 @@
 </head>
 <body id="top">
 
+<a class="skip-link" href="#main">SKIP TO CONTENT</a>
+
 <div class="boot-ov" id="bootOv" aria-hidden="true">
   <div class="boot-ov-inner">
-    <p class="bo-line">BABUBA//OS <span class="dim">— v1.0</span></p>
+    <p class="bo-line">BABUBA//GATEWAY <span class="dim">— v1.0</span></p>
     <p class="bo-line">POST ......... <span class="ok">OK</span></p>
     <p class="bo-line">kernel ....... <span class="volt">babuba.core</span></p>
     <p class="bo-line">router ....... <span class="ok">OK</span></p>
@@ -30,8 +43,8 @@
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- ═══════════ STATUS BAR / NAV ═══════════ -->
-<nav class="statusbar" id="nav">
-  <a class="logo" href="index.html"><span class="logo-mark">◉</span> BABUBA<span class="volt">//OS</span></a>
+<nav class="statusbar" id="nav" aria-label="Primary">
+  <a class="logo" href="index.html"><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span></a>
   <div class="sysinfo" aria-hidden="true">
     <span class="sys-dot"></span> AGENTS: 4 ONLINE
     <span class="sep">▸</span> GATEWAY: 127.0.0.1:18793
@@ -50,7 +63,7 @@
 </nav>
 
 <!-- ═══════════ HERO ═══════════ -->
-<header class="hero">
+<header class="hero" id="main">
   <div class="hero-inner">
     <div class="hero-copy">
       <p class="kicker reveal"><span class="prompt">$</span> whoami&nbsp;&nbsp;▸&nbsp;&nbsp;<span class="volt">babuba: your own agents, on your server</span><span class="cursor"></span></p>
@@ -60,6 +73,7 @@
         <span class="line reveal" data-delay="180">ANY NUMBER OF USERS.</span>
       </h1>
       <p class="hero-sub reveal" data-delay="260">Make an agent for every department — finance, ops, HR, MIS — and give your whole team access. No per-seat fees, no cloud lock-in. One gateway on <em>your</em> hardware: agents that read your mail, build your reports, reconcile your invoices, and <span class="volt">ask before anything ships</span>.</p>
+      <p class="hero-def reveal" data-delay="300"><span class="volt">▸</span> BABUBA IS A SELF-HOSTED AI AGENT GATEWAY — MAKE YOUR OWN AGENTS, ONE PER DEPARTMENT, UNLIMITED USERS, ON YOUR SERVER.</p>
       <div class="hero-ctas reveal" data-delay="340">
         <a class="btn btn-primary btn-lg" href="pricing.html">DEPLOY ON YOUR SERVER ▸</a>
         <a class="btn btn-ghost btn-lg" href="agents.html">SEE THE AGENTS</a>
@@ -337,7 +351,7 @@
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer" id="footer">
   <div class="footer-bar">
-    <span><span class="logo-mark">◉</span> BABUBA<span class="volt">//OS</span> v2.4.0</span>
+    <span><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span> v2.4.0</span>
     <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
   </div>
   <div class="footer-links">

@@ -14,7 +14,7 @@
   --line2: #3D3D44;
   --ink: #E8E8E2;
   --dim: #8B8B84;
-  --faint: #55554F;
+  --faint: #82827B;        /* was #55554F - raised for WCAG AA on dark bg */
   --volt: #C9F24B;        /* signature — acid volt */
   --volt-dim: rgba(201,242,75,0.12);
   --amber: #FFB454;
@@ -354,6 +354,13 @@ button { font-family: var(--mono); }
 
 /* ═══════════ BLINK ═══════════ */
 @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+/* ═══════════ ACCESSIBILITY: FOCUS STATES ═══════════ */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--volt);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
 
 /* ═══════════ RESPONSIVE ═══════════ */
 @media (max-width: 1020px) {

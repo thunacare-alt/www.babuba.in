@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Activate Babuba — Redeem your license</title>
 <meta name="description" content="Enter your Babuba license code to unlock your download and install Babuba on your own server — make your own agents, any number of users." />
+<link rel="canonical" href="https://www.babuba.in/redeem.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Babuba" />
+<meta property="og:title" content="Activate Babuba — Redeem your license" />
+<meta property="og:description" content="Enter your Babuba license code to unlock your download and install the self-hosted AI agent gateway on your own server." />
+<meta property="og:url" content="https://www.babuba.in/redeem.html" />
+<meta property="og:image" content="https://www.babuba.in/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Activate Babuba — Redeem your license" />
+<meta name="twitter:description" content="Redeem your Babuba license and install the self-hosted AI agent gateway on your own server." />
+<meta name="twitter:image" content="https://www.babuba.in/og.png" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0B'/><path d='M20 50 H80 M50 20 V80' stroke='%23C9F24B' stroke-width='14'/><rect x='18' y='18' width='64' height='64' fill='none' stroke='%23E8E8E2' stroke-width='4'/></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -24,7 +35,7 @@
   label { display: block; font-size: 10.5px; font-weight: 500; color: #8B8B84; margin: 16px 0 6px; text-transform: uppercase; letter-spacing: 0.14em; }
   input { width: 100%; box-sizing: border-box; background: #0E0E10; border: 1px solid #26262B; border-radius: 2px; color: #E8E8E2; font-family: "JetBrains Mono", monospace; font-size: 17px; letter-spacing: 0.14em; padding: 13px 14px; outline: none; transition: border-color .15s; }
   input:focus { border-color: #C9F24B; }
-  input::placeholder { color: #55554F; letter-spacing: 0.02em; font-family: "Inter", sans-serif; font-size: 13px; }
+  input::placeholder { color: #82827B; letter-spacing: 0.02em; font-family: "Inter", sans-serif; font-size: 13px; }
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 22px; border-radius: 2px; border: 1px solid #3D3D44; cursor: pointer; transition: all 220ms cubic-bezier(0.16,1,0.3,1); }
   .btn-primary { background: #C9F24B; color: #000; border-color: #C9F24B; }
   .btn-primary:hover { background: #D8FF6B; box-shadow: 0 0 24px rgba(201,242,75,0.15); }
@@ -47,16 +58,24 @@
   .foot a { color: #8B8B84; text-decoration: none; }
   .spin { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(0,0,0,0.25); border-top-color: #000; border-radius: 50%; animation: spin .7s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
+  .skip-link { position: absolute; left: -9999px; top: 0; z-index: 999; background: #C9F24B; color: #0A0A0B; font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; padding: 10px 16px; text-decoration: none; }
+  .skip-link:focus { left: 12px; top: 12px; }
+  .hero-def { font-size: 12px; color: #8B8B84; letter-spacing: 0.05em; line-height: 1.7; margin: -14px 0 26px; }
+  .hero-def .volt { color: #C9F24B; }
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main">SKIP TO CONTENT</a>
+
 <div class="bg-grid"></div>
 <div class="bg-glow"></div>
-<div class="wrap">
-  <a class="logo" href="/">◉ BABUBA<span class="logo-dot">//OS</span></a>
+<div class="wrap" id="main">
+  <a class="logo" href="/">◉ BABUBA<span class="logo-dot">//GATEWAY</span></a>
   <div class="card">
     <h1>Activate your license</h1>
     <p class="sub">Enter the license code you received after purchase. One code unlocks one install — after activation you'll get your download and install guide.</p>
+    <p class="hero-def"><span class="volt">▸</span> BABUBA IS A SELF-HOSTED AI AGENT GATEWAY — ONE LICENSE, UNLIMITED AGENTS, UNLIMITED USERS, ON YOUR SERVER.</p>
 
     <label for="code">License code</label>
     <input id="code" inputmode="text" autocomplete="off" spellcheck="false" placeholder="BABU-XXXX-XXXX-XXXX" maxlength="19" />

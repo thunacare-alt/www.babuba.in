@@ -14,7 +14,7 @@
   --line2: #3D3D44;
   --ink: #E8E8E2;
   --dim: #8B8B84;
-  --faint: #55554F;
+  --faint: #82827B;        /* was #55554F - raised for WCAG AA on dark bg */
   --volt: #C9F24B;        /* signature — acid volt */
   --volt-dim: rgba(201,242,75,0.12);
   --amber: #FFB454;
@@ -440,6 +440,14 @@ button { font-family: var(--mono); }
   .to-top { transition: none; }
 }
 
+/* ═══════════ ACCESSIBILITY: FOCUS STATES ═══════════ */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--volt);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+   of the stylesheet so they win over same-specificity base rules (source order).
+   If a new section is added, keep its base rules ABOVE this block. */
 /* ═══════════ RESPONSIVE ═══════════ */
 /* Base layout rules are defined above; these media queries MUST stay at the end
    of the stylesheet so they win over same-specificity base rules (source order).
