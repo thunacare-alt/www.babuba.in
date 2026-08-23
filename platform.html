@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Babuba Platform — One gateway. One agent per department.</title>
-<meta name="description" content="Babuba platform: one gateway process routes every message to the right agent, connects WhatsApp / Telegram / Gmail / web, runs department workflows with approvals, and keeps memory + knowledge per agent — on your server." />
+<meta name="description" content="One gateway routes every message to the right agent — WhatsApp, Telegram, Gmail, web. Department workflows with human approvals and per-agent memory on your server." />
 <link rel="canonical" href="https://www.babuba.in/platform.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Babuba" />
@@ -139,25 +139,25 @@
     <div class="flow">
       <div class="flow-step reveal">
         <div class="step-num">START</div>
-        <h4>TRIGGER</h4>
+        <h3>TRIGGER</h3>
         <p>Chat, email, cron or webhook starts the workflow with a context payload.</p>
         <p class="boot-log">$ workflow start --id onboarding</p>
       </div>
       <div class="flow-step reveal" data-delay="100">
         <div class="step-num">STEP</div>
-        <h4>AUTO-CHAIN</h4>
+        <h3>AUTO-CHAIN</h3>
         <p>Agents execute steps — generate, verify, fetch, format — advancing the graph.</p>
         <p class="boot-log">$ step 2/5 complete</p>
       </div>
       <div class="flow-step reveal" data-delay="200">
         <div class="step-num">GATE</div>
-        <h4>APPROVAL</h4>
+        <h3>APPROVAL</h3>
         <p>Graph pauses. Approver gets notified on their channel with full context.</p>
         <p class="boot-log">$ await approver</p>
       </div>
       <div class="flow-step reveal" data-delay="300">
         <div class="step-num">END</div>
-        <h4>RESUME</h4>
+        <h3>RESUME</h3>
         <p>Approve / reject / cancel — audited. Graph resumes or rolls back cleanly.</p>
         <p class="boot-log">$ audit.log --tail</p>
       </div>
