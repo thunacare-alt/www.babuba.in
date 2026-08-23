@@ -52,7 +52,7 @@
   }
 
   /* ── Stat counters ───────────────────────────────────────── */
-  const counters = $$(".stat-num");
+  const counters = $$(".stat-num[data-count]"); // only animate real counters; static stats (∞, <5 SEC, LONG-TERM…) stay untouched
   function animateCount(el) {
     const target = parseFloat(el.dataset.count);
     const dec = parseInt(el.dataset.decimals || "0", 10);
