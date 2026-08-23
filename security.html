@@ -165,8 +165,8 @@
     <h2 class="reveal">EVERY AGENT <span class="volt">SHOWS ITS WORK.</span></h2>
     <p class="section-sub reveal">Each hop is logged on your server — who routed what, which agent did what, and what it asked before anything shipped.</p>
     <div class="orch reveal" data-delay="150">
-      <canvas class="agent-canvas" role="img" aria-label="Animated diagram of the Babuba gateway routing one task to four agents working in parallel; each agent shows its work, then the results merge into one answer."></canvas>
-      <div class="orch-caption"><span class="pulse-dot"></span> ROUTER ▸ 4 AGENTS IN PARALLEL ▸ MERGE ▸ ONE ANSWER</div>
+      <canvas class="agent-canvas" data-variant="audit" role="img" aria-label="Animated diagram of a request passing RBAC, guardrail and approval gates before reaching an agent; some requests are denied and blocked."></canvas>
+      <div class="orch-caption"><span class="pulse-dot"></span> REQUEST ▸ RBAC ▸ GUARDRAIL ▸ APPROVAL ▸ LOGGED ▸ APPROVED</div>
     </div>
   </section>
 
