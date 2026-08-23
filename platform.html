@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Babuba Platform — One gateway. One port. The whole OS.</title>
+<meta name="description" content="Babuba platform: one gateway process routes every message to the right agent, connects WhatsApp / Telegram / Gmail / web, runs department workflows with approvals, and keeps memory + knowledge per agent — on your server." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0B'/><path d='M20 50 H80 M50 20 V80' stroke='%23C9F24B' stroke-width='14'/><rect x='18' y='18' width='64' height='64' fill='none' stroke='%23E8E8E2' stroke-width='4'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="pages.css" />
+</head>
+<body id="top">
+
+<div class="scanlines" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ═══════════ STATUS BAR / NAV ═══════════ -->
+<nav class="statusbar" id="nav">
+  <a class="logo" href="index.html"><span class="logo-mark">◉</span> BABUBA<span class="volt">//OS</span></a>
+  <div class="sysinfo" aria-hidden="true">
+    <span class="sys-dot"></span> AGENTS: 4 ONLINE
+    <span class="sep">▸</span> GATEWAY: 127.0.0.1:18793
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">OS</a>
+    <a href="agents.html">Agents</a>
+    <a href="platform.html" class="active">Platform</a>
+    <a href="security.html">Ownership</a>
+    <a href="pricing.html">Licenses</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn btn-primary nav-cta" href="pricing.html">DEPLOY →</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <p class="kicker reveal"><span class="prompt">$</span> systemctl status babuba<span class="cursor"></span></p>
+    <h1 class="reveal">ONE GATEWAY.<br /><span class="volt">ONE PORT. THE WHOLE OS.</span></h1>
+    <p class="hero-sub reveal" data-delay="120">A single process — port <em>18793</em> — hosts your gateway, router, agents, channels, workflows and cron. Install once on your hardware, and the entire system runs there.</p>
+    <ul class="hero-meta reveal" data-delay="200">
+      <li>ONE PROCESS</li>
+      <li>LANGGRAPH ROUTER</li>
+      <li>DEPARTMENT WORKFLOWS</li>
+      <li>ALL CHANNELS</li>
+    </ul>
+  </div>
+</header>
+
+<!-- ═══════════ BODY ═══════════ -->
+<div class="page-body">
+
+  <!-- Gateway + router -->
+  <section class="section">
+    <p class="eyebrow reveal">// THE GATEWAY</p>
+    <h2 class="reveal">A ROUTER THAT <span class="volt">DECIDES.</span></h2>
+    <p class="section-sub reveal">Every incoming message passes through the LangGraph router. It classifies intent, picks the right agent, starts the right workflow — and hands the reply back through the same channel it arrived on.</p>
+    <div class="term reveal">
+      <div class="term-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">router — message flow</span></div>
+      <div class="term-body">
+        <p><span class="dim">[in]</span> <span class="cmd">"INV-1044 pending, why?"</span> <span class="dim">← whatsapp</span></p>
+        <p><span class="dim">[route]</span> intent=reconciliation <span class="ok">→ fin.accounts</span></p>
+        <p><span class="dim">[workflow]</span> match-invoice <span class="volt">started</span></p>
+        <p><span class="dim">[guardrail]</span> read-only query <span class="ok">pass</span></p>
+        <p><span class="dim">[out]</span> <span class="cmd">"Matched 47/47. INV-1044 flagged — freight mismatch ₹3,200. Approve adjustment?"</span> <span class="ok">→ whatsapp</span><span class="cursor"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Channels -->
+  <section class="section">
+    <p class="eyebrow reveal">// CHANNELS</p>
+    <h2 class="reveal">TALK WHERE <span class="volt">YOU ALREADY WORK.</span></h2>
+    <p class="section-sub reveal">No new app to learn. The same gateway serves every channel — and the router keeps context per user across all of them.</p>
+    <div class="grid">
+      <div class="cell reveal">
+        <div class="cell-head"><span class="cell-id">WHATSAPP</span><span class="cell-status"><span class="sys-dot"></span> CONNECTED</span></div>
+        <ul>
+          <li>Send &amp; receive messages</li>
+          <li>Files: invoices, PDFs, images</li>
+          <li>Approval taps on your phone</li>
+        </ul>
+        <p class="cell-log dim">$ wa connect --qr</p>
+      </div>
+      <div class="cell reveal" data-delay="80">
+        <div class="cell-head"><span class="cell-id">TELEGRAM</span><span class="cell-status"><span class="sys-dot"></span> CONNECTED</span></div>
+        <ul>
+          <li>Multi-bot support</li>
+          <li>Rich formatting &amp; buttons</li>
+          <li>Commands &amp; slash routing</li>
+        </ul>
+        <p class="cell-log dim">$ tg connect --token</p>
+      </div>
+      <div class="cell reveal" data-delay="160">
+        <div class="cell-head"><span class="cell-id">GMAIL</span><span class="cell-status"><span class="sys-dot"></span> CONNECTED</span></div>
+        <ul>
+          <li>Read &amp; send via OAuth</li>
+          <li>Email-triggered workflows</li>
+          <li>Attachment parsing</li>
+        </ul>
+        <p class="cell-log dim">$ gmail bind --agent finance</p>
+      </div>
+      <div class="cell reveal" data-delay="240">
+        <div class="cell-head"><span class="cell-id">WEB CHAT</span><span class="cell-status"><span class="sys-dot"></span> CONNECTED</span></div>
+        <ul>
+          <li>Dashboard Super Chat</li>
+          <li>Per-user login &amp; roles</li>
+          <li>Session history, searchable</li>
+        </ul>
+        <p class="cell-log dim">$ web chat --open /admin</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflows + approvals -->
+  <section class="section">
+    <p class="eyebrow reveal">// WORKFLOWS</p>
+    <h2 class="reveal">DEPARTMENT PROCESSES, <span class="volt">AS GRAPHS.</span></h2>
+    <p class="section-sub reveal">Approval chains, onboarding, expense flows, compliance steps — define them as graphs per department. Start one from a chat message, an email, or a cron schedule. Human approvals pause the graph until someone taps.</p>
+    <div class="flow">
+      <div class="flow-step reveal">
+        <div class="step-num">START</div>
+        <h4>TRIGGER</h4>
+        <p>Chat, email, cron or webhook starts the workflow with a context payload.</p>
+        <p class="boot-log">$ workflow start --id onboarding</p>
+      </div>
+      <div class="flow-step reveal" data-delay="100">
+        <div class="step-num">STEP</div>
+        <h4>AUTO-CHAIN</h4>
+        <p>Agents execute steps — generate, verify, fetch, format — advancing the graph.</p>
+        <p class="boot-log">$ step 2/5 complete</p>
+      </div>
+      <div class="flow-step reveal" data-delay="200">
+        <div class="step-num">GATE</div>
+        <h4>APPROVAL</h4>
+        <p>Graph pauses. Approver gets notified on their channel with full context.</p>
+        <p class="boot-log">$ await approver</p>
+      </div>
+      <div class="flow-step reveal" data-delay="300">
+        <div class="step-num">END</div>
+        <h4>RESUME</h4>
+        <p>Approve / reject / cancel — audited. Graph resumes or rolls back cleanly.</p>
+        <p class="boot-log">$ audit.log --tail</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Memory + knowledge -->
+  <section class="section">
+    <p class="eyebrow reveal">// MEMORY &amp; KNOWLEDGE</p>
+    <h2 class="reveal">IT REMEMBERS. <span class="volt">IT LEARNS.</span></h2>
+    <p class="section-sub reveal">Every agent keeps long-term memory (MEMORY.md) plus a searchable knowledge store. Facts, decisions and lessons persist across conversations — and are shared context when they should be.</p>
+    <div class="stat-grid">
+      <div class="stat reveal">
+        <div class="stat-id">MEMORY</div>
+        <div class="stat-num">LONG<small>-TERM</small></div>
+        <div class="stat-label">Per-agent MEMORY.md — preferences, decisions, lessons. Read at every conversation start.</div>
+      </div>
+      <div class="stat reveal" data-delay="80">
+        <div class="stat-id">KNOWLEDGE</div>
+        <div class="stat-num">RAG</div>
+        <div class="stat-label">Uploaded documents, searchable. Agents pull exact answers, not guesses.</div>
+      </div>
+      <div class="stat reveal" data-delay="160">
+        <div class="stat-id">SESSION</div>
+        <div class="stat-num">FULL</div>
+        <div class="stat-label">Conversation history per user — searchable, resumable, inspectable.</div>
+      </div>
+      <div class="stat reveal" data-delay="240">
+        <div class="stat-id">ORG-WIDE</div>
+        <div class="stat-num">SHARED</div>
+        <div class="stat-label">Company knowledge every agent can query — standards, contacts, policy.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BYO model -->
+  <section class="section">
+    <p class="eyebrow reveal">// BRING YOUR OWN MODEL</p>
+    <h2 class="reveal">NO MODEL LOCK-IN.</h2>
+    <p class="section-sub reveal">Point Babuba at OpenAI, Anthropic, DeepSeek, Ollama or any OpenAI-compatible endpoint. Swap models per agent — cheap model for parsing, top model for drafting. Failover and caching built in.</p>
+    <div class="term reveal">
+      <div class="term-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">model config</span></div>
+      <div class="term-body">
+        <p><span class="prompt">$</span> <span class="cmd">babuba config set agents.finance.model anthropic/claude</span></p>
+        <p><span class="prompt">$</span> <span class="cmd">babuba config set agents.ops.model deepseek/reasoner</span></p>
+        <p><span class="dim">▸ provider failover ..........</span> <span class="ok">on</span></p>
+        <p><span class="dim">▸ semantic cache .............</span> <span class="ok">on</span><span class="cursor"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band reveal">
+    <p class="eyebrow">// NEXT</p>
+    <h2>SEE THE <span class="volt">SECURITY MODEL.</span></h2>
+    <p>Your data, your server, your keys — and a full audit trail for every agent action.</p>
+    <a class="btn btn-primary btn-lg" href="security.html">OWNERSHIP &amp; SECURITY ▸</a>
+    <a class="btn btn-ghost btn-lg" href="pricing.html">LICENSES</a>
+  </div>
+
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer" id="footer">
+  <div class="footer-bar">
+    <span><span class="logo-mark">◉</span> BABUBA<span class="volt">//OS</span> v2.4.0</span>
+    <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">OS</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
+  </div>
+  <p class="footer-copy dim">© 2026 BABUBA SYSTEMS · ALL DATA STAYS ON YOUR HARDWARE</p>
+</footer>
+
+<a class="to-top" id="toTop" href="#top" aria-label="Back to top">▲ TOP</a>
+
+<script src="app.js"></script>
+</body>
+</html>
