@@ -57,6 +57,13 @@
     "background:linear-gradient(135deg,#C9F24B,#9FD82F);border:none;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.45);" +
     "display:flex;align-items:center;justify-content:center;transition:transform .18s ease;}" +
     "#babuba-widget-btn:hover{transform:scale(1.08);}" +
+    "#babuba-widget-label{position:fixed;right:94px;bottom:36px;z-index:999999;background:#121214;border:1px solid #26262B;" +
+    "color:#E8E8E2;font:500 13px/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:9px 14px;" +
+    "border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.45);opacity:0;transform:translateX(8px);transition:opacity .25s ease,transform .25s ease;}" +
+    "#babuba-widget-label.show{opacity:1;transform:none;}" +
+    "#babuba-widget-label:after{content:'';position:absolute;right:-6px;top:50%;transform:translateY(-50%);" +
+    "width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:6px solid #26262B;}" +
+    "#babuba-widget-label b{color:#C9F24B;}" +
     "#babuba-widget-btn svg{width:30px;height:30px;fill:#0A0A0B;}" +
     "#babuba-widget-close{position:absolute;top:8px;right:10px;background:none;border:none;color:#8B8B84;font-size:20px;cursor:pointer;line-height:1;}" +
     "#babuba-widget-panel{position:fixed;right:22px;bottom:94px;z-index:999998;width:380px;max-width:calc(100vw - 44px);" +
@@ -95,18 +102,35 @@
     '<iframe id="babuba-widget-frame" title="Chat with Babuba" allow="clipboard-write"></iframe>';
   document.body.appendChild(panel);
 
+  // ---- "click here to talk to me" label ----
+  var label = document.createElement("div");
+  label.id = "babuba-widget-label";
+  label.innerHTML = 'Click here to <b>talk to me</b>';
+  document.body.appendChild(label);
+  var labelTimer = null;
+  function showLabel(keep) {
+    label.classList.add("show");
+    if (labelTimer) clearTimeout(labelTimer);
+    if (!keep) labelTimer = setTimeout(function () { label.classList.remove("show"); }, 8000);
+  }
+  function hideLabel() { label.classList.remove("show"); if (labelTimer) clearTimeout(labelTimer); }
+  setTimeout(function () { showLabel(false); }, 1200);
+  btn.addEventListener("mouseenter", function () { showLabel(true); });
+  btn.addEventListener("mouseleave", hideLabel);
+
   var frame = panel.querySelector("#babuba-widget-frame");
   var closeBtn = panel.querySelector("#babuba-widget-close");
 
   function openChat() {
     panel.classList.add("open");
     btn.style.display = "none";
+    hideLabel();
     if (!frame.getAttribute("src")) {
       ensureSession(function (sid) {
         if (sid) {
-          frame.setAttribute("src", GATEWAY + "/admin-chat/session/" + sid);
+          frame.setAttribute("src", GATEWAY + "/admin-chat/session/" + sid + "?theme=babuba");
         } else {
-          frame.setAttribute("src", GATEWAY + "/admin-chat");
+          frame.setAttribute("src", GATEWAY + "/admin-chat?theme=babuba");
         }
       });
     }
