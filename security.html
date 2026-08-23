@@ -25,7 +25,7 @@
     <span class="sep">▸</span> GATEWAY: 127.0.0.1:18793
   </div>
   <div class="nav-links" id="navLinks">
-    <a href="index.html">OS</a>
+    <a href="index.html">Home</a>
     <a href="agents.html">Agents</a>
     <a href="platform.html">Platform</a>
     <a href="security.html" class="active">Ownership</a>
@@ -117,6 +117,16 @@
         <p>Model API keys, tokens and secrets live in your gateway's secret store — never in our cloud, never in logs. Per-agent scoping included.</p>
       </div>
     </div>
+    <div class="term reveal" style="margin-top:32px;">
+      <div class="term-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">access — example</span></div>
+      <div class="term-body">
+        <p><span class="dim">[ask]</span> <span class="cmd">$ babuba access --check asha finance.approve</span></p>
+        <p><span class="dim">[rbac]</span> asha = viewer (level 1) <span class="volt">→ DENIED</span></p>
+        <p><span class="dim">[guardrail]</span> payment action = require-approval <span class="ok">pass → gate</span></p>
+        <p><span class="dim">[gate]</span> escalates to finance admin (level 4) <span class="ok">→ notified</span></p>
+        <p><span class="dim">[audit]</span> denied access logged <span class="ok">· searchable</span><span class="cursor"></span></p>
+      </div>
+    </div>
   </section>
 
   <!-- Data residency -->
@@ -138,7 +148,7 @@
   <!-- CTA -->
   <div class="cta-band reveal">
     <p class="eyebrow">// NEXT</p>
-    <h2>ONE LICENSE. <span class="volt">THE WHOLE OS.</span></h2>
+    <h2>ONE LICENSE. <span class="volt">YOUR WHOLE AI TEAM.</span></h2>
     <p>Unlimited agents, unlimited users, all channels, your server. One-time price — no rent, no per-seat fees.</p>
     <a class="btn btn-primary btn-lg" href="pricing.html">SEE THE LICENSE ▸</a>
   </div>
@@ -152,7 +162,7 @@
     <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
   </div>
   <div class="footer-links">
-    <a href="index.html">OS</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
+    <a href="index.html">Home</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
   </div>
   <p class="footer-copy dim">© 2026 BABUBA SYSTEMS · ALL DATA STAYS ON YOUR HARDWARE</p>
 </footer>

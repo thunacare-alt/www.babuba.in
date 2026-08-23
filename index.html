@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Babuba — The Agent Operating System. Running on your own server.</title>
-<meta name="description" content="Babuba is the operating system for AI agents. Install one gateway on your own server, boot a team of agents — one per department — and they read your mail, build your reports, reconcile your invoices, and ask before anything ships." />
+<title>Babuba — Make your own AI agents. Any number of users.</title>
+<meta name="description" content="Make your own AI agents — one per department — and give any number of users access. Babuba runs on your server: agents that read your mail, build your reports, reconcile your invoices, and ask before anything ships. No per-seat fees." />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0B'/><path d='M20 50 H80 M50 20 V80' stroke='%23C9F24B' stroke-width='14'/><rect x='18' y='18' width='64' height='64' fill='none' stroke='%23E8E8E2' stroke-width='4'/></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,7 +37,7 @@
     <span class="sep">▸</span> GATEWAY: 127.0.0.1:18793
   </div>
   <div class="nav-links" id="navLinks">
-    <a href="index.html" class="active">OS</a>
+    <a href="index.html" class="active">Home</a>
     <a href="agents.html">Agents</a>
     <a href="platform.html">Platform</a>
     <a href="security.html">Ownership</a>
@@ -53,13 +53,13 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="hero-copy">
-      <p class="kicker reveal"><span class="prompt">$</span> whoami&nbsp;&nbsp;▸&nbsp;&nbsp;<span class="volt">babuba: agent operating system</span><span class="cursor"></span></p>
+      <p class="kicker reveal"><span class="prompt">$</span> whoami&nbsp;&nbsp;▸&nbsp;&nbsp;<span class="volt">babuba: your own agents, on your server</span><span class="cursor"></span></p>
       <h1 class="hero-title">
-        <span class="line reveal">AN OPERATING SYSTEM</span>
-        <span class="line reveal volt" data-delay="90">FOR AI AGENTS.</span>
-        <span class="line reveal" data-delay="180">ON YOUR OWN SERVER.</span>
+        <span class="line reveal">MAKE YOUR OWN</span>
+        <span class="line reveal volt" data-delay="90">AI AGENTS.</span>
+        <span class="line reveal" data-delay="180">ANY NUMBER OF USERS.</span>
       </h1>
-      <p class="hero-sub reveal" data-delay="260">Babuba is not a chatbot. Not a SaaS dashboard. It's the layer your company runs on — one gateway installed on <em>your</em> hardware, booting a team of AI agents that read your mail, build your reports, reconcile your invoices, chase your follow-ups, and <span class="volt">ask before anything ships</span>.</p>
+      <p class="hero-sub reveal" data-delay="260">Make an agent for every department — finance, ops, HR, MIS — and give your whole team access. No per-seat fees, no cloud lock-in. One gateway on <em>your</em> hardware: agents that read your mail, build your reports, reconcile your invoices, and <span class="volt">ask before anything ships</span>.</p>
       <div class="hero-ctas reveal" data-delay="340">
         <a class="btn btn-primary btn-lg" href="pricing.html">DEPLOY ON YOUR SERVER ▸</a>
         <a class="btn btn-ghost btn-lg" href="agents.html">SEE THE AGENTS</a>
@@ -123,8 +123,8 @@
   <div class="crosshair" aria-hidden="true"></div>
   <div class="section-head">
     <p class="eyebrow reveal">// 01 — KERNEL</p>
-    <h2 class="section-title reveal">NOT A CHATBOT.<br />NOT SAAS. <span class="volt">AN OPERATING SYSTEM.</span></h2>
-    <p class="section-sub reveal">Chatbots answer questions. SaaS rents you a dashboard in someone else's cloud. Babuba is the system layer your company runs on — installed on your hardware, booting agents that do real work.</p>
+    <h2 class="section-title reveal">YOUR OWN AI WORKFORCE.<br /><span class="volt">ON YOUR SERVER.</span></h2>
+    <p class="section-sub reveal">Chatbots answer questions. SaaS rents you a dashboard in someone else's cloud — and bills per seat. Babuba runs on your hardware, with agents you make yourself and as many users as you need.</p>
   </div>
 
   <div class="kernels">
@@ -173,6 +173,16 @@
       <div class="stat-id">DATA</div>
       <div class="stat-num">100<small>%</small></div>
       <div class="stat-label">Stays on your server. Not ours. Not the model vendor's. Yours — always.</div>
+    </div>
+  </div>
+  <div class="term reveal" style="margin-top:44px;">
+    <div class="term-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">live — make your own, day one</span></div>
+    <div class="term-body">
+      <p><span class="dim">[1]</span> <span class="cmd">$ babuba agents create --name finance --dept accounts</span> <span class="ok">→ agent online (2.1s)</span></p>
+      <p><span class="dim">[2]</span> <span class="cmd">$ babuba agents add-user --agent finance --user asha --role user</span> <span class="ok">→ scoped</span></p>
+      <p><span class="dim">[3]</span> <span class="cmd">asha: "reconcile INV-1044, why is it pending?"</span> <span class="dim">← whatsapp</span></p>
+      <p><span class="dim">[4]</span> <span class="cmd">fin.accounts: matched 47/47. INV-1044 — freight mismatch ₹3,200.</span> <span class="volt">approve?</span></p>
+      <p><span class="dim">[5]</span> <span class="cmd">asha: approve</span> <span class="ok">→ done · audit logged</span><span class="cursor"></span></p>
     </div>
   </div>
   <div class="hero-ctas reveal" style="margin-top:36px;text-align:center;">
@@ -317,7 +327,7 @@
 <div class="page-body">
   <div class="cta-band reveal">
     <p class="eyebrow">// READY WHEN YOU ARE</p>
-    <h2>ONE LICENSE.<br /><span class="volt">THE WHOLE OS.</span></h2>
+    <h2>ONE LICENSE.<br /><span class="volt">YOUR WHOLE AI TEAM.</span></h2>
     <p>Unlimited agents. Unlimited users. All channels. Your server. One-time price — no rent, no per-seat fees, no per-agent fees.</p>
     <a class="btn btn-primary btn-lg" href="pricing.html">SEE THE LICENSE ▸</a>
     <a class="btn btn-ghost btn-lg" href="security.html">OWNERSHIP &amp; SECURITY</a>
@@ -331,7 +341,7 @@
     <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
   </div>
   <div class="footer-links">
-    <a href="index.html">OS</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
+    <a href="index.html">Home</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
   </div>
   <p class="footer-copy dim">© 2026 BABUBA SYSTEMS · ALL DATA STAYS ON YOUR HARDWARE</p>
 </footer>

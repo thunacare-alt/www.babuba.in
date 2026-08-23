@@ -25,7 +25,7 @@
     <span class="sep">▸</span> GATEWAY: 127.0.0.1:18793
   </div>
   <div class="nav-links" id="navLinks">
-    <a href="index.html">OS</a>
+    <a href="index.html">Home</a>
     <a href="agents.html" class="active">Agents</a>
     <a href="platform.html">Platform</a>
     <a href="security.html">Ownership</a>
@@ -173,6 +173,12 @@
     <p class="section-sub reveal">Every agent ships with guardrails and approval gates. High-risk actions — payments, exports, sends — land on a human's phone with the full picture. One tap to approve, one tap to reject.</p>
     <div class="flow">
       <div class="flow-step reveal">
+        <div class="step-num">CREATE</div>
+        <h4>MAKE YOUR OWN</h4>
+        <p>One command — an agent with identity, memory, tools and channels, live in seconds.</p>
+        <p class="boot-log">$ babuba agents create --name finance</p>
+      </div>
+      <div class="flow-step reveal">
         <div class="step-num">01</div>
         <h4>GUARDRAIL</h4>
         <p>Per-agent rules: allow, deny, warn or require-approval per topic. Enforced before and after every model call.</p>
@@ -199,6 +205,24 @@
     </div>
   </section>
 
+  <!-- Live example -->
+  <section class="section">
+    <p class="eyebrow reveal">// LIVE EXAMPLE</p>
+    <h2 class="reveal">WATCH IT <span class="volt">WORK.</span></h2>
+    <p class="section-sub reveal">A real request, end to end — user asks, agent works, human approves.</p>
+    <div class="term reveal">
+      <div class="term-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">fin.accounts — live request</span></div>
+      <div class="term-body">
+        <p><span class="dim">[in]</span> <span class="cmd">asha: "reconcile INV-1044, why is it pending?"</span> <span class="dim">← whatsapp</span></p>
+        <p><span class="dim">[route]</span> intent=reconciliation <span class="ok">→ fin.accounts</span></p>
+        <p><span class="dim">[work]</span> parse · validate · match GST <span class="ok">47/47 matched</span></p>
+        <p><span class="dim">[flag]</span> INV-1044 freight mismatch <span class="volt">₹3,200</span> <span class="dim">→ approval gate</span></p>
+        <p><span class="dim">[out]</span> <span class="cmd">"Matched 47/47. INV-1044 flagged. Approve adjustment?"</span> <span class="ok">→ whatsapp</span></p>
+        <p><span class="dim">[tap]</span> asha approves <span class="ok">→ done · audit logged</span><span class="cursor"></span></p>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <div class="cta-band reveal">
     <p class="eyebrow">// NEXT</p>
@@ -217,7 +241,7 @@
     <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
   </div>
   <div class="footer-links">
-    <a href="index.html">OS</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
+    <a href="index.html">Home</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
   </div>
   <p class="footer-copy dim">© 2026 BABUBA SYSTEMS · ALL DATA STAYS ON YOUR HARDWARE</p>
 </footer>
