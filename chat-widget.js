@@ -28,11 +28,8 @@
     return id;
   }
 
-  // ---- create (or reuse) a gateway session, returns sessionId ----
-  function ensureSession(cb) {
-    var cached = null;
-    try { cached = sessionStorage.getItem("babuba_session"); } catch (e) {}
-    if (cached) { cb(cached); return; }
+  // ---- create a fresh gateway session, returns sessionId ----
+  function createFreshSession(cb) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", GATEWAY + "/api/admin-chat/create-session", true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -51,13 +48,33 @@
     xhr.send(JSON.stringify({ agentId: AGENT_ID, userId: visitorId(), channel: "website-widget" }));
   }
 
+  // ---- reuse a cached session ONLY if still valid; else create a fresh one.
+  //      Gateway sessions die on restart, so a blindly-reused id shows "Link Expired". ----
+  function ensureSession(cb) {
+    var cached = null;
+    try { cached = sessionStorage.getItem("babuba_session"); } catch (e) {}
+    if (!cached) { createFreshSession(cb); return; }
+    var vxhr = new XMLHttpRequest();
+    vxhr.open("GET", GATEWAY + "/api/admin-chat/verify?session=" + encodeURIComponent(cached), true);
+    vxhr.onreadystatechange = function () {
+      if (vxhr.readyState !== 4) return;
+      var ok = false;
+      try { var vj = JSON.parse(vxhr.responseText); ok = !!(vj && vj.valid); } catch (e) { ok = false; }
+      if (ok) { cb(cached); return; }
+      try { sessionStorage.removeItem("babuba_session"); } catch (e) {}
+      createFreshSession(cb);
+    };
+    vxhr.onerror = function () { createFreshSession(cb); };
+    vxhr.send();
+  }
+
   // ---- styles ----
   var css = "" +
-    "#babuba-widget-btn{position:fixed;right:22px;bottom:22px;z-index:999999;width:60px;height:60px;border-radius:50%;" +
+    "#babuba-widget-btn{position:fixed;right:22px;bottom:64px;z-index:999999;width:60px;height:60px;border-radius:50%;" +
     "background:linear-gradient(135deg,#C9F24B,#9FD82F);border:none;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.45);" +
     "display:flex;align-items:center;justify-content:center;transition:transform .18s ease;}" +
     "#babuba-widget-btn:hover{transform:scale(1.08);}" +
-    "#babuba-widget-label{position:fixed;right:94px;bottom:36px;z-index:999999;background:#121214;border:1px solid #26262B;" +
+    "#babuba-widget-label{position:fixed;right:94px;bottom:78px;z-index:999999;background:#121214;border:1px solid #26262B;" +
     "color:#E8E8E2;font:500 13px/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:9px 14px;" +
     "border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.45);opacity:0;transform:translateX(8px);transition:opacity .25s ease,transform .25s ease;}" +
     "#babuba-widget-label.show{opacity:1;transform:none;}" +
