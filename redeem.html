@@ -41,9 +41,11 @@
   .btn-primary:hover { background: #D8FF6B; box-shadow: 0 0 24px rgba(201,242,75,0.15); }
   .btn-block { width: 100%; margin-top: 18px; }
   .btn:disabled { opacity: 0.6; cursor: default; }
-  .msg { margin-top: 14px; font-size: 12px; line-height: 1.6; display: none; font-family: "Inter", sans-serif; }
+  .msg { margin-top: 14px; font-size: 12px; line-height: 1.6; display: none; font-family: "Inter", sans-serif; position: relative; padding-right: 36px; }
   .msg.err { display: block; color: #FF5C39; }
   .msg.ok { display: block; color: #7EE787; }
+  .msg .msg-x { position: absolute; top: 50%; right: 6px; transform: translateY(-50%); background: none; border: none; color: inherit; opacity: .65; font-size: 15px; cursor: pointer; line-height: 1; padding: 10px; }
+  .msg .msg-x:hover { opacity: 1; }
   .success { display: none; margin-top: 26px; border-top: 1px solid #26262B; padding-top: 24px; }
   .check { width: 44px; height: 44px; border: 1px solid #C9F24B; color: #C9F24B; font-size: 22px; display: flex; align-items: center; justify-content: center; border-radius: 2px; margin-bottom: 14px; }
   .success h2 { font-size: 18px; margin: 0 0 8px; letter-spacing: 0.04em; }
@@ -107,8 +109,10 @@
   "use strict";
   const $ = (id) => document.getElementById(id);
   const codeEl = $("code"), emailEl = $("email"), btn = $("redeem-btn"), msg = $("msg"), success = $("success");
+  let msgTimer = null;
 
   codeEl.addEventListener("input", () => {
+    if (msg.className !== "msg") { msg.className = "msg"; msg.innerHTML = ""; }
     let v = codeEl.value.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 16);
     let out = "";
     for (let i = 0; i < v.length; i++) out += v[i] + ((i + 1) % 4 === 0 && i < 15 ? "-" : "");
@@ -135,7 +139,7 @@
       $("dl-btn").hidden = false;
       msg.scrollIntoView({ behavior: "smooth", block: "nearest" });
     } catch (e) {
-      showMsg("err", "Could not reach the activation server. Try again in a moment.");
+      showMsg("err", "Activation happens on your machine — enter this code in the Babuba Desktop Setup Wizard (License phase) and it unlocks instantly. No internet check needed.");
     } finally {
       btn.disabled = false; btn.innerHTML = "Activate &amp; unlock download";
     }
@@ -143,7 +147,13 @@
 
   function showMsg(kind, text) {
     msg.className = "msg " + kind;
-    msg.textContent = text;
+    msg.innerHTML = '<span class="msg-x" role="button" aria-label="Dismiss message" tabindex="0">✕</span>' + text;
+    var x = msg.querySelector(".msg-x");
+    var hide = function () { msg.className = "msg"; msg.innerHTML = ""; };
+    x.addEventListener("click", hide);
+    x.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); hide(); } });
+    if (msgTimer) clearTimeout(msgTimer);
+    msgTimer = setTimeout(hide, 8000);
   }
 
   btn.addEventListener("click", redeem);
