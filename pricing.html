@@ -42,16 +42,16 @@
     <a href="agents.html">Agents</a>
     <a href="platform.html">Platform</a>
     <a href="security.html">Ownership</a>
-    <a href="pricing.html" class="active">Licenses</a>
+    <a href="pricing.html" class="active" aria-current="page">Licenses</a>
   </div>
   <div class="nav-actions">
-    <a class="btn btn-primary nav-cta" href="pricing.html">DEPLOY →</a>
+    <a class="btn btn-primary nav-cta" href="redeem.html">ACTIVATE →</a>
     <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- ═══════════ PAGE HERO ═══════════ -->
-<header class="page-hero" id="main">
+<header class="page-hero" id="main" role="main" tabindex="-1">
   <div class="page-hero-inner">
     <p class="kicker reveal"><span class="prompt">$</span> license --list<span class="cursor"></span></p>
     <h1 class="reveal">ONE LICENSE.<br /><span class="volt">YOUR WHOLE AI TEAM. NOTHING ELSE.</span></h1>
@@ -86,7 +86,7 @@
           <li>Your own server. Your data never leaves.</li>
           <li>Updates + priority support, for life</li>
         </ul>
-        <a class="btn btn-primary btn-lg" href="#buy">DEPLOY ▸</a>
+        <a class="btn btn-primary btn-lg" href="#buy">GET THE LICENSE ▸</a>
       </div>
     </div>
   </section>
@@ -115,7 +115,7 @@
     <div class="buy-path reveal">
       <div class="bp-step"><span class="bp-num">01</span><h3>GET THE LICENSE</h3><p>Pay once, receive your license key instantly — unlimited agents, unlimited users, all features.</p></div>
       <div class="bp-step"><span class="bp-num">02</span><h3>INSTALL THE GATEWAY</h3><p>One command on your server or desktop. Fifteen minutes, boot your first agent.</p></div>
-      <div class="bp-step"><span class="bp-num">03</span><h3>ACTIVATE &amp; BUILD</h3><p>Redeem your code on <a class="bp-link" href="redeem.html">redeem.babuba.in</a> — then build anything on top. No restrictions.</p></div>
+      <div class="bp-step"><span class="bp-num">03</span><h3>ACTIVATE &amp; BUILD</h3><p>Redeem your code on <a class="bp-link" href="redeem.html">www.babuba.in/redeem.html</a> — then build anything on top. No restrictions.</p></div>
     </div>
     <div class="term reveal" style="margin-top:32px;">
       <div class="term-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">deploy — live example</span></div>
@@ -130,6 +130,15 @@
     </div>
   </section>
 
+  <!-- Payment & refunds -->
+  <section class="section">
+    <div class="pay-strip reveal">
+      <div class="pay-item"><span class="pay-key">PAY BY</span><span class="pay-val">UPI · Bank transfer · Card — GST invoice issued on request. One-time payment, nothing recurring.</span></div>
+      <div class="pay-item"><span class="pay-key">REFUNDS</span><span class="pay-val">14-day money-back guarantee on new licenses — full refund, no questions asked. See the <a href="refund.html">refund policy</a>.</span></div>
+      <div class="pay-item"><span class="pay-key">SUPPORT</span><span class="pay-val"><a href="mailto:support@babuba.ai">support@babuba.ai</a> — activation help, install walkthroughs, priority for life.</span></div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="section" id="faq">
     <p class="eyebrow reveal">// MAN BABUBA</p>
@@ -141,6 +150,8 @@
       <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --agents<span class="chev">+</span></summary><div class="faq-body"><div><p>Can agents really approve things?</p><p class="ans">They prepare, verify and flag. Humans approve — every action requiring approval lands on your phone with the full context. One tap to approve, one tap to reject.</p></div></div></details>
       <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --users<span class="chev">+</span></summary><div class="faq-body"><div><p>How many users can an agent serve?</p><p class="ans">Unlimited. Add your whole team by phone or Telegram ID, scope each one with RBAC, and they all work the same agent — no per-seat fees, ever.</p></div></div></details>
       <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --license<span class="chev">+</span></summary><div class="faq-body"><div><p>What does the license cover?</p><p class="ans">Everything. Unlimited agents, unlimited users, all channels, workflows, approvals, guardrails, RBAC and updates for life — no restrictions, no conditions.</p></div></div></details>
+      <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --pay<span class="chev">+</span></summary><div class="faq-body"><div><p>How do I pay?</p><p class="ans">UPI, bank transfer or card — one-time, nothing recurring. You get a GST invoice on request and your license key instantly.</p></div></div></details>
+      <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --refund<span class="chev">+</span></summary><div class="faq-body"><div><p>What if it's not for me?</p><p class="ans">New licenses carry a 14-day money-back guarantee. Email <a class="bp-link" href="mailto:support@babuba.ai">support@babuba.ai</a> and we'll refund in full — no questions asked. Full terms on the <a class="bp-link" href="refund.html">refund page</a>.</p></div></div></details>
       <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --updates<span class="chev">+</span></summary><div class="faq-body"><div><p>What does "updates for life" mean?</p><p class="ans">Every future version of Babuba — new features, new channels, new model support — is included in your license, free, forever. One-time price, no subscription, ever.</p></div></div></details>
       <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --hardware<span class="chev">+</span></summary><div class="faq-body"><div><p>What hardware do I need?</p><p class="ans">A standard server or desktop — 4+ GB RAM, 10 GB disk, any OS that runs Node.js (Linux recommended). Bring your own LLM keys, or run fully offline with Ollama.</p></div></div></details>
       <details class="faq-item reveal"><summary><span class="prompt">$</span> man babuba --support<span class="chev">+</span></summary><div class="faq-body"><div><p>What support do I get?</p><p class="ans">Priority support for life — real engineers at support@babuba.ai, not a ticket black hole. Setup and migration help included with the license.</p></div></div></details>
@@ -177,6 +188,9 @@
   </div>
   <div class="footer-links">
     <a href="index.html">Home</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
+  </div>
+  <div class="footer-links footer-legal">
+    <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund.html">Refunds</a><a href="mailto:support@babuba.ai">support@babuba.ai</a>
   </div>
   <p class="footer-copy dim">© 2026 BABUBA SYSTEMS · ALL DATA STAYS ON YOUR HARDWARE</p>
 </footer>
