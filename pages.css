@@ -24,7 +24,7 @@
 .page-hero .hero-sub em { color: var(--ink); font-style: normal; }
 .page-hero .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
 .page-hero .hero-meta li {
-  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--dim);
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--dim);
   border: 1px solid var(--line); padding: 7px 12px; background: var(--bg2);
 }
 
@@ -37,7 +37,7 @@
 .term-head { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--line); background: var(--bg2); }
 .term-head .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 .term-head .dot.r { background: var(--signal); } .term-head .dot.y { background: var(--amber); } .term-head .dot.g { background: var(--ok); }
-.term-title { color: var(--faint); font-size: 11px; letter-spacing: 0.08em; margin-left: 6px; }
+.term-title { color: var(--faint); font-size: 12px; letter-spacing: 0.08em; margin-left: 6px; }
 .term-body { padding: 18px 20px; }
 .term-body p { margin: 0 0 6px; }
 .term-body .prompt { color: var(--volt); }
@@ -110,12 +110,12 @@
 .role-table tr:last-child td { border-bottom: none; }
 .role-table td:first-child { color: var(--ink); font-weight: 500; }
 .role-table .volt { color: var(--volt); }
-.role-table .chip { display: inline-block; font-size: 10px; letter-spacing: 0.08em; padding: 3px 8px; border: 1px solid var(--line); color: var(--dim); }
+.role-table .chip { display: inline-block; font-size: 11px; letter-spacing: 0.08em; padding: 3px 8px; border: 1px solid var(--line); color: var(--dim); }
 
 /* ── Feature rows (alternating) ───────────────────────────── */
 .feat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 48px 0; border-bottom: 1px solid var(--line); }
 .feat-row:last-of-type { border-bottom: none; }
-.feat-row .feat-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--volt); margin-bottom: 12px; }
+.feat-row .feat-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; color: var(--volt); margin-bottom: 12px; }
 .feat-row h3 { font-size: clamp(22px, 2.6vw, 32px); margin: 0 0 14px; line-height: 1.15; }
 .feat-row p { color: var(--dim); line-height: 1.7; margin: 0 0 12px; }
 .feat-row ul { margin: 0; padding: 0; list-style: none; }
