@@ -427,7 +427,8 @@ button { font-family: var(--mono); }
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
   color: var(--volt); background: var(--panel);
   border: 1px solid var(--line2); border-radius: var(--r);
-  padding: 10px 12px; text-decoration: none;
+  padding: 0 12px; min-height: 40px; min-width: 40px; display: inline-flex; align-items: center; justify-content: center;
+  box-sizing: border-box; text-decoration: none;
   opacity: 0; visibility: hidden; transform: translateY(10px);
   transition: opacity 260ms var(--ease), transform 260ms var(--ease), visibility 260ms, border-color 260ms;
 }
