@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Babuba vs the rest — SaaS rent, code frameworks, no-code platforms</title>
+<meta name="description" content="Honest comparison: Babuba vs per-seat AI SaaS, vs code frameworks (LangGraph, OpenAI Agents SDK, CrewAI), vs no-code platforms (n8n, Dify, Botpress). One-time license, unlimited agents and users, self-hosted." />
+<link rel="canonical" href="https://www.babuba.in/compare.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Babuba" />
+<meta property="og:title" content="Babuba vs the rest — SaaS, code frameworks, no-code platforms" />
+<meta property="og:description" content="The honest comparison: what Babuba does that per-seat SaaS, code frameworks and no-code platforms don't — and when you should pick them instead." />
+<meta property="og:url" content="https://www.babuba.in/compare.html" />
+<meta property="og:image" content="https://www.babuba.in/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Babuba vs the rest" />
+<meta name="twitter:description" content="One-time license, unlimited agents and users, self-hosted. The honest comparison table." />
+<meta name="twitter:image" content="https://www.babuba.in/og.png" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0B'/><path d='M20 50 H80 M50 20 V80' stroke='%23C9F24B' stroke-width='14'/><rect x='18' y='18' width='64' height='64' fill='none' stroke='%23E8E8E2' stroke-width='4'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="pages.css" />
+</head>
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="scanlines" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ═══════════ STATUS BAR / NAV ═══════════ -->
+<nav class="statusbar" id="nav" aria-label="Primary">
+  <a class="logo" href="index.html"><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span></a>
+  <div class="sysinfo" aria-hidden="true">
+    <span class="sys-dot"></span> AGENTS: 4 ONLINE
+    <span class="sep">▸</span> GATEWAY: 127.0.0.1:18793
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="agents.html">Agents</a>
+    <a href="platform.html">Platform</a>
+    <a href="docs.html">Docs</a>
+    <a href="compare.html" class="active">Compare</a>
+    <a href="security.html">Ownership</a>
+    <a href="pricing.html">Licenses</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn btn-primary nav-cta" href="pricing.html">DEPLOY →</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+<header class="page-hero" id="main">
+  <div class="page-hero-inner">
+    <p class="kicker reveal"><span class="prompt">$</span> babuba vs the-rest --honest<span class="cursor"></span></p>
+    <h1 class="reveal">BABUBA VS <span class="volt">THE REST.</span></h1>
+    <p class="hero-sub reveal" data-delay="120">Three categories, three honest tables. Babuba isn't for everyone — here's exactly where it wins, and where the others are the right call.</p>
+    <ul class="hero-meta reveal" data-delay="200">
+      <li>VS PER-SEAT SAAS</li>
+      <li>VS CODE FRAMEWORKS</li>
+      <li>VS NO-CODE PLATFORMS</li>
+    </ul>
+  </div>
+</header>
+
+<!-- ═══════════ BODY ═══════════ -->
+<div class="page-body">
+  <div class="docs-wrap">
+
+    <h2 class="reveal">VS 01 / PER-SEAT <span class="volt">AI SAAS</span></h2>
+    <p class="reveal">The chatbot vendors — you rent seats, your data sits in their cloud, and the bill never stops. Babuba is the opposite on every row.</p>
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr><th>ROW</th><th class="babuba">BABUBA</th><th>AI SAAS (per seat)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Price model</td><td class="babuba volt">One-time — pay once</td><td>Per-seat subscription, forever rent</td></tr>
+          <tr><td>Agents</td><td class="babuba yes">Unlimited</td><td>Pay per agent / per bot</td></tr>
+          <tr><td>Users</td><td class="babuba yes">Unlimited</td><td>Per-seat fees on top</td></tr>
+          <tr><td>Your data</td><td class="babuba yes">On your server</td><td>In their cloud</td></tr>
+          <tr><td>Ownership</td><td class="babuba yes">Yours for life</td><td>Rent that ends when you stop paying</td></tr>
+          <tr><td>Channels</td><td class="babuba yes">WhatsApp · Telegram · Gmail · web</td><td>Usually their app only</td></tr>
+          <tr><td>5-year cost (6 agents)</td><td class="babuba volt">₹5.5L once</td><td>≈ ₹5.4L+ — and still renting</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="reveal">VS 02 / CODE <span class="volt">FRAMEWORKS</span></h2>
+    <p class="reveal">LangGraph, OpenAI Agents SDK, CrewAI, AutoGen, Google ADK — excellent libraries. They give you orchestration primitives and make you build everything else yourself.</p>
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr><th>CAPABILITY</th><th class="babuba">BABUBA</th><th>CODE FRAMEWORKS</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>What you get</td><td class="babuba">Working gateway — agents, router, channels, dashboard</td><td>Code libraries; you assemble the system</td></tr>
+          <tr><td>Channels (WhatsApp/Telegram/Gmail)</td><td class="babuba yes">Built-in</td><td class="no">You build and maintain them</td></tr>
+          <tr><td>Admin dashboard</td><td class="babuba yes">Included</td><td class="no">You build it</td></tr>
+          <tr><td>Approval workflows</td><td class="babuba yes">Built-in, human-in-the-loop</td><td class="no">You implement them</td></tr>
+          <tr><td>RBAC &amp; guardrails</td><td class="babuba yes">Per-agent, per-role</td><td class="no">Partial / DIY</td></tr>
+          <tr><td>Audit trail</td><td class="babuba yes">Every call logged</td><td class="no">You add observability</td></tr>
+          <tr><td>Team users</td><td class="babuba yes">Unlimited, scoped</td><td class="no">No user model</td></tr>
+          <tr><td>Deploy effort</td><td class="babuba volt">15 minutes</td><td>Weeks of engineering</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="doc-note">When to pick a framework: you're a software team shipping agents inside your own product and you want full control of every layer. Babuba is for teams that want agents <em>running</em> — not a build project.</div>
+
+    <h2 class="reveal">VS 03 / NO-CODE <span class="volt">PLATFORMS</span></h2>
+    <p class="reveal">n8n, Dify, Botpress, Flowise — visual workflow builders. Great for automations; they lean cloud, per-seat pricing and workflow-centric rather than agent-per-department.</p>
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr><th>CAPABILITY</th><th class="babuba">BABUBA</th><th>NO-CODE PLATFORMS</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Core model</td><td class="babuba">One agent per department, code-level</td><td>Visual workflows / bots</td></tr>
+          <tr><td>Self-hosted</td><td class="babuba yes">Default — your server</td><td>Mostly cloud; self-host is the paid tier</td></tr>
+          <tr><td>Pricing</td><td class="babuba volt">One-time, unlimited</td><td>Per-seat / per-usage subscriptions</td></tr>
+          <tr><td>Data control</td><td class="babuba yes">Zero data leaves</td><td>In their cloud</td></tr>
+          <tr><td>Governance</td><td class="babuba yes">Approvals, RBAC, guardrails, audit built-in</td><td>Varies; often add-on</td></tr>
+          <tr><td>Flexibility</td><td class="babuba">Full API, tools, runtime edits</td><td>Constrained by the builder</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="doc-note">When to pick a no-code platform: you want to chain API calls visually with zero code and don't need per-department agents, deep governance or full data ownership. Babuba's closest relatives here are Dify and Botpress — but those lean cloud and workflow, whereas Babuba is a self-hosted code-level harness with governance built in.</div>
+
+    <h2 class="reveal">THE <span class="volt">BOTTOM LINE</span></h2>
+    <p>Frameworks are for building. SaaS is for renting. No-code is for wiring. Babuba is for <strong>owning</strong> — a gateway on your hardware, agents you make yourself, your whole team on it, one-time price. If that's the question you're answering, the table above is the answer.</p>
+
+    <div class="hero-ctas reveal" style="margin-top:44px;text-align:center;">
+      <a class="btn btn-primary btn-lg" href="pricing.html">SEE THE LICENSE ▸</a>
+      <a class="btn btn-ghost btn-lg" href="docs.html">READ THE DOCS</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span>
+      <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a><a href="docs.html">Docs</a><a href="compare.html">Compare</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
+    </div>
+    <p class="footer-copy dim">© 2026 BABUBA SYSTEMS · ALL DATA STAYS ON YOUR HARDWARE · <a href="mailto:support@babuba.ai">support@babuba.ai</a></p>
+  </div>
+</footer>
+
+<a class="to-top" id="toTop" href="#top" aria-label="Back to top">▲ TOP</a>
+
+<script src="app.js"></script>
+<script src="chat-widget.js" data-agent="agent-sales-talk-to-babuba-demo" defer></script>
+</body>
+</html>

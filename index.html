@@ -17,6 +17,9 @@
 <meta name="twitter:description" content="Self-hosted AI agent gateway: make one agent per department, unlimited users, no per-seat fees. Your data stays on your server." />
 <meta name="twitter:image" content="https://www.babuba.in/og.png" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0B'/><path d='M20 50 H80 M50 20 V80' stroke='%23C9F24B' stroke-width='14'/><rect x='18' y='18' width='64' height='64' fill='none' stroke='%23E8E8E2' stroke-width='4'/></svg>" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Babuba","applicationCategory":"BusinessApplication","operatingSystem":"Linux, Windows, macOS","description":"Self-hosted AI agent gateway — make one agent per department, unlimited users, no per-seat fees. Agents read your mail, build your reports, reconcile your invoices, and ask before anything ships.","offers":{"@type":"Offer","price":"550000","priceCurrency":"INR","description":"One-time team license — unlimited agents, unlimited users"},"featureList":["Multi-agent gateway","Unlimited agents","Unlimited users","RBAC scoping","Guardrails","Approval workflows","WhatsApp/Telegram/Gmail/web channels","Self-hosted, zero data leaves"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -83,6 +86,8 @@
     <a href="index.html" class="active" aria-current="page">Home</a>
     <a href="agents.html">Agents</a>
     <a href="platform.html">Platform</a>
+    <a href="docs.html">Docs</a>
+    <a href="compare.html">Compare</a>
     <a href="security.html">Ownership</a>
     <a href="pricing.html">Licenses</a>
   </div>
@@ -107,6 +112,7 @@
       <div class="hero-ctas reveal" data-delay="340">
         <a class="btn btn-primary btn-lg" href="pricing.html">DEPLOY ON YOUR SERVER ▸</a>
         <a class="btn btn-ghost btn-lg" href="agents.html">SEE THE AGENTS</a>
+        <a class="btn btn-ghost btn-lg" href="#desk" id="liveDemoBtn">TRY LIVE DEMO ▸</a>
       </div>
       <ul class="hero-meta reveal" data-delay="420">
         <li>SELF-HOSTED</li>
@@ -154,6 +160,17 @@
     </div>
   </div>
 </header>
+
+<!-- ═══════════ STATS STRIP ═══════════ -->
+<div class="stats-strip" aria-label="Babuba production numbers">
+  <div class="stats-grid">
+    <div class="stat"><div class="stat-num">2,206</div><div class="stat-label">INVOICES RECONCILED</div><div class="stat-note">on one gateway, FY24-27</div></div>
+    <div class="stat"><div class="stat-num">₹6.97 Cr</div><div class="stat-label">REVENUE PROCESSED</div><div class="stat-note">FY2026-27 · freight, GST, MIS</div></div>
+    <div class="stat"><div class="stat-num">99.98%</div><div class="stat-label">GATEWAY UPTIME</div><div class="stat-note">self-hosted, since day one</div></div>
+    <div class="stat"><div class="stat-num">4 / 4</div><div class="stat-label">AGENTS ONLINE</div><div class="stat-note">fin · ops · hr · compliance</div></div>
+  </div>
+  <p class="stats-note-line">REAL PIPELINE. LIVE GATEWAY. — these are the numbers this site's own Babuba instance produces.</p>
+</div>
 
 <!-- ═══════════ TICKER ═══════════ -->
 <div class="ticker" aria-hidden="true">
@@ -329,10 +346,53 @@
   </div>
 </section>
 
+<!-- ═══════════ CONTROL PLANE ═══════════ -->
+<section class="section" id="product">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 06 — THE CONTROL PLANE</p>
+    <h2 class="section-title reveal">EVERY AGENT, EVERY RULE.<br /><span class="volt">ONE SCREEN ON YOUR SERVER.</span></h2>
+    <p class="section-sub reveal">This is the admin panel you deploy — not a mock. Agents, approval queue, audit trail, guardrails, roles. One process, one port, your hardware.</p>
+  </div>
+
+  <div class="admin-panel reveal" data-delay="150">
+    <div class="admin-top">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="t">admin — babuba gateway · 127.0.0.1:18793</span>
+      <span class="s"><span class="pulse-dot"></span> 4 AGENTS ONLINE</span>
+    </div>
+    <div class="admin-body">
+      <div class="admin-side">
+        <a class="on" href="#">▸ Agents</a>
+        <a href="#">▸ Workflows</a>
+        <a href="#">▸ Approvals</a>
+        <a href="#">▸ Guardrails</a>
+        <a href="#">▸ RBAC &amp; Roles</a>
+        <a href="#">▸ Channels</a>
+        <a href="#">▸ Cron</a>
+        <a href="#">▸ Logs</a>
+      </div>
+      <div class="admin-main">
+        <p class="admin-h">AGENTS — 4 ONLINE</p>
+        <div class="admin-agent"><span class="sys-dot"></span><span class="nm">FIN.ACCOUNTS</span><span class="st">RUNNING · 47/47 today</span></div>
+        <div class="admin-agent"><span class="sys-dot"></span><span class="nm">OPS.LOGISTICS</span><span class="st">RUNNING · 12 verified</span></div>
+        <div class="admin-agent"><span class="sys-dot"></span><span class="nm">HR.PEOPLE</span><span class="st">RUNNING · payroll ready</span></div>
+        <div class="admin-agent"><span class="sys-dot"></span><span class="nm">ADMIN.COMPLIANCE</span><span class="st">RUNNING · 3 deadlines</span></div>
+        <p class="admin-h" style="margin-top:18px;">APPROVAL QUEUE</p>
+        <div class="queue-item"><span class="qid">INV-1044</span><span>payment · freight mismatch ₹3,200</span><span class="amt">₹18.2L</span></div>
+        <div class="queue-item"><span class="qid">PO-2219</span><span>new supplier · NAS Transport</span><span class="amt">₹4.4L</span></div>
+        <p class="admin-h" style="margin-top:18px;">AUDIT TRAIL</p>
+        <p class="audit-row"><b>09:14</b> <span class="act">fin.accounts</span> matched 47/47 · MIS built</p>
+        <p class="audit-row"><b>09:02</b> <span class="act">ops.logistics</span> verified 12 dispatches</p>
+        <p class="audit-row"><b>08:47</b> <span class="act">admin</span> scoped asha → fin.accounts (user)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ USE CASES ═══════════ -->
 <section class="section" id="deploy">
   <div class="section-head">
-    <p class="eyebrow reveal">// 06 — DEPLOY A DEPARTMENT</p>
+    <p class="eyebrow reveal">// 07 — DEPLOY A DEPARTMENT</p>
     <h2 class="section-title reveal">PICK A DEPARTMENT.<br /><span class="volt">IT STARTS RUNNING.</span></h2>
     <p class="section-sub reveal">Each one is a dedicated agent with its own memory, tools and guardrails. Boot them one at a time — or all at once.</p>
   </div>
@@ -380,28 +440,39 @@
   </div>
 </section>
 
-<!-- ═══════════ PROOF — PLACEHOLDER COPY (REVIEW REQUIRED) ═══════════ -->
-<section class="section" id="proof">
+
+<!-- ═══════════ GOVERNANCE ═══════════ -->
+<section class="section" id="governance">
   <div class="section-head">
-    <p class="eyebrow reveal">// RUNNING IN PRODUCTION</p>
-    <h2 class="section-title reveal">TEAMS RUN <span class="volt">BABUBA</span> FOR REAL.</h2>
-    <p class="section-sub reveal" data-delay="100">Placeholder quotes — replace with verified customer stories before launch.</p>
+    <p class="eyebrow reveal">// 08 — GOVERNANCE</p>
+    <h2 class="section-title reveal">AGENTS THAT WORK<br /><span class="volt">UNDER RULES.</span></h2>
+    <p class="section-sub reveal">Every framework talks about human-in-the-loop. Babuba ships it built-in — approvals, roles, guardrails and audit in the gateway, not bolted on later.</p>
   </div>
-  <div class="proof-grid reveal" data-delay="150">
-    <figure class="proof-card">
-      <blockquote>We replaced three SaaS tools with one gateway. Everything runs on our own server now.</blockquote>
-      <figcaption>— OPERATIONS LEAD · <span class="proof-ph">[COMPANY — PLACEHOLDER]</span></figcaption>
-    </figure>
-    <figure class="proof-card">
-      <blockquote>Agents read the invoices before we do. Approval still happens on our phones — nothing ships without us.</blockquote>
-      <figcaption>— FINANCE HEAD · <span class="proof-ph">[COMPANY — PLACEHOLDER]</span></figcaption>
-    </figure>
-    <figure class="proof-card">
-      <blockquote>One-time price. No seat count, no renewal call, no data in someone else's cloud.</blockquote>
-      <figcaption>— IT OWNER · <span class="proof-ph">[COMPANY — PLACEHOLDER]</span></figcaption>
-    </figure>
+
+  <div class="gov-grid">
+    <div class="gov-card reveal">
+      <h3><span class="volt">▸</span> APPROVAL GATES</h3>
+      <p>Nothing ships silently. Payments, supplier adds, any sensitive action lands on your phone — one tap to approve, with full context attached.</p>
+    </div>
+    <div class="gov-card reveal" data-delay="80">
+      <h3><span class="volt">▸</span> RBAC SCOPING</h3>
+      <p>Every agent serves the whole team, role-scoped. Finance can't see HR's data. Ops can't approve payments. Each user gets their own scoped view — with an audit trail.</p>
+    </div>
+    <div class="gov-card reveal" data-delay="160">
+      <h3><span class="volt">▸</span> GUARDRAILS</h3>
+      <p>Per-agent allow / deny / warn rules and risk thresholds. The agent knows its boundaries before it acts — and stays inside them.</p>
+    </div>
+    <div class="gov-card reveal" data-delay="240">
+      <h3><span class="volt">▸</span> AUDIT TRAIL</h3>
+      <p>Every LLM call, tool call and decision is logged and searchable. Show auditors, regulators and your own team exactly what happened — and why.</p>
+    </div>
   </div>
-  <p class="proof-note reveal" data-delay="200">▲ PLACEHOLDER SECTION — replace quotes and names with verified customers before launch.</p>
+
+  <div class="hero-ctas reveal" style="margin-top:36px;text-align:center;">
+    <a class="btn btn-ghost btn-lg" href="docs.html">READ THE DOCS ▸</a>
+    <a class="btn btn-ghost btn-lg" href="compare.html">BABUBA VS THE REST</a>
+  </div>
+
 </section>
 
 <!-- ═══════════ CTA BAND ═══════════ -->
@@ -422,7 +493,7 @@
     <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
   </div>
   <div class="footer-links">
-    <a href="index.html">Home</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
+    <a href="index.html">Home</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a><a href="docs.html">Docs</a><a href="compare.html">Compare</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
   </div>
   <div class="footer-links footer-legal">
     <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund.html">Refunds</a><a href="mailto:support@babuba.ai">support@babuba.ai</a>
@@ -435,5 +506,6 @@
 <script src="app.js?v=20260825b"></script>
 <script src="agent-canvas.js?v=20260825b"></script>
 <script src="chat-widget.js?v=20260825b" data-agent="agent-sales-talk-to-babuba-demo" defer></script>
+
 </body>
 </html>

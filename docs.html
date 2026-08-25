@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Babuba Docs — Getting started, architecture, concepts</title>
+<meta name="description" content="Babuba documentation: install the gateway, create your first agent, connect channels, set guardrails and approvals. Everything you need to run your own AI workforce." />
+<link rel="canonical" href="https://www.babuba.in/docs.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Babuba" />
+<meta property="og:title" content="Babuba Docs — Getting started, architecture, concepts" />
+<meta property="og:description" content="Install the gateway, create agents, connect WhatsApp/Telegram/Gmail, set guardrails and approvals — the complete Babuba docs." />
+<meta property="og:url" content="https://www.babuba.in/docs.html" />
+<meta property="og:image" content="https://www.babuba.in/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Babuba Docs — Getting started, architecture, concepts" />
+<meta name="twitter:description" content="The complete Babuba documentation — install, agents, channels, governance." />
+<meta name="twitter:image" content="https://www.babuba.in/og.png" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0B'/><path d='M20 50 H80 M50 20 V80' stroke='%23C9F24B' stroke-width='14'/><rect x='18' y='18' width='64' height='64' fill='none' stroke='%23E8E8E2' stroke-width='4'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="pages.css" />
+</head>
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="scanlines" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ═══════════ STATUS BAR / NAV ═══════════ -->
+<nav class="statusbar" id="nav" aria-label="Primary">
+  <a class="logo" href="index.html"><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span></a>
+  <div class="sysinfo" aria-hidden="true">
+    <span class="sys-dot"></span> AGENTS: 4 ONLINE
+    <span class="sep">▸</span> GATEWAY: 127.0.0.1:18793
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="agents.html">Agents</a>
+    <a href="platform.html">Platform</a>
+    <a href="docs.html" class="active">Docs</a>
+    <a href="compare.html">Compare</a>
+    <a href="security.html">Ownership</a>
+    <a href="pricing.html">Licenses</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn btn-primary nav-cta" href="pricing.html">DEPLOY →</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+<header class="page-hero" id="main">
+  <div class="page-hero-inner">
+    <p class="kicker reveal"><span class="prompt">$</span> man babuba<span class="cursor"></span></p>
+    <h1 class="reveal">THE DOCS.<br /><span class="volt">FROM ZERO TO YOUR FIRST AGENT.</span></h1>
+    <p class="hero-sub reveal" data-delay="120">Install the gateway, boot an agent, hook up your channels, set the rules. Fifteen minutes to a running AI workforce — everything below is what you actually do.</p>
+    <ul class="hero-meta reveal" data-delay="200">
+      <li>GET STARTED</li>
+      <li>ARCHITECTURE</li>
+      <li>CONCEPTS</li>
+      <li>GOVERNANCE</li>
+    </ul>
+  </div>
+</header>
+
+<!-- ═══════════ BODY ═══════════ -->
+<div class="page-body">
+  <div class="docs-wrap">
+
+    <h2 class="reveal">01 / GETTING <span class="volt">STARTED</span></h2>
+    <p>Three steps from nothing to a running agent. No cloud account, no deployment pipeline, no per-seat math.</p>
+    <pre class="reveal">$ babuba deploy --license LIC.TEAM-XXXX-XXXX
+gateway booting .......... OK
+channels: whatsapp · telegram · gmail · web CONNECTED
+agents: make your own — ∞ available</pre>
+    <ol>
+      <li><strong>Get the license</strong> — pay once at <a href="pricing.html">pricing.html</a>, receive your key instantly. UPI, bank transfer or card.</li>
+      <li><strong>Install the gateway</strong> — one command on your server or desktop. The installer boots the gateway, the admin panel and the channel adapters.</li>
+      <li><strong>Activate &amp; build</strong> — redeem your key at <a href="redeem.html">redeem.html</a>, then create your first agent. It boots with an identity (SOUL), long-term memory (MEMORY), tools and channels wired — in about two seconds.</li>
+    </ol>
+    <div class="doc-note">Desktop app? The setup wizard handles install, activation and first agent for you — no terminal required. Server or Docker installs use the commands above.</div>
+
+    <h2 class="reveal">02 / <span class="volt">ARCHITECTURE</span></h2>
+    <p>Babuba is one gateway process — one port (18793) — hosting everything:</p>
+    <pre class="reveal">babuba gateway (127.0.0.1:18793)
+├─ router       — reads every message, picks the agent + workflow
+├─ agents       — one per department; own memory, tools, rules
+├─ channels     — whatsapp · telegram · gmail · web chat
+├─ workflows    — department processes as approval graphs
+├─ cron         — scheduled jobs, reports, scans
+├─ admin panel  — agents, approvals, guardrails, RBAC, logs
+└─ state        — SQLite + memory, all on your machine</pre>
+    <p>The router decides which agent handles an incoming message — by channel binding, role scope or default. Workflows can start automatically when a message matches a process graph.</p>
+
+    <h2 class="reveal">03 / <span class="volt">CONCEPTS</span></h2>
+    <h3>Gateway</h3>
+    <p>The single process that runs the whole system on your hardware. Install once — the router, agents, channels, workflows and admin panel all live inside it.</p>
+    <h3>Agents</h3>
+    <p>One per department. Each agent is an LLM equipped with its own <code>SOUL.md</code> (identity and system prompt), <code>MEMORY.md</code> (long-term memory), tools, guardrails and approval rules. Agents are isolated from each other — finance can't see HR's data.</p>
+    <h3>Router</h3>
+    <p>A LangGraph-based message router. It classifies intent, picks the right agent and can start a workflow. You don't wire rules — the router learns the routing from your agent set.</p>
+    <h3>Channels</h3>
+    <p>Talk to agents where you already work: WhatsApp Web, Telegram, Gmail, Slack and web chat. Same agent, same memory, every channel.</p>
+    <h3>Workflows</h3>
+    <p>Department processes expressed as graphs — with human approval steps. A payment workflow, an onboarding workflow, a compliance review: each step can require a person's tap before it proceeds.</p>
+    <h3>Cron</h3>
+    <p>Scheduled jobs on the gateway: daily backups, state cleanup, self-diagnosis, market scans, reports. They run whether or not anyone is chatting.</p>
+
+    <h2 class="reveal">04 / AGENT <span class="volt">LIFECYCLE</span></h2>
+    <pre class="reveal"># create — boots an agent with identity, memory, tools, channels
+$ babuba agents create --name finance --dept accounts
+  generating SOUL.md ........ done (0.4s)
+  agent online .............. RUNNING (2.1s)
+
+# add users — the whole team, role-scoped, no seating costs
+$ babuba agents add-user --agent finance --user asha --role user
+
+# edit at runtime — swap model, toggle tools, re-scope users
+$ babuba agents update --agent finance --model deepseek-v4-flash</pre>
+    <p>No redeploys. Agents are runtime-editable: change the SOUL, swap the model, toggle tools, re-scope users — the gateway picks it up live.</p>
+
+    <h2 class="reveal">05 / <span class="volt">GOVERNANCE</span></h2>
+    <p>Babuba ships governance built in — not bolted on. Four layers:</p>
+    <ul>
+      <li><strong>Approval gates</strong> — payments, supplier adds and other sensitive actions pause at your phone. One tap approves; nothing ships silently.</li>
+      <li><strong>RBAC</strong> — every agent serves the whole team, role-scoped (super-admin → admin → manager → user → viewer). Finance can't see HR's data; ops can't approve payments.</li>
+      <li><strong>Guardrails</strong> — per-agent allow / deny / warn rules and risk thresholds. The agent knows its boundaries before it acts.</li>
+      <li><strong>Audit trail</strong> — every LLM call, tool call and decision is logged and searchable. Reversible, reviewable, regulator-ready.</li>
+    </ul>
+
+    <h2 class="reveal">06 / DEPLOY <span class="volt">PATHS</span></h2>
+    <ul>
+      <li><strong>Desktop app</strong> — install and run on a Windows/Mac machine. Best for small teams; the setup wizard does everything.</li>
+      <li><strong>Server / Docker</strong> — one command on any Linux box or VPS. Best for production, always-on availability and team access.</li>
+      <li><strong>Air-gapped</strong> — fully offline operation is supported; bring your own model (Ollama, local endpoints) and the gateway runs with zero external calls.</li>
+    </ul>
+
+    <h2 class="reveal">07 / <span class="volt">FAQ</span></h2>
+    <h3>Does my data leave my server?</h3>
+    <p>No. The gateway, agents, database and memory run on your machine. The only outbound calls are the LLM API calls the agents make — and with a local model, even those stay on your hardware.</p>
+    <h3>How many agents and users?</h3>
+    <p>Unlimited. One license covers as many agents as you want to create and as many users as you want to add. No per-agent or per-seat fees — ever.</p>
+    <h3>Which models can I use?</h3>
+    <p>Bring your own: OpenAI, Anthropic, DeepSeek, any OpenAI-compatible endpoint, or local models via Ollama. Swap models per agent at runtime.</p>
+    <h3>What if I need help?</h3>
+    <p>support@babuba.ai — activation help, install walkthroughs and priority support for life. <a href="pricing.html">Get the license ▸</a></p>
+
+    <div class="hero-ctas reveal" style="margin-top:44px;text-align:center;">
+      <a class="btn btn-primary btn-lg" href="pricing.html">DEPLOY ON YOUR SERVER ▸</a>
+      <a class="btn btn-ghost btn-lg" href="agents.html">SEE THE AGENTS</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span>
+      <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a><a href="docs.html">Docs</a><a href="compare.html">Compare</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
+    </div>
+    <p class="footer-copy dim">© 2026 BABUBA SYSTEMS · ALL DATA STAYS ON YOUR HARDWARE · <a href="mailto:support@babuba.ai">support@babuba.ai</a></p>
+  </div>
+</footer>
+
+<a class="to-top" id="toTop" href="#top" aria-label="Back to top">▲ TOP</a>
+
+<script src="app.js"></script>
+<script src="chat-widget.js" data-agent="agent-sales-talk-to-babuba-demo" defer></script>
+</body>
+</html>
