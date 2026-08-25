@@ -84,7 +84,7 @@ button { font-family: var(--mono); }
 .sysinfo .sep { color: var(--line2); }
 .sys-dot { display: inline-block; width: 7px; height: 7px; background: var(--volt); border-radius: 50%; animation: pulse 1.6s ease-in-out infinite; }
 .nav-links { display: flex; gap: 22px; }
-.nav-links a { color: var(--dim); font-size: 12px; letter-spacing: 0.08em; position: relative; padding: 11px 2px; transition: color 200ms; }
+.nav-links a { color: var(--dim); font-size: 12px; letter-spacing: 0.08em; position: relative; padding: 11px 6px; transition: color 200ms; }
 .nav-links a:hover { color: var(--ink); }
 .nav-links a::after {
   content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 0;
@@ -347,6 +347,9 @@ button { font-family: var(--mono); }
 .footer-links { display: flex; gap: 22px; max-width: var(--max); margin: 0 auto; padding: 20px 28px 8px; flex-wrap: wrap; }
 .footer-links a { color: var(--dim); font-size: 12.5px; letter-spacing: 0.1em; transition: color 200ms; display: inline-flex; align-items: center; min-height: 40px; padding: 2px; }
 .footer-links a:hover { color: var(--volt); }
+/* prose links: ≥24px touch targets without breaking line layout */
+.docs-wrap a:not(.btn):not(.skip-link), .bp-step a, .pay-val a { display:inline-block; padding:4px 0; }
+.footer-copy a { display:inline-block; padding:13px 0; margin:-13px 0; }
 .footer-copy { max-width: var(--max); margin: 0 auto; padding: 10px 28px 30px; font-size: 11px; letter-spacing: 0.12em; }
 
 /* ═══════════ REVEAL ═══════════ */
@@ -382,7 +385,7 @@ button { font-family: var(--mono); }
 .bp-num { font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--volt); display: block; margin-bottom: 12px; }
 .bp-step h3 { font-size: 13px; letter-spacing: 0.08em; margin-bottom: 8px; }
 .bp-step p { font-family: var(--sans); font-size: 13px; line-height: 1.6; color: var(--dim); }
-.bp-link { color: var(--volt); text-decoration: underline; text-underline-offset: 3px; }
+.bp-link { color: var(--volt); text-decoration: underline; text-underline-offset: 3px; display:inline-block; padding:5px 0; margin:-5px 0; }
 .bp-link:hover { color: var(--ink); }
 
 /* ═══════════════ MICRO-MOTION (added) ═══════════════ */
@@ -528,7 +531,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .admin-top .s { margin-left:auto; font-size:11px; color:#C9F24B; font-family:'JetBrains Mono',monospace; }
 .admin-body { display:grid; grid-template-columns:220px 1fr; min-height:380px; }
 .admin-side { border-right:1px solid #26262A; padding:14px 0; }
-.admin-side a { display:block; padding:9px 16px; font-size:12px; color:#8B8B8F; text-decoration:none; font-family:'JetBrains Mono',monospace; }
+.admin-side a { display:block; padding:11px 16px; font-size:12px; color:#8B8B8F; text-decoration:none; font-family:'JetBrains Mono',monospace; }
 .admin-side a:hover { color:#E8E8E2; }
 .admin-side a.on { color:#C9F24B; border-left:2px solid #C9F24B; background:#14140F; }
 .admin-main { padding:16px 18px; }
