@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Babuba — Make your own AI agents. Any number of users.</title>
-<meta name="description" content="Build your own AI agents on your own server — one per department, unlimited users, no per-seat fees, zero data leaves your machine." />
+<title>Babuba — Make Your Own AI Agents | Self-Hosted Agent Platform</title>
+<meta name="description" content="Self-hosted AI agent platform: make your own AI agents — one per department, unlimited users, no per-seat fees, zero data leaves your server. WhatsApp, Telegram, Gmail, web chat." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://www.babuba.in/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Babuba" />
@@ -12,7 +13,12 @@
 <meta property="og:description" content="Self-hosted AI agent gateway: make one agent per department, unlimited users, no per-seat fees. Agents read your mail, build reports, reconcile invoices — and ask before anything ships." />
 <meta property="og:url" content="https://www.babuba.in/" />
 <meta property="og:image" content="https://www.babuba.in/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Babuba — self-hosted AI agent platform for your own AI agents" />
+<meta property="og:locale" content="en_IN" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image:alt" content="Babuba — self-hosted AI agent platform for your own AI agents" />
 <meta name="twitter:title" content="Babuba — Make your own AI agents. Any number of users." />
 <meta name="twitter:description" content="Self-hosted AI agent gateway: make one agent per department, unlimited users, no per-seat fees. Your data stays on your server." />
 <meta name="twitter:image" content="https://www.babuba.in/og.png" />
@@ -38,7 +44,11 @@
     "email": "support@babuba.ai",
     "contactType": "customer support"
   },
-  "sameAs": []
+  "sameAs": [
+    "https://github.com/thunacare-alt/Babuba-Agent-framework",
+    "https://github.com/thunacare-alt/www.babuba.in"
+  ],
+  "logo": "https://www.babuba.in/og.png"
 }
 </script>
 <script type="application/ld+json">
@@ -54,6 +64,87 @@
     "priceCurrency": "INR",
     "description": "One-time license: unlimited agents, unlimited users, all channels, updates for life."
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Babuba",
+  "alternateName": "Babuba Gateway",
+  "url": "https://www.babuba.in/",
+  "description": "Babuba is a self-hosted AI agent platform (agent gateway). Make your own AI agents on your own server — one agent per department, unlimited users, no per-seat fees, zero data leaves your server.",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Babuba Systems",
+    "url": "https://www.babuba.in",
+    "logo": "https://www.babuba.in/og.png"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Babuba?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Babuba is a self-hosted AI agent platform (agent gateway). You run it on your own server, make one AI agent per department — finance, ops, MIS, admin — and give your whole team access with no per-seat fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Babuba different from a SaaS chatbot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SaaS rents you a dashboard in someone else's cloud and bills per seat. Babuba runs on your own hardware, with agents you make yourself and as many users as you need. Zero data leaves your server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does my data stay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On your server. Not on Babuba's cloud, not on the model vendor's. Babuba is self-hosted, so zero data leaves your machine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which channels can I talk to my agents on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WhatsApp, Telegram, Gmail, and web chat. The Babuba gateway connects to the channels you already use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many agents and users can I have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlimited. Create one agent per department — as many as you need — and add unlimited users per agent with RBAC-scoped roles. No per-agent or per-seat fees, ever."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast is deployment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Seconds. babuba agents create --name finance --dept accounts brings an agent online in about 2 seconds. No infra, no deployments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What governance is built in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each agent is an isolated process with its own memory, tools, guardrails and approval rules — auditable and replaceable. RBAC scoping and an approval queue are built in, and agents ask before anything ships."
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -498,6 +589,45 @@
     <a class="btn btn-ghost btn-lg" href="security.html">OWNERSHIP &amp; SECURITY</a>
   </div>
 </div>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="section" id="faq">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 07 — FAQ</p>
+    <h2 class="section-title reveal">BABUBA, <span class="volt">IN PLAIN WORDS.</span></h2>
+    <p class="section-sub reveal">What Babuba is, where your data lives, and how it fits into your team.</p>
+  </div>
+  <div class="faq-list reveal" data-delay="150">
+    <details class="faq-item">
+      <summary><strong>What is Babuba?</strong></summary>
+      <p>Babuba is a self-hosted AI agent platform (agent gateway). You run it on your own server, make one AI agent per department — finance, ops, MIS, admin — and give your whole team access with no per-seat fees.</p>
+    </details>
+    <details class="faq-item">
+      <summary><strong>How is Babuba different from a SaaS chatbot?</strong></summary>
+      <p>SaaS rents you a dashboard in someone else's cloud and bills per seat. Babuba runs on your own hardware, with agents you make yourself and as many users as you need. Zero data leaves your server.</p>
+    </details>
+    <details class="faq-item">
+      <summary><strong>Where does my data stay?</strong></summary>
+      <p>On your server. Not on Babuba's cloud, not on the model vendor's. Babuba is self-hosted, so zero data leaves your machine.</p>
+    </details>
+    <details class="faq-item">
+      <summary><strong>Which channels can I talk to my agents on?</strong></summary>
+      <p>WhatsApp, Telegram, Gmail, and web chat. The Babuba gateway connects to the channels you already use.</p>
+    </details>
+    <details class="faq-item">
+      <summary><strong>How many agents and users can I have?</strong></summary>
+      <p>Unlimited. Create one agent per department — as many as you need — and add unlimited users per agent with RBAC-scoped roles. No per-agent or per-seat fees, ever.</p>
+    </details>
+    <details class="faq-item">
+      <summary><strong>How fast is deployment?</strong></summary>
+      <p>Seconds. <code>babuba agents create --name finance --dept accounts</code> brings an agent online in about 2 seconds. No infra, no deployments.</p>
+    </details>
+    <details class="faq-item">
+      <summary><strong>What governance is built in?</strong></summary>
+      <p>Each agent is an isolated process with its own memory, tools, guardrails and approval rules — auditable and replaceable. RBAC scoping and an approval queue are built in, and agents ask before anything ships.</p>
+    </details>
+  </div>
+</section>
 
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer" id="footer">
