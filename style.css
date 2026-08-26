@@ -574,3 +574,112 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .compare-table td.babuba { background:rgba(201,242,75,0.05); }
 .compare-table .volt { color:#C9F24B; }
 @media (max-width:720px) { .compare-table { font-size:12px; } .compare-table th, .compare-table td { padding:8px 9px; } }
+
+/* ═══════════════════════════════════════════════════════════
+   v2026.09 — accessibility & live-status pass
+   Tokens, tiered neutrals, card surfaces, status semantics,
+   glows, prose faces, sticky live bar. Appended so overrides win.
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* Status semantics (new — distinct from brand volt) */
+  --green: #22c55e;   /* live / running */
+  --flag:  #f59e0b;   /* flagged / pending */
+  --red:   #ef4444;   /* blocked / denied */
+  /* Tiered neutrals */
+  --text-body:   #a1a1aa;  /* body copy — AA on #0A0A0B */
+  --text-meta:   #6b7280;  /* meta / labels */
+  --text-footer: #52525b;  /* legal footer line */
+  /* Card surfaces */
+  --card-bg:         #0d120e;
+  --card-line:       rgba(255,255,255,0.06);
+  --card-line-hover: rgba(34,197,94,0.25);
+}
+
+/* ── Tiered neutrals: body copy ───────────────────────────── */
+.hero-sub, .section-sub, .hero-def, .boot-step p,
+.gov-card p, .cta-band p, .cell ul li { color: var(--text-body); }
+
+/* ── Tiered neutrals: meta / labels ───────────────────────── */
+.eyebrow, .kicker, .stat-label, .col-label, .admin-h,
+.step-num, .console-title, .win-title, .cell-head { color: var(--text-meta); }
+.stat-note { color: var(--text-meta); }
+
+/* ── Tiered neutrals: footer ──────────────────────────────── */
+.footer-copy { color: var(--text-footer); } /* legal line only — links keep AA */
+.footer-links a:hover { color: var(--ink); }
+
+/* ── Card surfaces: story blocks, live desk, governance ───── */
+.kernel, .cell, .gov-card, .win {
+  background: var(--card-bg);
+  border-color: var(--card-line);
+}
+.kernel:hover, .cell:hover, .gov-card:hover { border-color: var(--card-line-hover); }
+.admin-agent, .queue-item { background: var(--card-bg); }
+
+/* ── Status semantics: green live / amber flagged / red blocked ── */
+.cell-status { color: var(--green); }
+.cell-status .sys-dot { background: var(--green); }
+.win-alert { border-color: rgba(245,158,11,0.45); }
+.win-alert .win-title, .win-alert .alert-line { color: var(--flag); }
+.queue-item { border-left-color: var(--flag); background: #141006; }
+.queue-item .amt { color: var(--flag); }
+.live-dot {
+  display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--green); box-shadow: 0 0 8px rgba(34,197,94,0.7);
+  animation: pulse 1.4s ease-in-out infinite; vertical-align: middle;
+}
+.stats-live {
+  text-align: center; margin-top: 16px;
+  font-size: 10px; letter-spacing: 0.16em; color: var(--text-meta);
+}
+.st-legend {
+  display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+  margin: 6px 0 34px; font-size: 10px; letter-spacing: 0.14em;
+}
+.st { display: inline-flex; align-items: center; gap: 6px; color: var(--text-meta); }
+.st-live { color: var(--green); }
+.st-flag { color: var(--flag); }
+.st-block { color: var(--red); }
+
+/* ── Prose faces: Inter for long copy, mono stays for machine text ── */
+.hero-sub, .section-sub, .gov-card p, .cta-band p, .boot-step p { font-family: var(--sans); }
+
+/* ── Glows: stats strip, console, governance, CTA band ────── */
+.stats-strip {
+  background:
+    radial-gradient(780px 260px at 50% -30%, rgba(201,242,75,0.09), transparent 70%),
+    #0D0D0F;
+}
+.console {
+  background:
+    radial-gradient(640px 220px at 50% -40%, rgba(201,242,75,0.07), transparent 70%),
+    var(--bg2);
+}
+#governance {
+  background:
+    radial-gradient(760px 300px at 50% -20%, rgba(201,242,75,0.06), transparent 70%),
+    var(--bg);
+}
+.cta-band {
+  background:
+    radial-gradient(820px 320px at 50% -30%, rgba(201,242,75,0.09), transparent 70%),
+    var(--bg2);
+}
+
+/* ── Sticky live bar (homepage only) ──────────────────────── */
+.stickybar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 9px 22px;
+  background: rgba(10,10,11,0.94);
+  border-top: 1px solid var(--line);
+  font-size: 10.5px; letter-spacing: 0.13em; color: var(--text-meta);
+}
+.stickybar a { color: var(--volt); font-weight: 700; }
+.stickybar a:hover { color: #D8FF6B; }
+body.home { padding-bottom: 33px; }
+@media (max-width: 760px) {
+  .stickybar { display: none; }
+  body.home { padding-bottom: 0; }
+}

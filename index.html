@@ -16,6 +16,7 @@
 <meta name="twitter:title" content="Babuba — Make your own AI agents. Any number of users." />
 <meta name="twitter:description" content="Self-hosted AI agent gateway: make one agent per department, unlimited users, no per-seat fees. Your data stays on your server." />
 <meta name="twitter:image" content="https://www.babuba.in/og.png" />
+<meta name="theme-color" content="#0A0A0B" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0B'/><path d='M20 50 H80 M50 20 V80' stroke='%23C9F24B' stroke-width='14'/><rect x='18' y='18' width='64' height='64' fill='none' stroke='%23E8E8E2' stroke-width='4'/></svg>" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Babuba","applicationCategory":"BusinessApplication","operatingSystem":"Linux, Windows, macOS","description":"Self-hosted AI agent gateway — make one agent per department, unlimited users, no per-seat fees. Agents read your mail, build your reports, reconcile your invoices, and ask before anything ships.","offers":{"@type":"Offer","price":"550000","priceCurrency":"INR","description":"One-time team license — unlimited agents, unlimited users"},"featureList":["Multi-agent gateway","Unlimited agents","Unlimited users","RBAC scoping","Guardrails","Approval workflows","WhatsApp/Telegram/Gmail/web channels","Self-hosted, zero data leaves"]}
@@ -23,8 +24,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=20260825b" />
-<link rel="stylesheet" href="pages.css?v=20260825b" />
+<link rel="stylesheet" href="style.css?v=20260901" />
+<link rel="stylesheet" href="pages.css?v=20260901" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,7 +57,7 @@
 }
 </script>
 </head>
-<body id="top">
+<body id="top" class="home">
 
 <a class="skip-link" href="#main">SKIP TO CONTENT</a>
 
@@ -112,6 +113,7 @@
       <div class="hero-ctas reveal" data-delay="340">
         <a class="btn btn-primary btn-lg" href="pricing.html">DEPLOY ON YOUR SERVER ▸</a>
         <a class="btn btn-ghost btn-lg" href="agents.html">SEE THE AGENTS</a>
+        <a class="btn btn-ghost btn-lg" href="mailto:support@babuba.ai?subject=Book%20a%20Babuba%20demo">BOOK A DEMO ▸</a>
         <a class="btn btn-ghost btn-lg" href="#desk" id="liveDemoBtn">TRY LIVE DEMO ▸</a>
       </div>
       <ul class="hero-meta reveal" data-delay="420">
@@ -169,6 +171,7 @@
     <div class="stat"><div class="stat-num">99.98%</div><div class="stat-label">GATEWAY UPTIME</div><div class="stat-note">self-hosted, since day one</div></div>
     <div class="stat"><div class="stat-num">4 / 4</div><div class="stat-label">AGENTS ONLINE</div><div class="stat-note">fin · ops · hr · compliance</div></div>
   </div>
+  <p class="stats-live"><span class="live-dot"></span> LIVE — PULLED FROM THE RUNNING GATEWAY</p>
   <p class="stats-note-line">REAL PIPELINE. LIVE GATEWAY. — these are the numbers this site's own Babuba instance produces.</p>
 </div>
 
@@ -296,6 +299,11 @@
     <p class="eyebrow reveal">// 04 — LIVE DESK</p>
     <h2 class="section-title reveal">YOUR DESK. <span class="volt">RUN BY AGENTS.</span></h2>
     <p class="section-sub reveal">A live loop of what an agent desk looks like mid-morning. Real pipeline, real numbers — anonymized.</p>
+    <div class="st-legend reveal" data-delay="100" aria-label="Status legend">
+      <span class="st st-live">● LIVE</span>
+      <span class="st st-flag">● FLAGGED</span>
+      <span class="st st-block">● BLOCKED</span>
+    </div>
   </div>
 
   <div class="console reveal" data-delay="200" id="opsConsole">
@@ -501,11 +509,16 @@
   <p class="footer-copy dim">© 2026 BABUBA SYSTEMS · ALL DATA STAYS ON YOUR HARDWARE</p>
 </footer>
 
+<div class="stickybar">
+  <span class="stickybar-left"><span class="live-dot"></span> 4/4 AGENTS ONLINE · GATEWAY 127.0.0.1:18793</span>
+  <span class="stickybar-right"><a href="mailto:support@babuba.ai?subject=Book%20a%20Babuba%20demo">BOOK A DEMO ▸</a></span>
+</div>
+
 <a class="to-top" id="toTop" href="#top" aria-label="Back to top">▲ TOP</a>
 
-<script src="app.js?v=20260825b"></script>
-<script src="agent-canvas.js?v=20260825b"></script>
-<script src="chat-widget.js?v=20260825b" data-agent="agent-sales-talk-to-babuba-demo" defer></script>
+<script src="app.js?v=20260901"></script>
+<script src="agent-canvas.js?v=20260901"></script>
+<script src="chat-widget.js?v=20260901" data-agent="agent-sales-talk-to-babuba-demo" defer></script>
 
 </body>
 </html>
