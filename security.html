@@ -22,6 +22,39 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css?v=20260825b" />
 <link rel="stylesheet" href="pages.css?v=20260825b" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does my data leave my server with Babuba?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The gateway, agents and database run on your machine. Data never goes to Babuba's cloud — you can even run fully air-gapped with no internet required." }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns the data and model keys?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You do. Root access is yours — model API keys live in your gateway's secret store, and the audit log is exportable any time." }
+    },
+    {
+      "@type": "Question",
+      "name": "What access controls does Babuba have?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Five-level RBAC with custom roles and per-resource permissions, guardrails with four modes (allow, deny, warn, require-approval) enforced before and after every model call, and approval gates on payments, exports and sends." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is every agent action audited?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every agent action is logged and searchable — who, what, when, and which rule allowed it. Export the log any time; roll back, fix the rule, move on." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Babuba run without internet access?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — air-gapped deployment is supported. One command on a server or desktop, no internet required." }
+    }
+  ]
+}
+</script>
 </head>
 <body id="top">
 

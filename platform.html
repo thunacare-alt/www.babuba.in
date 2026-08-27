@@ -22,6 +22,39 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css?v=20260825b" />
 <link rel="stylesheet" href="pages.css?v=20260825b" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Babuba gateway?",
+      "acceptedAnswer": { "@type": "Answer", "text": "One self-hosted process on port 18793 that runs your router, agents, channels, workflows and cron. Install once on your hardware and the entire system runs there." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which channels does Babuba work with?",
+      "acceptedAnswer": { "@type": "Answer", "text": "WhatsApp, Telegram, Gmail and web chat — all served by the same gateway, with per-user context kept across every channel." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Babuba decide which agent handles a message?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A LangGraph router classifies intent, picks the right agent, starts the right workflow and replies through the same channel the message arrived on." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can workflows require human approval?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Approval chains pause the graph until a human approves — the request lands on the channel you already use, with one tap to approve or reject." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Babuba locked to one LLM?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Bring your own OpenAI, Anthropic, DeepSeek, Ollama or any OpenAI-compatible endpoint — swap models per agent." }
+    }
+  ]
+}
+</script>
 </head>
 <body id="top">
 
