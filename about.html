@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Thuna Care Private Limited | Babuba &amp; GHOST</title>
+<meta name="description" content="Thuna Care Private Limited builds two products on one engine: Babuba Gateway, a self-hosted AI agent platform, and GHOST, a managed AI employee that works inside WhatsApp." />
+<link rel="canonical" href="https://www.babuba.in/about.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Babuba" />
+<meta property="og:title" content="About — Thuna Care Private Limited" />
+<meta property="og:description" content="One engine, two products: Babuba Gateway (self-hosted AI agent platform) and GHOST (managed AI employee on WhatsApp)." />
+<meta property="og:url" content="https://www.babuba.in/about.html" />
+<meta property="og:image" content="https://www.babuba.in/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="About — Thuna Care Private Limited" />
+<meta name="twitter:description" content="One engine, two products: Babuba Gateway and GHOST." />
+<meta name="twitter:image" content="https://www.babuba.in/og.png" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0B'/><path d='M20 50 H80 M50 20 V80' stroke='%23C9F24B' stroke-width='14'/><rect x='18' y='18' width='64' height='64' fill='none' stroke='%23E8E8E2' stroke-width='4'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="pages.css" />
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main">SKIP TO CONTENT</a>
+
+<div class="scanlines" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ═══════════ STATUS BAR / NAV ═══════════ -->
+<nav class="statusbar" id="nav" aria-label="Primary">
+  <a class="logo" href="index.html"><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span></a>
+  <div class="sysinfo" aria-hidden="true">
+    <span class="sys-dot"></span> AGENTS: 4 ONLINE
+    <span class="sep">▸</span> GATEWAY: 127.0.0.1:18793
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="agents.html">Agents</a>
+    <a href="platform.html">Platform</a> <a href="ghost.html">Ghost</a>
+    <a href="docs.html">Docs</a>
+    <a href="compare.html">Compare</a>
+    <a href="security.html">Ownership</a>
+    <a href="pricing.html">Licenses</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn btn-primary nav-cta" href="pricing.html">DEPLOY →</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+<header class="page-hero" id="main">
+  <div class="page-hero-inner">
+    <p class="kicker reveal"><span class="prompt">$</span> whoami <span class="volt">thuna-care</span><span class="cursor"></span></p>
+    <h1 class="reveal">ONE ENGINE.<br /><span class="volt">TWO PRODUCTS.</span></h1>
+    <p class="hero-sub reveal" data-delay="120">Thuna Care Private Limited builds the AI stack we run ourselves. Babuba Gateway is the engine — a self-hosted platform for AI agents. GHOST is the product built on that engine, sold as an AI employee that works inside WhatsApp.</p>
+    <ul class="hero-meta reveal" data-delay="200">
+      <li>THUNA CARE PVT LTD</li>
+      <li>BABUBA GATEWAY</li>
+      <li>GHOST</li>
+      <li>INDIA</li>
+    </ul>
+  </div>
+</header>
+
+<!-- ═══════════ BODY ═══════════ -->
+<div class="page-body">
+  <div class="docs-wrap">
+
+    <h2 class="reveal">01 / WHAT WE <span class="volt">BUILD</span></h2>
+    <p>We sell two things, and only one of them is a platform. Babuba Gateway is the engine: a single process that hosts many AI agents — one per department or function — connects them to WhatsApp, Telegram, Gmail, Slack and web chat, and gives them roles, memory, tools, guardrails and an audit trail. It runs on hardware you control.</p>
+    <p>GHOST is what that engine looks like when we run it for a customer. Sold at a flat monthly price, GHOST is a managed AI employee that answers customers, runs daily operations, writes to the books and posts reports inside WhatsApp. Same engine underneath, sold as an outcome instead of software.</p>
+    <ul>
+      <li><strong>Babuba Gateway</strong> — self-hosted platform. One-time licence, no per-agent or per-seat fees, your infrastructure, your models.</li>
+      <li><strong>GHOST</strong> — managed AI employee on WhatsApp. Per-agent monthly subscription, live in two weeks, no server to own.</li>
+      <li><strong>One codebase</strong> — GHOST runs on the Babuba gateway, router, agent runtime, scheduler, approval engine and dashboard.</li>
+    </ul>
+    <div class="doc-note">Why both exist: some customers want to own the software and run it behind their own firewall. Others want the work done, with nothing to install. Babuba covers the first, GHOST covers the second — and every GHOST deployment is also a live reference for the gateway.</div>
+
+    <h2 class="reveal">02 / HOW GHOST SITS ON <span class="volt">BABUBA</span></h2>
+    <p>There is no second platform. Each GHOST customer is one isolated instance of the same gateway, with its own container, credentials and data.</p>
+    <ul>
+      <li><strong>The employee</strong> — a Babuba agent with its own identity, memory and tool allowlist.</li>
+      <li><strong>WhatsApp, Telegram, Gmail</strong> — Babuba channel adapters. The chat app is the interface; nothing to install.</li>
+      <li><strong>The morning and evening reports</strong> — Babuba cron jobs on fixed schedules, delivered to the owner's group.</li>
+      <li><strong>Approvals before money moves</strong> — Babuba guardrails and the approval engine, on by default.</li>
+      <li><strong>Google Sheets, Drive and mail</strong> — Babuba tool integrations, authorised by the customer and revocable at any time.</li>
+      <li><strong>"See his logs, change his rules"</strong> — the Babuba admin panel, one per customer.</li>
+      <li><strong>Isolation</strong> — one gateway and one data store per customer; no agent can read another customer's data.</li>
+    </ul>
+
+    <h2 class="reveal">03 / COMPANY <span class="volt">DETAILS</span></h2>
+    <ul>
+      <li><strong>Registered company</strong> — Thuna Care Private Limited, registered office in Gurugram, Haryana, India</li>
+      <li><strong>Location</strong> — Gurugram, Haryana, India</li>
+      <li><strong>Products</strong> — Babuba Gateway (www.babuba.in) and GHOST (ghostagents.in)</li>
+      <li><strong>Babuba version</strong> — v2.4.0</li>
+      <li><strong>Babuba licensing</strong> — one-time, per organisation, no per-user or per-agent fees</li>
+      <li><strong>GHOST pricing</strong> — ₹15,000 per agent per month, 5 users included, setup in two weeks</li>
+      <li><strong>Support</strong> — <a href="mailto:aswin@babuba.in">aswin@babuba.in</a> (Babuba) · <a href="mailto:aswin@babuba.in">aswin@babuba.in</a> (GHOST)</li>
+      <li><strong>Data model</strong> — Babuba is self-hosted, so customer data never reaches our servers; GHOST runs in per-customer containers we operate for that customer only</li>
+    </ul>
+
+    <h2 class="reveal">04 / INFRASTRUCTURE <span class="volt">WE RUN</span></h2>
+    <p>GHOST is live today, not a prototype: customer agents answering real WhatsApp messages, running scheduled operational jobs and writing to real spreadsheets. Running that means compute per customer, managed databases, model inference, document storage and mail integration — the part of the stack we operate so the customer does not have to.</p>
+    <p>Babuba customers run the same software on their own machines, which is why the platform is packaged as a single deployable process rather than a cloud account. Both models share one engineering team and one codebase.</p>
+
+    <h2 class="reveal">05 / HOW WE <span class="volt">WORK</span></h2>
+    <p>We sell software the old way: you buy a licence or a subscription, you get a working system, you talk to the engineers who build it. There is no per-seat rent and no switch we can flip to turn a deployment off.</p>
+    <p>What we ask in return is that the licence is respected: no resale, no hosting it for third parties, no stripping the activation check. Those limits are in the <a href="terms.html">terms</a>, in plain language.</p>
+
+    <h2 class="reveal">06 / <span class="volt">CONTACT</span></h2>
+    <p>Licensing, deployment, migration or a technical question — write to <a href="mailto:aswin@babuba.in">aswin@babuba.in</a> and an engineer replies. For GHOST, see <a href="https://ghostagents.in" target="_blank" rel="noopener">ghostagents.in</a>.</p>
+    <p>For how we handle personal data, see the <a href="privacy.html">privacy policy</a>. For licensing terms and refunds, see <a href="terms.html">terms</a> and <a href="refund.html">refunds</a>.</p>
+
+    <div class="hero-ctas reveal" style="margin-top:44px;text-align:center;">
+      <a class="btn btn-primary btn-lg" href="mailto:aswin@babuba.in">EMAIL US →</a>
+      <a class="btn btn-ghost btn-lg" href="https://ghostagents.in" target="_blank" rel="noopener">SEE GHOST</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer" id="footer">
+  <div class="footer-bar">
+    <span><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span> v2.4.0</span>
+    <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a><a href="agents.html">Agents</a><a href="platform.html">Platform</a> <a href="ghost.html">Ghost</a><a href="docs.html">Docs</a><a href="compare.html">Compare</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
+  </div>
+  <div class="footer-links footer-legal">
+    <a href="about.html" class="active" aria-current="page">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund.html">Refunds</a><a href="contact.html">Contact</a><a href="mailto:aswin@babuba.in">aswin@babuba.in</a>
+  </div>
+  <p class="footer-copy dim">© 2026 THUNA CARE PRIVATE LIMITED · ALL DATA STAYS ON YOUR HARDWARE</p>
+</footer>
+
+<a class="to-top" id="toTop" href="#top" aria-label="Back to top">▲ TOP</a>
+
+<script src="app.js"></script>
+</body>
+</html>
