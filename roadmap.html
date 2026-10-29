@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Babuba Roadmap — Shipped, next, later.</title>
+<meta name="description" content="The Babuba Gateway product roadmap: what is live in production today, what is committed for the next 90 days, and where the platform is heading." />
+<link rel="canonical" href="https://www.babuba.in/roadmap.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Babuba" />
+<meta property="og:title" content="Babuba Roadmap — shipped, next, later." />
+<meta property="og:description" content="What runs in production today, what is committed for the next 90 days, and the direction of the Babuba platform." />
+<meta property="og:url" content="https://www.babuba.in/roadmap.html" />
+<meta property="og:image" content="https://www.babuba.in/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Babuba Roadmap — shipped, next, later." />
+<meta name="twitter:description" content="What runs in production today, what is committed for the next 90 days, and the direction of the Babuba platform." />
+<meta name="twitter:image" content="https://www.babuba.in/og.png" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0B'/><path d='M20 50 H80 M50 20 V80' stroke='%23C9F24B' stroke-width='14'/><rect x='18' y='18' width='64' height='64' fill='none' stroke='%23E8E8E2' stroke-width='4'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=20260825b" />
+<link rel="stylesheet" href="pages.css?v=20260825b" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does my data leave my server with Babuba?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The gateway, agents and database run on your machine. Data never goes to Babuba's cloud — you can even run fully air-gapped with no internet required." }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns the data and model keys?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You do. Root access is yours — model API keys live in your gateway's secret store, and the audit log is exportable any time." }
+    },
+    {
+      "@type": "Question",
+      "name": "What access controls does Babuba have?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Five-level RBAC with custom roles and per-resource permissions, guardrails with four modes (allow, deny, warn, require-approval) enforced before and after every model call, and approval gates on payments, exports and sends." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is every agent action audited?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every agent action is logged and searchable — who, what, when, and which rule allowed it. Export the log any time; roll back, fix the rule, move on." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Babuba run without internet access?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — air-gapped deployment is supported. One command on a server or desktop, no internet required." }
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main">SKIP TO CONTENT</a>
+
+<div class="scanlines" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ═══════════ STATUS BAR / NAV ═══════════ -->
+<nav class="statusbar" id="nav" aria-label="Primary">
+  <a class="logo" href="index.html"><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span></a>
+  <div class="sysinfo" aria-hidden="true">
+    <span class="sys-dot"></span> AGENTS: 4 ONLINE
+    <span class="sep">▸</span> GATEWAY: 127.0.0.1:18793
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="agents.html">Agents</a>
+    <a href="platform.html" class="nav-prod">Babuba</a> <a href="ghost.html" class="nav-prod">Ghost</a>
+    <a href="docs.html">Docs</a>
+    <a href="compare.html">Compare</a>
+    <a href="security.html">Ownership</a>
+    <a href="pricing.html">Licenses</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn btn-primary nav-cta" href="pricing.html">DEPLOY →</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+<header class="page-hero" id="main" role="main" tabindex="-1">
+  <div class="page-hero-inner">
+    <p class="kicker reveal"><span class="prompt">$</span> cat roadmap.md <span class="volt">// updated oct 2026</span><span class="cursor"></span></p>
+    <h1 class="reveal">SHIPPED, NEXT, <span class="volt">LATER.</span></h1>
+    <p class="hero-sub reveal" data-delay="120">Babuba is a product on a <em>dated release trail</em>, not a bespoke build for hire. Below: what runs in production today, what is committed for the next ninety days, and where the platform is going.</p>
+    <p class="hero-def reveal" data-delay="160"><span class="volt">▸</span> CURRENT RELEASE — BABUBA GATEWAY v2.4.0 · GHOST v2.4.0</p>
+  </div>
+</header>
+
+<!-- ═══════════ BODY ═══════════ -->
+
+<!-- ═══════════ BODY ═══════════ -->
+<div class="page-body">
+
+  <section class="section">
+    <p class="eyebrow reveal">// PRODUCT ROADMAP</p>
+    <h2 class="reveal">SHIPPED, NEXT, <span class="volt">LATER.</span></h2>
+    <p class="section-sub reveal">Babuba Gateway is a product on a dated release trail, not a bespoke build for hire. Everything under SHIPPED runs in production today. NEXT is committed and in progress. LATER is direction, not a promise.</p>
+    <div class="spec reveal"><div class="spec-row"><span class="spec-key">CURRENT RELEASE</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">BABUBA GATEWAY v2.4.0 &middot; GHOST v2.4.0</span></div><div class="spec-row"><span class="spec-key">CADENCE</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">FORTNIGHTLY MINOR RELEASES, BACKWARDS COMPATIBLE</span></div><div class="spec-row"><span class="spec-key">DISTRIBUTION</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">SELF-HOSTED LICENCE + MANAGED SUBSCRIPTION (GHOST)</span></div><div class="spec-row"><span class="spec-key">STEWARDSHIP</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">THUNA CARE PRIVATE LIMITED, GURUGRAM, INDIA</span></div><div class="spec-row"><span class="spec-key">LAST UPDATED</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">OCTOBER 2026</span></div></div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow reveal">// 01 — SHIPPED &middot; LIVE TODAY</p>
+    <h2 class="reveal">ALREADY <span class="volt">RUNNING.</span></h2>
+    <div class="spec reveal"><div class="spec-row"><span class="spec-key">AGENT RUNTIME</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">ONE GATEWAY PROCESS HOSTS MANY AGENTS, ONE PER DEPARTMENT OR FUNCTION</span></div><div class="spec-row"><span class="spec-key">PERSONA + MEMORY</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">PER-AGENT SOUL AND PERSISTENT MEMORY, CARRIED ACROSS SESSIONS</span></div><div class="spec-row"><span class="spec-key">ROUTER</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">MESSAGE ROUTED TO THE RIGHT AGENT BY CHANNEL BINDING, ROLE SCOPE AND INTENT</span></div><div class="spec-row"><span class="spec-key">CHANNELS</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">WHATSAPP, TELEGRAM, GMAIL, SLACK, WEB CHAT</span></div><div class="spec-row"><span class="spec-key">GOVERNANCE</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">RBAC, GUARDRAIL RULES, APPROVAL GATES, FULL AUDIT TRAIL</span></div><div class="spec-row"><span class="spec-key">AUTOMATION</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">CRON SCHEDULES, DURABLE BACKGROUND TASKS, GOALS</span></div><div class="spec-row"><span class="spec-key">WORKFLOWS</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">DEPARTMENT APPROVAL GRAPHS — HR, FINANCE, IT, LEGAL</span></div><div class="spec-row"><span class="spec-key">TOOLS</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">180+ TOOLS — DOCUMENTS, SPREADSHEETS, BROWSER, DATA, EMAIL, PDF</span></div><div class="spec-row"><span class="spec-key">GHOST</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">SIX STANDARD JOBS ON WHATSAPP, SOLD PER AGENT PER MONTH</span></div></div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow reveal">// 02 — NEXT &middot; COMMITTED, 90 DAYS</p>
+    <h2 class="reveal">IN <span class="volt">PROGRESS.</span></h2>
+    <div class="spec reveal"><div class="spec-row"><span class="spec-key">SELF-SERVE PROVISIONING</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">BUY A LICENCE OR A GHOST SUBSCRIPTION AND GET AN AGENT LIVE WITHOUT US TOUCHING A SERVER</span></div><div class="spec-row"><span class="spec-key">USAGE METERING</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">PER-AGENT TOKEN AND TASK DASHBOARD FOR CUSTOMERS AND RESELLERS</span></div><div class="spec-row"><span class="spec-key">ACCOUNTING CONNECTORS</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">TALLY AND BUSY SYNC FOR LEDGER, STOCK AND OUTSTANDING REPORTS</span></div><div class="spec-row"><span class="spec-key">WHATSAPP COMMERCE</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">CATALOGUE, ORDER CAPTURE AND PAYMENT LINKS IN THE SAME THREAD</span></div><div class="spec-row"><span class="spec-key">AUDIT EXPORT</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">SIGNED, TAMPER-EVIDENT EXPORT FOR AUDITORS AND COMPLIANCE REVIEWS</span></div></div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow reveal">// 03 — LATER &middot; DIRECTION</p>
+    <h2 class="reveal">WHAT WE ARE <span class="volt">BUILDING TOWARD.</span></h2>
+    <div class="spec reveal"><div class="spec-row"><span class="spec-key">CONTROL PLANE</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">ONE CONSOLE MANAGING MANY CUSTOMER GATEWAYS, EACH ON ITS OWN HARDWARE</span></div><div class="spec-row"><span class="spec-key">VERTICAL PACKS</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">PRE-BUILT AGENT SETS FOR DISTRIBUTION, RETAIL, LOGISTICS AND PROFESSIONAL SERVICES</span></div><div class="spec-row"><span class="spec-key">AGENT MARKETPLACE</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">THIRD-PARTY TOOLS AND SKILLS INSTALLED PER AGENT, WITH VERSIONING</span></div><div class="spec-row"><span class="spec-key">SIGNED ON-PREM UPDATES</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">ONE-CLICK UPGRADES THAT VERIFY SIGNATURES AND ROLL BACK CLEANLY</span></div><div class="spec-row"><span class="spec-key">MULTI-LANGUAGE</span><span class="spec-dots" aria-hidden="true"></span><span class="spec-val">HINDI, MALAYALAM AND TAMIL AGENT PERSONAS AND REPORTING</span></div></div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow reveal">// 04 — THE VISION</p>
+    <h2 class="reveal">AN AI WORKFORCE <span class="volt">YOU OWN.</span></h2>
+    <p class="section-sub reveal">Today, adopting AI means renting intelligence from a vendor who keeps your data, prices per seat, and can change the rules whenever it likes. We think the opposite model wins: the intelligence is rented, the workforce is owned. Babuba exists to make that practical for a company of twenty people, not just a company of twenty thousand — one process, your hardware, your models, your audit trail, and an employee you can actually afford to hire.</p>
+    <p class="section-sub reveal">The end state is a company where every department already has an agent that has read the files, remembers the history, and answers inside the apps people already use. No new interface to learn. No data leaving the building.</p>
+  </section>
+
+</div>
+
+<footer class="footer" id="footer">
+  <div class="footer-bar">
+    <span><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span> + GHOST<span class="volt">//AI-EMPLOYEE</span> v2.4.0</span>
+    <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a><a href="agents.html">Agents</a><a href="platform.html" class="nav-prod">Babuba</a> <a href="ghost.html">Ghost</a><a href="docs.html">Docs</a><a href="compare.html">Compare</a><a href="roadmap.html">Roadmap</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
+  </div>
+  <div class="footer-links footer-legal">
+    <a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund.html">Refunds</a><a href="contact.html">Contact</a><a href="mailto:aswin@babuba.in">aswin@babuba.in</a>
+  </div>
+  <p class="footer-copy dim">© 2026 THUNA CARE PRIVATE LIMITED · CIN U86900HR2026PTC145488 · GURUGRAM, INDIA · ALL DATA STAYS ON YOUR HARDWARE</p>
+</footer>
+
+<a class="to-top" id="toTop" href="#top" aria-label="Back to top">▲ TOP</a>
+
+<script src="app.js?v=20260825b"></script>
+<script src="agent-canvas.js?v=20260825b"></script>
+</body>
+</html>
