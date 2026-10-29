@@ -14,8 +14,8 @@
   function onScroll() {
     const h = document.documentElement;
     const max = h.scrollHeight - h.clientHeight;
-    progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
-    nav.classList.toggle("scrolled", h.scrollTop > 8);
+    if (progress) progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
+    if (nav) nav.classList.toggle("scrolled", h.scrollTop > 8);
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
@@ -23,10 +23,12 @@
   /* ── Mobile nav ──────────────────────────────────────────── */
   const burger = $("#navBurger");
   const links = $("#navLinks");
-  burger.addEventListener("click", () => links.classList.toggle("open"));
-  links.addEventListener("click", (e) => {
-    if (e.target.tagName === "A") links.classList.remove("open");
-  });
+  if (burger && links) {
+    burger.addEventListener("click", () => links.classList.toggle("open"));
+    links.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") links.classList.remove("open");
+    });
+  }
 
   /* ── Scroll reveals ──────────────────────────────────────── */
   const revealEls = $$(".reveal");
