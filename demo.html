@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Live Demo — Talk to a Babuba Agent | Babuba</title>
+<meta name="description" content="Talk to a real Babuba agent in the browser. It reads the question, decides whether it needs a tool, then answers — live, no signup, no form." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://www.babuba.in/demo.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Babuba" />
+<meta property="og:title" content="Live Demo — Talk to a Babuba Agent." />
+<meta property="og:description" content="A real agent, in the browser. Ask anything — it shows you the steps it took and how long it took." />
+<meta property="og:url" content="https://www.babuba.in/demo.html" />
+<meta property="og:image" content="https://www.babuba.in/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.babuba.in/og.png" />
+<meta name="theme-color" content="#0A0A0B" />
+<link rel="icon" href="favicon.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=20261029" />
+<link rel="stylesheet" href="pages.css?v=20261029" />
+<style>
+  .dx-wrap { max-width: 940px; margin: 0 auto; padding: 0 24px 96px; }
+  .dx-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 4px;
+    padding: 22px; position: relative;
+  }
+  .dx-card::before {
+    content: "LIVE AGENT // SANDBOX"; position: absolute; top: -9px; left: 16px;
+    background: var(--bg); padding: 0 8px; font-family: var(--mono);
+    font-size: 10px; letter-spacing: .14em; color: var(--faint);
+  }
+  .dx-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .dx-chip {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .02em;
+    padding: 7px 11px; border-radius: 2px; background: var(--panel2);
+    border: 1px solid var(--line); color: var(--dim); cursor: pointer;
+    transition: color .15s, border-color .15s;
+  }
+  .dx-chip:hover { color: var(--volt); border-color: var(--volt); }
+  .dx-row { display: flex; gap: 10px; align-items: stretch; }
+  .dx-in {
+    flex: 1; background: var(--bg2); border: 1px solid var(--line2); border-radius: 2px;
+    padding: 14px 15px; color: var(--ink); font-family: var(--mono); font-size: 13.5px;
+    outline: none; transition: border-color .15s, box-shadow .15s;
+  }
+  .dx-in::placeholder { color: var(--faint); }
+  .dx-in:focus { border-color: var(--volt); box-shadow: 0 0 0 3px var(--volt-dim); }
+  .dx-go {
+    background: var(--volt); color: #0A0A0B; border: 0; border-radius: 2px;
+    padding: 0 22px; font-family: var(--mono); font-size: 12.5px; font-weight: 700;
+    letter-spacing: .06em; cursor: pointer; white-space: nowrap;
+  }
+  .dx-go:disabled { opacity: .55; cursor: default; }
+  .dx-out { display: none; margin-top: 20px; border-top: 1px solid var(--line); padding-top: 16px; }
+  .dx-out.on { display: block; }
+  .dx-step {
+    display: flex; gap: 9px; font-family: var(--mono); font-size: 12px;
+    color: var(--dim); padding: 4px 0; line-height: 1.5;
+  }
+  .dx-step .tick { color: var(--ok); flex: none; }
+  .dx-ans {
+    margin-top: 16px; background: var(--bg2); border: 1px solid var(--line);
+    border-left: 2px solid var(--volt); border-radius: 2px; padding: 16px 17px;
+    font-size: 14.5px; line-height: 1.7; white-space: pre-wrap; word-break: break-word;
+  }
+  .dx-ans.err { border-left-color: var(--signal); color: var(--signal); }
+  .dx-facts { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 7px; }
+  .dx-fact {
+    font-family: var(--mono); font-size: 11px; padding: 5px 9px; border-radius: 2px;
+    background: var(--volt-dim); color: var(--volt);
+  }
+  .dx-meta { margin-top: 14px; font-family: var(--mono); font-size: 11px; color: var(--faint); letter-spacing: .04em; }
+  .dx-note { margin-top: 18px; font-size: 13px; color: var(--faint); line-height: 1.65; }
+  .dx-note a { color: var(--volt); }
+  @media (max-width: 640px) {
+    .dx-row { flex-direction: column; }
+    .dx-go { padding: 14px 22px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="statusbar" id="nav" aria-label="Primary">
+  <a class="logo" href="index.html"><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span></a>
+  <div class="sysinfo" aria-hidden="true">
+    <span class="sys-dot"></span> AGENTS: 4 ONLINE
+    <span class="sep">▸</span> GATEWAY: 127.0.0.1:18793
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="agents.html">Agents</a>
+    <a href="platform.html" class="nav-prod">Babuba</a> <a href="ghost.html" class="nav-prod">Ghost</a>
+    <a href="docs.html">Docs</a>
+    <a href="compare.html">Compare</a>
+    <a href="roadmap.html">Roadmap</a><a href="security.html">Ownership</a>
+    <a href="demo.html" class="active" aria-current="page">Demo</a>
+    <a href="pricing.html">Licenses</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn btn-primary nav-cta" href="pricing.html">DEPLOY →</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-hero" id="main">
+  <div class="page-hero-inner">
+    <p class="kicker reveal"><span class="prompt">$</span> babuba ask "what can you do?"<span class="cursor"></span></p>
+    <h1 class="reveal">TALK TO ONE.<br /><span class="volt">RIGHT HERE, RIGHT NOW.</span></h1>
+    <p class="hero-sub reveal" data-delay="120">No signup, no form, no sales call. This agent runs on the same engine you self-host — it reads the question, decides whether it needs a tool, then answers. You see every step and the exact time it took.</p>
+    <ul class="hero-meta reveal" data-delay="200">
+      <li>LIVE</li>
+      <li>NO SIGNUP</li>
+      <li>STEPS SHOWN</li>
+      <li>YOUR DATA — NEVER</li>
+    </ul>
+  </div>
+</header>
+
+<div class="page-body">
+  <div class="dx-wrap">
+
+    <div class="dx-card reveal">
+      <div class="dx-chips">
+        <button class="dx-chip" data-t="What can you do for my business, in one line?">What can you do?</button>
+        <button class="dx-chip" data-t="How do you handle a WhatsApp order end to end?">WhatsApp order, end to end</button>
+        <button class="dx-chip" data-t="Which tools do you actually hold? List them.">Which tools do you hold?</button>
+        <button class="dx-chip" data-t="What stays on my server if I self-host?">What stays on my server?</button>
+        <button class="dx-chip" data-t="Draft a payment reminder I can send a client today.">Draft a payment reminder</button>
+        <button class="dx-chip" data-t="Babuba vs hiring one person — what is the real difference?">Babuba vs hiring</button>
+      </div>
+
+      <div class="dx-row">
+        <input class="dx-in" id="q" type="text" placeholder="Ask the agent anything — or paste a link and it will read it…" autocomplete="off" aria-label="Your question" />
+        <button class="dx-go" id="go">ASK →</button>
+      </div>
+
+      <div class="dx-out" id="out" aria-live="polite">
+        <div id="trace"></div>
+        <div class="dx-ans" id="answer"></div>
+        <div class="dx-facts" id="facts"></div>
+        <div class="dx-meta" id="meta"></div>
+      </div>
+
+      <p class="dx-note">This demo agent is scoped to the product — it answers about Babuba and GHOST, and it holds no access to anyone's data. The agents you deploy are yours, on your hardware, with your rules.</p>
+    </div>
+
+    <p class="dx-note">Want this on your server, answering your customers? <a href="contact.html">Book a demo</a> · <a href="mailto:aswin@babuba.in">aswin@babuba.in</a> · <a href="pricing.html">see licenses</a>.</p>
+
+  </div>
+</div>
+
+<footer class="footer" id="footer">
+  <div class="footer-bar">
+    <span><span class="logo-mark">◈</span> BABUBA<span class="volt">//GATEWAY</span> + GHOST<span class="volt">//AI-EMPLOYEE</span> v2.4.0</span>
+    <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a><a href="platform.html">Babuba</a><a href="ghost.html">Ghost</a><a href="agents.html">Agents</a><a href="docs.html">Docs</a><a href="demo.html">Demo</a><a href="compare.html">Compare</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
+  </div>
+  <div class="footer-links footer-legal">
+    <a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund.html">Refunds</a>
+  </div>
+</footer>
+
+<script src="app.js?v=20261029" defer></script>
+<script>
+(function () {
+  var API = "https://demo.ghostagents.in/demo";
+  var q = document.getElementById("q"),
+      go = document.getElementById("go"),
+      out = document.getElementById("out"),
+      trace = document.getElementById("trace"),
+      answer = document.getElementById("answer"),
+      facts = document.getElementById("facts"),
+      meta = document.getElementById("meta");
+
+  document.querySelectorAll(".dx-chip").forEach(function (c) {
+    c.addEventListener("click", function () { q.value = c.dataset.t; q.focus(); });
+  });
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>]/g, function (m) {
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[m];
+    });
+  }
+
+  var busy = false;
+  async function run() {
+    if (busy) return;
+    var input = (q.value || "").trim();
+    if (!input) { q.focus(); return; }
+    busy = true;
+    go.disabled = true; go.textContent = "THINKING…";
+    out.classList.add("on");
+    trace.innerHTML = '<div class="dx-step"><span class="tick">›</span><span>sent to the agent…</span></div>';
+    facts.innerHTML = ""; meta.textContent = "";
+    answer.classList.remove("err"); answer.textContent = "";
+    try {
+      var r = await fetch(API, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ input: input })
+      });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      var d = await r.json();
+      trace.innerHTML = (d.steps && d.steps.length
+        ? d.steps.map(function (s) {
+            return '<div class="dx-step"><span class="tick">✓</span><span>' + esc(s.name) +
+                   (s.detail ? " — " + esc(s.detail) : "") + "</span></div>";
+          }).join("")
+        : '<div class="dx-step"><span class="tick">✓</span><span>answered</span></div>');
+      answer.textContent = d.answer || "(no answer returned)";
+      facts.innerHTML = (d.facts || []).map(function (f) {
+        return '<span class="dx-fact">' + esc(f) + "</span>";
+      }).join("");
+      meta.textContent = "ANSWERED IN " + (d.ms ? (d.ms / 1000).toFixed(2) + "S" : "—") +
+                         (d.kind ? " · " + String(d.kind).toUpperCase() : "");
+    } catch (e) {
+      answer.classList.add("err");
+      answer.textContent = "The demo agent is not reachable right now (" + e.message +
+        "). Write to aswin@babuba.in and we will run it live for you.";
+      trace.innerHTML = '<div class="dx-step"><span class="tick">×</span><span>failed</span></div>';
+    } finally {
+      busy = false;
+      go.disabled = false; go.textContent = "ASK →";
+    }
+  }
+
+  go.addEventListener("click", run);
+  q.addEventListener("keydown", function (e) { if (e.key === "Enter") run(); });
+})();
+</script>
+</body>
+</html>
