@@ -467,16 +467,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width: 760px) {
   .statusbar { padding: 0 16px; gap: 12px; }
   .sysinfo { display: none; }
-  .nav-links {
-    position: fixed; top: 52px; left: 0; right: 0;
-    flex-direction: column; gap: 0; background: var(--bg);
-    border-bottom: 1px solid var(--line);
-    max-height: 0; overflow: hidden; transition: max-height 400ms var(--ease);
-  }
-  .nav-links.open { max-height: 320px; }
-  .nav-links a { padding: 15px 20px; border-top: 1px solid var(--line); }
-  .nav-burger { display: block; }
-  .nav-cta { display: none; }
   .hero { padding: 110px 18px 50px; }
   .section { padding: 80px 18px; }
   .hero-title { font-size: clamp(34px, 9vw, 48px); }
@@ -764,3 +754,24 @@ body.home { padding-bottom: 33px; }
 /* roadmap + 404 spec links */
 .spec-val a { color: var(--volt); border-bottom: 1px solid rgba(201,242,75,.35); padding-bottom: 1px; }
 .spec-val a:hover { border-bottom-color: var(--volt); }
+
+/* ═══════════ NAV: MOBILE / NARROW MENU ═══════════
+   The header carries 10 nav links + CTA, which needs ~1000px. Below that the
+   burger takes over, and the panel is sized to the viewport and scrollable so
+   no item (Compare, Roadmap, Demo, Licenses) can ever be cut off. */
+@media (max-width: 1080px) {
+  .nav-links {
+    position: fixed; top: 52px; left: 0; right: 0;
+    flex-direction: column; gap: 0; background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    max-height: 0; overflow: hidden; transition: max-height 400ms var(--ease);
+    overscroll-behavior: contain;
+  }
+  .nav-links.open {
+    max-height: calc(100dvh - 52px);
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+  }
+  .nav-links a { padding: 15px 20px; border-top: 1px solid var(--line); }
+  .nav-burger { display: block; }
+  .nav-cta { display: none; }
+}
