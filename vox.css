@@ -281,3 +281,43 @@ footer{
   .brand span{display:none}
   .hero{padding-top:96px}
 }
+
+/* ============ LIVE DEMO ============ */
+.livedemo{padding-top:clamp(46px,6vw,72px);padding-bottom:clamp(46px,6vw,72px)}
+.ld-head{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(18px,4vw,48px);align-items:end;margin-bottom:clamp(22px,3vw,38px)}
+.ld-head h2{font-size:clamp(38px,5.6vw,78px)}
+.ld-head h2 em{font-family:'SERIF',serif;font-style:italic;text-transform:none;color:var(--red);font-size:.62em}
+.ld-head p{font-size:16px;line-height:1.6;opacity:.86;margin:0}
+.ld-card{
+  position:relative;background:var(--paper2);border:var(--edge) solid var(--ink);
+  box-shadow:9px 9px 0 var(--ink);padding:clamp(18px,3vw,32px);max-width:880px;
+}
+.ld-card .tape2{position:absolute;top:-14px;right:30px;width:104px;height:27px;background:rgba(224,166,42,.78);transform:rotate(2.5deg)}
+.ld-card .lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.62}
+.ld-chips{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 18px}
+.ld-chip{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--paper);color:var(--ink);border:2px solid var(--ink);padding:7px 10px;cursor:pointer;
+  transition:background .15s,transform .15s;
+}
+.ld-chip:hover{background:var(--mustard);transform:translate(-1px,-1px)}
+.ld-bar{display:flex;gap:10px;flex-wrap:wrap}
+#ldQ{
+  flex:1 1 260px;min-width:0;font-family:var(--body);font-size:16px;color:var(--ink);
+  background:var(--paper);border:2px solid var(--ink);padding:13px 14px;outline:none;
+}
+#ldQ:focus{box-shadow:4px 4px 0 var(--ink)}
+#ldQ::placeholder{color:rgba(26,23,20,.42)}
+.ld-out{margin-top:20px;border-top:2px dashed rgba(26,23,20,.28);padding-top:16px}
+.ld-step{display:flex;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;line-height:1.7;text-transform:none}
+.ld-step .tick{color:var(--teal);font-weight:700}
+.ld-answer{font-size:16.5px;line-height:1.58;margin:12px 0 0;white-space:pre-wrap}
+.ld-answer.err{color:var(--red);font-family:var(--mono);font-size:13px;letter-spacing:.02em}
+.ld-meta{opacity:.55;margin-top:12px;font-size:10.5px;letter-spacing:.14em}
+.ld-foot{margin-top:18px;padding-top:12px;border-top:2px solid var(--ink);font-size:10px;letter-spacing:.14em;opacity:.72}
+.ld-foot a{color:var(--red);text-decoration:none;border-bottom:1.5px solid var(--red)}
+@media(max-width:880px){
+  .ld-head{grid-template-columns:1fr}
+  .ld-card{box-shadow:6px 6px 0 var(--ink)}
+  #ldGo{flex:1 1 100%}
+}

@@ -158,8 +158,9 @@
     <a href="#channels">Channels</a>
     <a href="#control">Control</a>
     <a href="#modes">Modes</a>
+    <a href="#demo">Live demo</a>
   </nav>
-  <a class="btn red sm" href="mailto:aswin@babuba.in?subject=Book%20a%20Babuba%20demo">Book a demo</a>
+  <a class="btn red sm" href="https://wa.me/919497243925?text=Hi%20Babuba%2C%20I%20want%20a%20demo">Book a demo</a>
 </header>
 
 <!-- ============ HERO ============ -->
@@ -172,8 +173,8 @@
         <em class="hand" style="color:var(--teal);margin-top:14px">your team, without the headcount</em>
         <p class="lede">Every department gets its own agent — HR, sales, accounts, operations. It works inside the tools you already pay for, and shows you every step it takes.</p>
         <div class="hero-cta">
-          <a class="btn red" href="mailto:aswin@babuba.in?subject=Book%20a%20Babuba%20demo">See it on your own work</a>
-          <a class="btn" href="#depts">How it works ↓</a>
+          <a class="btn red" href="https://wa.me/919497243925?text=Hi%20Babuba%2C%20I%20have%20a%20real%20task%20for%20an%20agent">See it on your own work</a>
+          <a class="btn" href="#demo">Talk to a live agent ↓</a>
         </div>
         <div class="hero-micro">WhatsApp · Telegram · Gmail · Slack · Botim</div>
       </div>
@@ -345,14 +346,48 @@
   </div>
 </section>
 
+<!-- ============ LIVE DEMO ============ -->
+<section class="livedemo" id="demo">
+  <div class="wrap">
+    <div class="ld-head">
+      <div>
+        <div class="eyebrow"><i></i><span>06 — try it live</span></div>
+        <h2>Ask a real <em>agent</em>, right here</h2>
+      </div>
+      <p class="reveal">Not a video, not a screenshot. A live Babuba agent on a sandbox endpoint — it reads your question, decides whether it needs a tool, then answers. No signup, no form.</p>
+    </div>
+
+    <div class="ld-card reveal">
+      <span class="tape2"></span>
+      <span class="lbl">live agent // sandbox · no signup</span>
+      <div class="ld-chips">
+        <button type="button" class="ld-chip" data-t="The chef just messaged that vegetables are over. What does a stores agent do next?">vegetables are over</button>
+        <button type="button" class="ld-chip" data-t="How does the accounts agent chase an overdue invoice without annoying the customer?">chase an invoice</button>
+        <button type="button" class="ld-chip" data-t="Which department should I start with, and what does a licence cost?">what it costs</button>
+      </div>
+      <div class="ld-bar">
+        <input id="ldQ" type="text" maxlength="400" placeholder="Ask it something your team asks you…" autocomplete="off" aria-label="Ask the live agent" />
+        <button type="button" class="btn red" id="ldGo">Ask →</button>
+      </div>
+      <div class="ld-out" id="ldOut" hidden>
+        <div class="ld-trace" id="ldTrace"></div>
+        <p class="ld-answer" id="ldAnswer"></p>
+        <div class="ld-meta mono" id="ldMeta"></div>
+      </div>
+      <div class="ld-foot mono">real endpoint · 8 questions / hour · <a href="demo.html">full page</a> · <a href="https://wa.me/919497243925">whatsapp</a></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CTA ============ -->
 <section class="cta" id="book">
   <div class="wrap">
-    <div class="eyebrow" style="justify-content:center"><i></i><span>06 — the ask</span></div>
+    <div class="eyebrow" style="justify-content:center"><i></i><span>07 — the ask</span></div>
     <h2>Bring us one <em>real</em> job</h2>
     <p>Not a demo script. A task sitting on your desk right now — the shortlist, the overdue invoice, the backlog of enquiries. We'll set the agent up on it and you watch it work.</p>
     <div class="cta-actions">
-      <a class="btn red" href="mailto:aswin@babuba.in?subject=Book%20a%20Babuba%20demo">Book a demo</a>
+      <a class="btn red" href="https://wa.me/919497243925?text=Hi%20Babuba%2C%20I%20want%20a%20demo">Book a demo</a>
+      <a class="btn" href="#demo">Try the live agent</a>
       <a class="btn" href="contact.html">Contact us</a>
     </div>
     <div class="stamp">free<br>first<br>task</div>
@@ -385,6 +420,80 @@
     b.setAttribute('aria-expanded',open?'true':'false');
   });
   n.addEventListener('click',function(e){ if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false');} });
+})();
+</script>
+<script>
+(function () {
+  var API = "https://demo.ghostagents.in/demo";
+  var q = document.getElementById("ldQ"),
+      go = document.getElementById("ldGo"),
+      out = document.getElementById("ldOut"),
+      trace = document.getElementById("ldTrace"),
+      answer = document.getElementById("ldAnswer"),
+      meta = document.getElementById("ldMeta");
+  if (!q || !go) return;
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>]/g, function (m) {
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[m];
+    });
+  }
+
+  document.querySelectorAll(".ld-chip").forEach(function (c) {
+    c.addEventListener("click", function () {
+      q.value = c.dataset.t;
+      q.focus();
+    });
+  });
+
+  var busy = false;
+  function step(txt, done) {
+    return '<div class="ld-step"><span class="tick">' +
+      (done ? "&#10003;" : "&rsaquo;") + '</span><span>' + txt + '</span></div>';
+  }
+
+  async function run() {
+    if (busy) return;
+    var input = (q.value || "").trim();
+    if (!input) { q.focus(); return; }
+    busy = true;
+    go.disabled = true;
+    var label = go.textContent;
+    go.textContent = "THINKING\u2026";
+    out.hidden = false;
+    trace.innerHTML = step("sent to the agent\u2026", false);
+    answer.textContent = "";
+    answer.classList.remove("err");
+    meta.textContent = "";
+    try {
+      var r = await fetch(API, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ input: input })
+      });
+      var d = await r.json().catch(function () { return {}; });
+      if (!r.ok || d.ok === false) {
+        throw new Error(d.error || ("HTTP " + r.status));
+      }
+      trace.innerHTML = (d.steps && d.steps.length
+        ? d.steps.map(function (s) { return step(esc(s.name) + (s.detail ? " &mdash; " + esc(s.detail) : ""), true); }).join("")
+        : step("answered", true));
+      answer.textContent = d.answer || "(no answer)";
+      meta.textContent = (d.ms ? d.ms + " ms" : "") + (d.kind ? " \u00b7 " + d.kind : "");
+    } catch (e) {
+      trace.innerHTML = step("the sandbox did not answer", false);
+      answer.classList.add("err");
+      answer.textContent = e.message || "network error";
+      meta.textContent = "";
+    } finally {
+      busy = false;
+      go.disabled = false;
+      go.textContent = label;
+    }
+  }
+
+  go.addEventListener("click", run);
+  q.addEventListener("keydown", function (e) { if (e.key === "Enter") run(); });
 })();
 </script>
 </body>
