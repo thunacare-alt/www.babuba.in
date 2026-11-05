@@ -1,34 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Babuba — an AI workforce, not a chatbot</title>
-<meta name="description" content="Ghost by Babuba gives every department its own agent — HR, sales, accounts, operations. It works inside WhatsApp, Telegram, Gmail and Slack, and shows you every step.">
-<meta property="og:title" content="Babuba — an AI workforce, not a chatbot">
-<meta property="og:description" content="Every department gets its own agent. You see every step. Approve it, pause it, or take over.">
-<meta property="og:type" content="website">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Babuba &amp; GHOST — Make Your Own AI Agents | Self-Hosted Agent Platform</title>
+<meta name="description" content="Two products, one engine. Babuba is the self-hosted AI agent gateway you own — one license, one agent per department, zero data leaves your server. GHOST is the AI employee built on it — WhatsApp, books, reports, from ₹15,000/agent/month." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://www.babuba.in/" />
+<meta property="og:type" content="website" />
 <meta property="og:site_name" content="Babuba" />
+<meta property="og:title" content="Babuba &amp; GHOST — Own the engine, or hire the employee." />
+<meta property="og:description" content="Babuba: self-hosted AI agent gateway — one license, every agent, your server. GHOST: the AI employee built on it — answers customers, keeps the books, reports to you, inside WhatsApp." />
 <meta property="og:url" content="https://www.babuba.in/" />
 <meta property="og:image" content="https://www.babuba.in/og.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Babuba - an AI workforce, one agent per department" />
+<meta property="og:image:alt" content="Babuba and GHOST — self-hosted AI agent platform and AI employee" />
 <meta property="og:locale" content="en_IN" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Babuba - an AI workforce. Not a chatbot." />
-<meta name="twitter:description" content="Every department gets its own agent. You see every step. Approve it, pause it, or take over." />
+<meta name="twitter:image:alt" content="Babuba and GHOST — self-hosted AI agent platform and AI employee" />
+<meta name="twitter:title" content="Babuba &amp; GHOST — Own the engine, or hire the employee." />
+<meta name="twitter:description" content="Babuba: self-hosted agent gateway you own. GHOST: the AI employee built on it, working inside WhatsApp. Two products, one engine." />
 <meta name="twitter:image" content="https://www.babuba.in/og.png" />
-<link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-<link rel="preload" href="fonts/BigShoulders-Bold.ttf" as="font" type="font/ttf" crossorigin />
-<link rel="preload" href="fonts/WorkSans-Regular.ttf" as="font" type="font/ttf" crossorigin />
-<link rel="preload" href="fonts/JetBrainsMono-Bold.ttf" as="font" type="font/ttf" crossorigin />
+<meta name="theme-color" content="#0A0A0B" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0B'/><path d='M20 50 H80 M50 20 V80' stroke='%23C9F24B' stroke-width='14'/><rect x='18' y='18' width='64' height='64' fill='none' stroke='%23E8E8E2' stroke-width='4'/></svg>" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Babuba","applicationCategory":"BusinessApplication","operatingSystem":"Linux, Windows, macOS","description":"Self-hosted AI agent gateway — make one agent per department, your whole team, no per-seat fees. Agents read your mail, build your reports, reconcile your invoices, and ask before anything ships.","offers":{"@type":"Offer","price":"550000","priceCurrency":"INR","description":"One-time team license — priced per server, not per agent or per seat"},"featureList":["Multi-agent gateway","One agent per department","RBAC-scoped team logins","RBAC scoping","Guardrails","Approval workflows","WhatsApp/Telegram/Gmail/web channels","Self-hosted, zero data leaves"]}
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=20261029c" />
+<link rel="stylesheet" href="pages.css?v=20261029c" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -146,356 +149,604 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="vox.css">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 </head>
-<body>
+<body id="top" class="home">
 
-<header>
-  <div class="brand"><b>BABUBA</b><span>AI WORKFORCE</span></div>
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">MENU</button>
-  <nav id="nav">
-    <a href="#depts">Departments</a>
-    <a href="#channels">Channels</a>
-    <a href="#control">Control</a>
-    <a href="#modes">Modes</a>
-    <a href="#demo">Live demo</a>
-  </nav>
-  <a class="btn red sm" href="https://wa.me/919497243925?text=Hi%20Babuba%2C%20I%20want%20a%20demo">Book a demo</a>
+<a class="skip-link" href="#main">SKIP TO CONTENT</a>
+
+<div class="boot-ov" id="bootOv" aria-hidden="true">
+  <div class="boot-ov-inner">
+    <p class="bo-line">BABUBA//GATEWAY <span class="dim">— v1.0</span></p>
+    <p class="bo-line">POST ......... <span class="ok">OK</span></p>
+    <p class="bo-line">kernel ....... <span class="volt">babuba.core</span></p>
+    <p class="bo-line">router ....... <span class="ok">OK</span></p>
+    <p class="bo-line">agents ....... <span class="ok">4 ONLINE</span></p>
+    <p class="bo-line">gateway ...... <span class="volt">127.0.0.1:18793</span></p>
+    <p class="bo-line">▸ <span class="volt">SYSTEM READY</span><span class="cursor"></span></p>
+  </div>
+</div>
+
+<div class="scanlines" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ═══════════ STATUS BAR / NAV ═══════════ -->
+<nav class="statusbar" id="nav" aria-label="Primary">
+  <a class="logo" href="index.html"><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="platform.html">Babuba</a>
+    <a href="ghost.html">GHOST</a>
+    <a href="demo.html">Demo</a>
+    <a href="docs.html">Docs</a>
+    <a href="pricing.html">Licenses</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn btn-primary nav-cta" href="pricing.html">DEPLOY →</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero" id="main" role="main" tabindex="-1">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="kicker reveal"><span class="prompt">$</span> whoami&nbsp;&nbsp;▸&nbsp;&nbsp;<span class="volt">babuba + ghost: own the engine, or hire the employee</span><span class="cursor"></span></p>
+      <h1 class="hero-title">
+        <span class="line reveal">MAKE YOUR OWN</span>
+        <span class="line reveal volt" data-delay="90">AI AGENTS.</span>
+        <span class="line reveal" data-delay="180">YOUR WHOLE TEAM ON IT.</span>
+      </h1>
+      <p class="hero-sub reveal" data-delay="260">Make an agent for every department — finance, ops, HR, MIS — and give your whole team access. No per-seat fees, no cloud lock-in. One gateway on <em>your</em> hardware: agents that read your mail, build your reports, reconcile your invoices, and <span class="volt">ask before anything ships</span>.</p>
+      <p class="hero-def reveal" data-delay="300"><span class="volt">▸</span> BABUBA IS THE SELF-HOSTED AI AGENT GATEWAY. GHOST IS THE AI EMPLOYEE BUILT ON IT. OWN THE ENGINE, OR HIRE THE EMPLOYEE.</p>
+      <div class="hero-ctas reveal" data-delay="340">
+        <a class="btn btn-primary btn-lg" href="pricing.html">DEPLOY ON YOUR SERVER ▸</a>
+        <a class="btn btn-primary btn-lg" href="ghost.html">HIRE GHOST ▸</a>
+        <a class="btn btn-ghost btn-lg" href="agents.html">SEE THE AGENTS</a>
+        <a class="btn btn-ghost btn-lg" href="mailto:aswin@babuba.in?subject=Book%20a%20Babuba%20demo">BOOK A DEMO ▸</a>
+        <a class="btn btn-ghost btn-lg" href="demo.html" id="liveDemoBtn">TRY THE LIVE AGENT ▸</a>
+      </div>
+      <ul class="hero-meta reveal" data-delay="420">
+        <li>SELF-HOSTED OR MANAGED</li>
+        <li>NO DATA LEAVES</li>
+        <li>BRING YOUR OWN MODEL</li>
+        <li>AIR-GAPPED OK</li>
+      </ul>
+
+      <!-- two products, equal weight -->
+      <div class="prod-split reveal" data-delay="480">
+        <a class="prod-card" href="platform.html">
+          <span class="prod-id">BABUBA · THE FRAMEWORK</span>
+          <strong>OWN THE ENGINE</strong>
+          <span class="prod-note">Self-hosted gateway. One license, unlimited agents, your server. ₹5,50,000 one-time.</span>
+          <span class="prod-go">SEE THE LICENSE →</span>
+        </a>
+        <a class="prod-card" href="ghost.html">
+          <span class="prod-id">GHOST · THE AI EMPLOYEE</span>
+          <strong>HIRE THE EMPLOYEE</strong>
+          <span class="prod-note">Works inside WhatsApp from week one. Answers, books, reports. ₹15,000 / agent / month.</span>
+          <span class="prod-go">MEET GHOST →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- desktop mock -->
+    <div class="desk reveal" data-delay="300" aria-hidden="true">
+      <div class="desk-topbar">
+        <span class="desk-host">ops@gateway</span>
+        <span class="desk-clock" id="deskClock">09:14:02</span>
+      </div>
+
+      <div class="win win-main">
+        <div class="win-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="win-title">babuba — boot.log</span></div>
+        <div class="win-body bootlog">
+          <p><span class="dim">[0.000]</span> loading kernel <span class="volt">babuba.core</span></p>
+          <p><span class="dim">[0.204]</span> router .......... <span class="ok">OK</span></p>
+          <p><span class="dim">[0.410]</span> agents .......... <span class="ok">4 ONLINE</span></p>
+          <p><span class="dim">[0.622]</span> channels ........ <span class="ok">WA / TG / GM / WEB</span></p>
+          <p><span class="dim">[0.815]</span> gateway ......... <span class="volt">127.0.0.1:18793</span></p>
+          <p class="boot-ready">▸ <span class="volt">SYSTEM READY</span> <span class="ok">· ZERO DATA LEAVES</span></p>
+        </div>
+      </div>
+
+      <div class="win win-side">
+        <div class="win-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="win-title">finance/reconciler</span></div>
+        <div class="win-body">
+          <p class="row"><span>INVOICES</span><span class="volt">47/47 MATCHED</span></p>
+          <p class="row"><span>MIS</span><span class="ok">BUILT 09:14</span></p>
+          <p class="row"><span>EXCEPTIONS</span><span class="ok">0</span></p>
+        </div>
+      </div>
+
+      <div class="win win-alert">
+        <div class="win-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="win-title">approval — pending</span></div>
+        <div class="win-body">
+          <p class="alert-line">⚠ INV-1044 · ₹18.2L</p>
+          <p class="alert-sub dim">needs your tap · 1 of 1</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="eyebrow"><i></i><span>01 — the pitch</span></div>
-        <h1>An AI<br>workforce.<br><span class="hl-red">&nbsp;Not a&nbsp;</span><br>chatbot.</h1>
-        <em class="hand" style="color:var(--teal);margin-top:14px">your team, without the headcount</em>
-        <p class="lede">Every department gets its own agent — HR, sales, accounts, operations. It works inside the tools you already pay for, and shows you every step it takes.</p>
-        <div class="hero-cta">
-          <a class="btn red" href="https://wa.me/919497243925?text=Hi%20Babuba%2C%20I%20have%20a%20real%20task%20for%20an%20agent">See it on your own work</a>
-          <a class="btn" href="#demo">Talk to a live agent ↓</a>
-        </div>
-        <div class="hero-micro">WhatsApp · Telegram · Gmail · Slack · Botim</div>
-      </div>
+<!-- ═══════════ STATS STRIP ═══════════ -->
+<div class="stats-strip" aria-label="Trusted by our clients">
+  <p class="stats-clients">TRUSTED BY</p>
+  <div class="client-logos">
+    <a class="client-logo-card" href="https://www.enviroenablers.com" target="_blank" rel="noopener" aria-label="Enviro Enablers — visit site">
+      <img class="client-logo-img" src="assets/clients/enviro-enablers.svg" alt="Enviro Enablers" loading="lazy">
+    </a>
+    <a class="client-logo-card" href="https://www.thuna.in" target="_blank" rel="noopener" aria-label="Thuna — visit site">
+      <span class="thuna-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l2.5-6 5 12 2.5-6H22"/></svg>
+        <span class="thuna-word">thuna<span class="thuna-dot">.</span>in</span>
+      </span>
+    </a>
+  </div>
+  <p class="stats-live"><span class="live-dot"></span> LIVE — PULLED FROM THE RUNNING GATEWAY</p>
+</div>
 
-      <div class="stage">
-        <div class="tape"></div>
-        <canvas id="collage" aria-label="Paper-collage illustration of four department agents"></canvas>
-      </div>
-    </div>
+<!-- ═══════════ TICKER ═══════════ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="marqueeTrack">
+    <span>4 AGENTS ONLINE</span><i>▸</i><span>INVOICES MATCHED 47/47</span><i>▸</i><span>MIS BUILT 09:14</span><i>▸</i><span>APPROVAL QUEUE: 1</span><i>▸</i><span>GATEWAY UPTIME 99.98%</span><i>▸</i><span>ZERO DATA LEAVES SERVER</span><i>▸</i>
+  </div>
+</div>
+
+<!-- ═══════════ WHAT IS BABUBA ═══════════ -->
+<section class="section" id="what">
+  <div class="crosshair" aria-hidden="true"></div>
+  <div class="section-head">
+    <p class="eyebrow reveal">// 01 — KERNEL</p>
+    <h2 class="section-title reveal">YOUR OWN AI WORKFORCE.<br /><span class="volt">ON YOUR SERVER.</span></h2>
+    <p class="section-sub reveal">Chatbots answer questions. SaaS rents you a dashboard in someone else's cloud — and bills per seat. Babuba runs on your hardware, with agents you make yourself and as many users as you need.</p>
   </div>
 
-  <div class="hero-ticker" aria-hidden="true">
-    <div class="ticker-row" id="ticker">
-      <div><b>HR</b> shortlists three</div>
-      <div><b>SALES</b> sends the quote</div>
-      <div><b>ACCOUNTS</b> chases the payment</div>
-      <div><b>OPS</b> books the courier</div>
-      <div><b>YOU</b> approve every step</div>
-      <div><b>HR</b> shortlists three</div>
-      <div><b>SALES</b> sends the quote</div>
-      <div><b>ACCOUNTS</b> chases the payment</div>
-      <div><b>OPS</b> books the courier</div>
-      <div><b>YOU</b> approve every step</div>
+  <div class="kernels">
+    <div class="kernel reveal">
+      <div class="kernel-id">01/KERNEL</div>
+      <h3>THE GATEWAY</h3>
+      <p>One process. One port. One router that reads every message and decides which agent handles it — and which workflow to start.</p>
     </div>
-  </div>
-</section>
-
-<!-- ============ DEPARTMENTS ============ -->
-<section class="depts" id="depts">
-  <div class="wrap">
-    <div class="depts-head">
-      <div>
-        <div class="eyebrow"><i></i><span>02 — the line-up</span></div>
-        <h2>Every department gets its own agent</h2>
-      </div>
-      <p class="reveal">Not one assistant doing everything badly. Four agents, each with its own job, its own tools, its own inbox. Pick one below.</p>
+    <div class="kernel reveal" data-delay="100">
+      <div class="kernel-id">02/PROCESSES</div>
+      <h3>ONE AGENT PER DEPARTMENT</h3>
+      <p>Finance, ops, MIS, admin. Each agent is a process with its own memory, tools, guardrails and approval rules — isolated, auditable, replaceable.</p>
     </div>
-
-    <div class="cards" role="tablist" aria-label="Departments">
-      <button class="dept" role="tab" aria-selected="true" data-i="0">
-        <span class="status">live</span>
-        <span class="n">AGENT 01</span>
-        <span class="glyph">HR</span>
-        <h3>Human<br>Resources</h3>
-        <p>Reads the resumes, shortlists three, books the interviews.</p>
-      </button>
-      <button class="dept" role="tab" aria-selected="false" data-i="1">
-        <span class="status">live</span>
-        <span class="n">AGENT 02</span>
-        <span class="glyph">SL</span>
-        <h3>Sales</h3>
-        <p>Chases the lead, sends the quote, logs the call.</p>
-      </button>
-      <button class="dept" role="tab" aria-selected="false" data-i="2">
-        <span class="status">live</span>
-        <span class="n">AGENT 03</span>
-        <span class="glyph">AC</span>
-        <h3>Accounts</h3>
-        <p>Raises the invoice, matches the payment, chases what's overdue.</p>
-      </button>
-      <button class="dept" role="tab" aria-selected="false" data-i="3">
-        <span class="status">live</span>
-        <span class="n">AGENT 04</span>
-        <span class="glyph">OP</span>
-        <h3>Operations</h3>
-        <p>Order in, courier booked, sheet updated, customer told.</p>
-      </button>
-    </div>
-
-    <div class="scene reveal" id="scene">
-      <div class="scene-main">
-        <div class="kicker" id="sc-kicker">agent 01 — human resources</div>
-        <h3 id="sc-title">Reads the resumes. Shortlists three. Books the interviews.</h3>
-        <ol id="sc-steps">
-          <li>Screens every application against your JD, not a keyword list.</li>
-          <li>Shortlists three with a one-line reason for each.</li>
-          <li>Books the interview slots and sends the confirmations.</li>
-        </ol>
-      </div>
-      <div class="scene-side">
-        <div class="who">Preview — what you see in chat</div>
-        <div class="thread" id="sc-thread"></div>
-        <div class="chip-self" id="sc-chip">waiting for your approval</div>
-      </div>
+    <div class="kernel reveal" data-delay="200">
+      <div class="kernel-id">03/SHELL</div>
+      <h3>YOUR CHANNELS</h3>
+      <p>Talk to it where you already work — WhatsApp, Telegram, Gmail, web chat. The shell you already have, connected to the gateway underneath.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ CHANNELS ============ -->
-<section class="channels" id="channels">
-  <div class="wrap">
-    <div class="chan-band reveal">
-      <div class="eyebrow"><i style="background:var(--mustard)"></i><span style="color:var(--paper2)">03 — where it lives</span></div>
-      <h2>It works where you already talk</h2>
-      <p>No new dashboard to learn. The agent shows up as a contact — you brief it in a message, it answers in a message. Files, voice notes, approvals: all in the app you already have open.</p>
-      <div class="chan-list">
-        <span class="chan hot"><i class="dot"></i>WhatsApp</span>
-        <span class="chan"><i class="dot"></i>Telegram</span>
-        <span class="chan"><i class="dot"></i>Gmail</span>
-        <span class="chan"><i class="dot"></i>Slack</span>
-        <span class="chan"><i class="dot"></i>Botim</span>
-        <span class="chan"><i class="dot"></i>Shopify</span>
-        <span class="chan"><i class="dot"></i>Google Sheets</span>
-        <span class="chan"><i class="dot"></i>Your website</span>
-        <span class="chan"><i class="dot"></i>A real browser</span>
+<!-- ═══════════ PROOF STRIP: THE PRO ═══════════ -->
+<!-- PRODUCTS: TWO WAYS -->
+<section class="section" id="products">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 02 — THE PRODUCTS</p>
+    <h2 class="section-title reveal">TWO WAYS TO RUN BABUBA.<br /><span class="volt">OWN THE ENGINE, OR HIRE THE EMPLOYEE.</span></h2>
+    <p class="section-sub reveal">Babuba is the framework. Ghost is the first product built on it. Buy the engine and build your own agent team, or hire Ghost and let him do the work on WhatsApp. Same gateway underneath.</p>
+  </div>
+  <div class="grid">
+    <div class="cell reveal">
+      <div class="cell-head"><span class="cell-id">BABUBA · ONE-TIME</span><span class="cell-status">SELF-HOSTED</span></div>
+      <h3>THE FRAMEWORK</h3>
+      <p class="cell-log">One gateway on your own server. Make as many agents as you need — one per department — every teammate RBAC-scoped. No per-agent, no per-seat fees. Deployed with companies running their own agent teams.</p>
+      <p><a class="btn btn-ghost" href="pricing.html">SEE THE LICENSE →</a></p>
+    </div>
+    <div class="cell reveal" data-delay="120">
+      <div class="cell-head"><span class="cell-id">GHOST · MONTHLY</span><span class="cell-status">BUILT ON BABUBA</span></div>
+      <h3>THE EMPLOYEE</h3>
+      <p class="cell-log">An AI employee inside WhatsApp: answers customers, runs the day, keeps the books and reports to you. ₹15,000 per agent / month, 5 users included, live in two weeks. Six businesses running right now.</p>
+      <p><a class="btn btn-primary" href="ghost.html">MEET GHOST →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GHOST · THE AI EMPLOYEE ═══════════ -->
+<section class="section" id="ghost">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 03 — GHOST</p>
+    <h2 class="section-title reveal">GHOST.<br /><span class="volt">HIRE AN EMPLOYEE, NOT A CHATBOT.</span></h2>
+    <p class="section-sub reveal">Ghost is the AI employee built on Babuba — the same gateway you can own, run for you. He works inside WhatsApp, does six jobs, and costs less than a junior hire. No dashboard to learn, no per-seat fees, live in two weeks.</p>
+  </div>
+  <div class="grid">
+    <div class="cell reveal">
+      <div class="cell-head"><span class="cell-id">GHOST · JOBS 01–02</span><span class="cell-status">CUSTOMERS</span></div>
+      <h3>ANSWERS &amp; RUNS THE DAY</h3>
+      <p class="cell-log">Replies to customers on WhatsApp in your voice, takes the order, follows up. Then runs the daily routine — dispatch reminders, stock checks, the things someone has to chase every morning.</p>
+    </div>
+    <div class="cell reveal" data-delay="100">
+      <div class="cell-head"><span class="cell-id">GHOST · JOBS 03–04</span><span class="cell-status">NUMBERS</span></div>
+      <h3>KEEPS THE BOOKS &amp; REPORTS</h3>
+      <p class="cell-log">Pulls invoices, reconciles them, keeps the ledgers straight — and sends you the numbers before you ask. Daily summary on WhatsApp, full report when you want it.</p>
+    </div>
+    <div class="cell reveal" data-delay="200">
+      <div class="cell-head"><span class="cell-id">GHOST · JOBS 05–06</span><span class="cell-status">ADMIN</span></div>
+      <h3>STAFF ROUTINES &amp; CORRESPONDENCE</h3>
+      <p class="cell-log">Handles staff routines — leave, attendance, reminders — then reads your mail, drafts the reply, and waits for your approval before anything ships.</p>
+    </div>
+  </div>
+  <div class="hero-ctas reveal" data-delay="260" style="justify-content:center;margin-top:28px;">
+    <a class="btn btn-primary btn-lg" href="ghost.html">MEET GHOST ▸</a>
+    <a class="btn btn-ghost btn-lg" href="https://ghostagents.in">GHOSTAGENTS.IN →</a>
+    <a class="btn btn-ghost btn-lg" href="demo.html">TALK TO AN AGENT ▸</a>
+    <a class="btn btn-ghost btn-lg" href="mailto:aswin@babuba.in?subject=Hire%20GHOST%20for%20my%20business">HIRE GHOST — ₹15,000/AGENT/MO</a>
+  </div>
+</section>
+
+<section class="section" id="pro">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 04 — WHY BABUBA</p>
+    <h2 class="section-title reveal">SECONDS TO BOOT.<br /><span class="volt">PAY ONCE. NOT PER AGENT. NOT PER SEAT.</span></h2>
+    <p class="section-sub reveal">No provisioning, no per-seat math, no cloud lock-in. One gateway, and you build your whole agent team on it.</p>
+  </div>
+  <div class="stat-grid">
+    <div class="stat reveal">
+      <div class="stat-id">PROVISION</div>
+      <div class="stat-num">&lt;5<small> SEC</small></div>
+      <div class="stat-label">Create an agent. SOUL + memory auto-generated, boots instantly. No infra, no deployments.</div>
+    </div>
+    <div class="stat reveal" data-delay="80">
+      <div class="stat-id">AGENTS</div>
+      <div class="stat-num">1<small> GATEWAY</small></div>
+      <div class="stat-label">One agent per department, and more whenever you need them. No per-agent fees, ever.</div>
+    </div>
+    <div class="stat reveal" data-delay="160">
+      <div class="stat-id">USERS</div>
+      <div class="stat-num">RBAC</div>
+      <div class="stat-label">Every teammate gets their own RBAC-scoped login. No per-seat costs.</div>
+    </div>
+    <div class="stat reveal" data-delay="240">
+      <div class="stat-id">DATA</div>
+      <div class="stat-num">100<small>%</small></div>
+      <div class="stat-label">Stays on your server. Not ours. Not the model vendor's. Yours — always.</div>
+    </div>
+  </div>
+  <div class="term reveal" style="margin-top:44px;">
+    <div class="term-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">live — make your own, day one</span></div>
+    <div class="term-body">
+      <p><span class="dim">[1]</span> <span class="cmd">$ babuba agents create --name finance --dept accounts</span> <span class="ok">→ agent online (2.1s)</span></p>
+      <p><span class="dim">[2]</span> <span class="cmd">$ babuba agents add-user --agent finance --user asha --role user</span> <span class="ok">→ scoped</span></p>
+      <p><span class="dim">[3]</span> <span class="cmd">asha: "reconcile INV-1044, why is it pending?"</span> <span class="dim">← whatsapp</span></p>
+      <p><span class="dim">[4]</span> <span class="cmd">fin.accounts: matched 47/47. INV-1044 — freight mismatch ₹3,200.</span> <span class="volt">approve?</span></p>
+      <p><span class="dim">[5]</span> <span class="cmd">asha: approve</span> <span class="ok">→ done · audit logged</span><span class="cursor"></span></p>
+    </div>
+  </div>
+  <div class="hero-ctas reveal" style="margin-top:36px;text-align:center;">
+    <a class="btn btn-ghost btn-lg" href="agents.html">HOW AGENTS WORK ▸</a>
+    <a class="btn btn-ghost btn-lg" href="platform.html">THE PLATFORM ▸</a>
+  </div>
+</section>
+
+<!-- ═══════════ HOW IT WORKS ═══════════ -->
+<section class="section" id="how">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 05 — BOOT SEQUENCE</p>
+    <h2 class="section-title reveal">FROM SERVER <span class="volt">TO DONE.</span></h2>
+  </div>
+
+  <div class="boot">
+    <div class="boot-step reveal">
+      <div class="step-num">01</div>
+      <h3>BOOT</h3>
+      <p class="boot-log dim">$ install babuba --on-prem</p>
+      <p>Install the gateway on your server. Fifteen minutes, one command.</p>
+    </div>
+    <div class="boot-arrow" aria-hidden="true">▸</div>
+    <div class="boot-step reveal" data-delay="100">
+      <div class="step-num">02</div>
+      <h3>LISTEN</h3>
+      <p class="boot-log dim">$ connect whatsapp gmail telegram</p>
+      <p>Hook up the channels your team already uses. No new apps to learn.</p>
+    </div>
+    <div class="boot-arrow" aria-hidden="true">▸</div>
+    <div class="boot-step reveal" data-delay="200">
+      <div class="step-num">03</div>
+      <h3>WORK</h3>
+      <p class="boot-log dim">$ agents run --all</p>
+      <p>Agents read, parse, build MIS, reconcile invoices, chase pending items.</p>
+    </div>
+    <div class="boot-arrow" aria-hidden="true">▸</div>
+    <div class="boot-step reveal" data-delay="300">
+      <div class="step-num">04</div>
+      <h3>ASK</h3>
+      <p class="boot-log dim">$ await human.approval</p>
+      <p>Nothing ships silently. Every action lands on your phone — one tap to approve.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ OPS DESK DEMO ═══════════ -->
+<section class="section" id="desk">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 06 — LIVE DESK</p>
+    <h2 class="section-title reveal">YOUR DESK. <span class="volt">RUN BY AGENTS.</span></h2>
+    <p class="section-sub reveal">A live loop of what an agent desk looks like mid-morning. Real pipeline, real numbers — anonymized.</p>
+    <div class="st-legend reveal" data-delay="100" aria-label="Status legend">
+      <span class="st st-live">● LIVE</span>
+      <span class="st st-flag">● FLAGGED</span>
+      <span class="st st-block">● BLOCKED</span>
+    </div>
+  </div>
+
+  <div class="console reveal" data-delay="200" id="opsConsole">
+    <div class="console-head">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="console-title">ops@desk — <em>live pipeline, anonymized</em></span>
+      <span class="console-status"><span class="pulse-dot"></span> processing</span>
+    </div>
+    <div class="console-body">
+      <div class="console-col incoming" id="incomingCol">
+        <div class="col-label">INBOX · WHATSAPP</div>
+        <div class="msg"><b>Unit A</b> 23.5 MT<span class="t">INV-1041 · WhatsApp</span></div>
+        <div class="msg"><b>Unit B</b> 18.2 MT<span class="t">INV-1042 · WhatsApp</span></div>
+        <div class="msg"><b>Unit C</b> 31.6 MT<span class="t">INV-1043 · WhatsApp</span></div>
+        <div class="msg"><b>Unit D</b> 12.9 MT<span class="t">INV-1044 · WhatsApp</span></div>
+      </div>
+      <div class="console-col mid">
+        <div class="col-label">AGENT CORE</div>
+        <div class="agent-core"><div class="agent-ring"></div><span id="agentState">parsing</span></div>
+      </div>
+      <div class="console-col out">
+        <div class="col-label">OUTPUT · INVOICE LIST</div>
+        <table class="list-table" id="afrTable">
+          <thead><tr><th>INV</th><th>QTY</th><th>STATUS</th></tr></thead>
+          <tbody>
+            <tr><td>INV-1041</td><td>23.5 MT</td><td><span class="chip ok">MATCHED</span></td></tr>
+            <tr><td>INV-1042</td><td>18.2 MT</td><td><span class="chip ok">MATCHED</span></td></tr>
+            <tr><td>INV-1043</td><td>31.6 MT</td><td><span class="chip flag">FLAGGED</span></td></tr>
+            <tr><td>INV-1044</td><td>12.9 MT</td><td><span class="chip ok">MATCHED</span></td></tr>
+          </tbody>
+        </table>
+        <button class="approve-btn" id="approveBtn">APPROVE <span id="approveCount">0</span> ▸</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONTROL ============ -->
-<section class="control" id="control">
-  <div class="wrap control-grid">
-    <div>
-      <div class="eyebrow"><i></i><span>04 — the control</span></div>
-      <h2>You see every step</h2>
-      <p>An agent that does things needs a brake. Every action lands in your chat before it happens — read it, then approve it, pause it, or take over and finish it yourself.</p>
-      <div class="pillars">
-        <div class="pillar"><span class="tag" style="background:var(--mustard)">approve</span><div><b>Approve</b><p>One tap and the send happens. Nothing goes out silently.</p></div></div>
-        <div class="pillar"><span class="tag" style="background:var(--paper)">pause</span><div><b>Pause</b><p>Stop mid-task. The agent holds, with everything it gathered so far.</p></div></div>
-        <div class="pillar"><span class="tag" style="background:#DCEBDF">take over</span><div><b>Take over</b><p>Step into the same thread. It keeps the notes and picks up again.</p></div></div>
-      </div>
-    </div>
+<!-- ═══════════ ORCHESTRATION ═══════════ -->
+<section class="section">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 07 — ORCHESTRATION</p>
+    <h2 class="section-title reveal">ONE MESSAGE. <span class="volt">FOUR AGENTS.</span></h2>
+    <p class="section-sub reveal">Watch the router decide. A task fans out to the right agents in parallel — each one shows its work — then merges into one answer, every step auditable.</p>
+  </div>
+  <div class="orch reveal" data-delay="150">
+    <canvas class="agent-canvas" data-variant="parallel" role="img" aria-label="Animated diagram of the Babuba gateway routing one task to four agents working in parallel; each agent shows its work, then the results merge into one answer."></canvas>
+    <div class="orch-caption"><span class="pulse-dot"></span> ROUTER ▸ 4 AGENTS IN PARALLEL ▸ MERGE ▸ ONE ANSWER</div>
+  </div>
+</section>
 
-    <div class="phone reveal" data-d="1">
-      <div class="bar"><div class="av">B</div><div><b>Accounts · Babuba</b><span>online — 4 steps done</span></div></div>
-      <div class="thread-body">
-        <div class="bub">Invoice #2041 raised for Meridian Traders — ₹1,84,500, 15-day terms.<span class="meta">10:12 am</span></div>
-        <div class="bub">Payment received ₹1,84,500 against #2041. Reconciled. TDS certificate still missing from them.</div>
-        <div class="bub">#1987 crossed 15 days today. Drafting the follow-up mail — want me to send it?<span class="acts"><span>send it</span><span class="ghost">edit</span><span class="ghost">hold</span></span><span class="meta">waiting · 2 min</span></div>
-        <div class="bub me">tone it softer, they're a repeat customer<span class="meta">you · 10:14 am</span></div>
-        <div class="bub">Rewritten. Sent at 10:15 am. I'll flag the reply the moment it lands.</div>
+<!-- ═══════════ CONTROL PLANE ═══════════ -->
+<section class="section" id="product">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 08 — THE CONTROL PLANE</p>
+    <h2 class="section-title reveal">EVERY AGENT, EVERY RULE.<br /><span class="volt">ONE SCREEN ON YOUR SERVER.</span></h2>
+    <p class="section-sub reveal">This is the admin panel you deploy — not a mock. Agents, approval queue, audit trail, guardrails, roles. One process, one port, your hardware.</p>
+  </div>
+
+  <div class="admin-panel reveal" data-delay="150">
+    <div class="admin-top">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="t">admin — babuba gateway · 127.0.0.1:18793</span>
+      <span class="s"><span class="pulse-dot"></span> 4 AGENTS ONLINE</span>
+    </div>
+    <div class="admin-body">
+      <div class="admin-side">
+        <a class="on" href="#">▸ Agents</a>
+        <a href="#">▸ Workflows</a>
+        <a href="#">▸ Approvals</a>
+        <a href="#">▸ Guardrails</a>
+        <a href="#">▸ RBAC &amp; Roles</a>
+        <a href="#">▸ Channels</a>
+        <a href="#">▸ Cron</a>
+        <a href="#">▸ Logs</a>
+      </div>
+      <div class="admin-main">
+        <p class="admin-h">AGENTS — 4 ONLINE</p>
+        <div class="admin-agent"><span class="sys-dot"></span><span class="nm">FIN.ACCOUNTS</span><span class="st">RUNNING · 47/47 today</span></div>
+        <div class="admin-agent"><span class="sys-dot"></span><span class="nm">OPS.LOGISTICS</span><span class="st">RUNNING · 12 verified</span></div>
+        <div class="admin-agent"><span class="sys-dot"></span><span class="nm">HR.PEOPLE</span><span class="st">RUNNING · payroll ready</span></div>
+        <div class="admin-agent"><span class="sys-dot"></span><span class="nm">ADMIN.COMPLIANCE</span><span class="st">RUNNING · 3 deadlines</span></div>
+        <p class="admin-h" style="margin-top:18px;">APPROVAL QUEUE</p>
+        <div class="queue-item"><span class="qid">INV-1044</span><span>payment · freight mismatch ₹3,200</span><span class="amt">₹18.2L</span></div>
+        <div class="queue-item"><span class="qid">PO-2219</span><span>new supplier · NAS Transport</span><span class="amt">₹4.4L</span></div>
+        <p class="admin-h" style="margin-top:18px;">AUDIT TRAIL</p>
+        <p class="audit-row"><b>09:14</b> <span class="act">fin.accounts</span> matched 47/47 · MIS built</p>
+        <p class="audit-row"><b>09:02</b> <span class="act">ops.logistics</span> verified 12 dispatches</p>
+        <p class="audit-row"><b>08:47</b> <span class="act">admin</span> scoped asha → fin.accounts (user)</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ MODES ============ -->
-<section class="modes" id="modes">
-  <div class="wrap modes-grid">
-    <div>
-      <div class="eyebrow"><i></i><span>05 — make it yours</span></div>
-      <h2>Your mode. Your rules. Your skills.</h2>
-      <p class="lede">Every business argues differently. Build your own mode — your tone, your approval line, and only the skills you actually want running. Tap to see it build.</p>
-      <div class="skills" id="skills">
-        <span class="skill" aria-pressed="true">read inbox</span>
-        <span class="skill" aria-pressed="true">draft mail</span>
-        <span class="skill" aria-pressed="true">send with approval</span>
-        <span class="skill" aria-pressed="true">read sheets</span>
-        <span class="skill" aria-pressed="true">write sheets</span>
-        <span class="skill" aria-pressed="false">raise invoice</span>
-        <span class="skill" aria-pressed="false">chase payment</span>
-        <span class="skill" aria-pressed="true">book meetings</span>
-        <span class="skill" aria-pressed="false">post to website</span>
-        <span class="skill" aria-pressed="false">browse &amp; fill forms</span>
-        <span class="skill" aria-pressed="true">whatsapp reply</span>
-        <span class="skill" aria-pressed="false">voice notes</span>
-      </div>
-    </div>
+<!-- ═══════════ USE CASES ═══════════ -->
+<section class="section" id="deploy">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 09 — DEPLOY A DEPARTMENT</p>
+    <h2 class="section-title reveal">PICK A DEPARTMENT.<br /><span class="volt">IT STARTS RUNNING.</span></h2>
+    <p class="section-sub reveal">Each one is a dedicated agent with its own memory, tools and guardrails. Boot them one at a time — or all at once.</p>
+  </div>
 
-    <div class="mode-card reveal" data-d="1">
-      <div class="tape2"></div>
-      <div class="lbl">mode card</div>
-      <h3 id="mode-name">The Ledger</h3>
-      <div class="tone" id="mode-tone">"precise, brief, never chases twice in a week"</div>
-      <ul id="mode-list"></ul>
-      <div class="count">skills active — <b id="mode-count">6</b> of 12</div>
+  <div class="grid">
+    <div class="cell reveal">
+      <div class="cell-head"><span class="cell-id">FIN.ACCOUNTS</span><span class="cell-status"><span class="sys-dot"></span> RUNNING</span></div>
+      <ul>
+        <li>Invoice capture &amp; validation</li>
+        <li>GST reconciliation vs filings</li>
+        <li>Approval gates on every payment</li>
+      </ul>
+      <p class="cell-log dim">$ 47 invoices matched today</p>
     </div>
+    <div class="cell reveal" data-delay="80">
+      <div class="cell-head"><span class="cell-id">OPS.LOGISTICS</span><span class="cell-status"><span class="sys-dot"></span> RUNNING</span></div>
+      <ul>
+        <li>Dispatch tracking, live</li>
+        <li>Freight billing, auto-checked</li>
+        <li>Pending pickups chased</li>
+      </ul>
+      <p class="cell-log dim">$ 12 dispatches verified</p>
+    </div>
+    <div class="cell reveal" data-delay="320">
+      <div class="cell-head"><span class="cell-id">HR.PEOPLE</span><span class="cell-status"><span class="sys-dot"></span> RUNNING</span></div>
+      <ul>
+        <li>Leave &amp; attendance handling</li>
+        <li>Offer letters, generated</li>
+        <li>Onboarding checklists, tracked</li>
+      </ul>
+      <p class="cell-log dim">$ payroll pack ready</p>
+    </div>
+    <div class="cell reveal" data-delay="400">
+      <div class="cell-head"><span class="cell-id">ADMIN.COMPLIANCE</span><span class="cell-status"><span class="sys-dot"></span> RUNNING</span></div>
+      <ul>
+        <li>Contract &amp; renewal reminders</li>
+        <li>Regulatory deadlines tracked</li>
+        <li>Audit trail, searchable</li>
+      </ul>
+      <p class="cell-log dim">$ 3 deadlines in next 30 days</p>
+    </div>
+  </div>
+  <div class="hero-ctas reveal" style="margin-top:36px;text-align:center;">
+    <a class="btn btn-primary btn-lg" href="agents.html">BUILD YOUR OWN — SECONDS ▸</a>
   </div>
 </section>
 
-<!-- ============ LIVE DEMO ============ -->
-<section class="livedemo" id="demo">
-  <div class="wrap">
-    <div class="ld-head">
-      <div>
-        <div class="eyebrow"><i></i><span>06 — try it live</span></div>
-        <h2>Ask a real <em>agent</em>, right here</h2>
-      </div>
-      <p class="reveal">Not a video, not a screenshot. A live Babuba agent on a sandbox endpoint — it reads your question, decides whether it needs a tool, then answers. No signup, no form.</p>
-    </div>
 
-    <div class="ld-card reveal">
-      <span class="tape2"></span>
-      <span class="lbl">live agent // sandbox · no signup</span>
-      <div class="ld-chips">
-        <button type="button" class="ld-chip" data-t="The chef just messaged that vegetables are over. What does a stores agent do next?">vegetables are over</button>
-        <button type="button" class="ld-chip" data-t="How does the accounts agent chase an overdue invoice without annoying the customer?">chase an invoice</button>
-        <button type="button" class="ld-chip" data-t="Which department should I start with, and what does a licence cost?">what it costs</button>
-      </div>
-      <div class="ld-bar">
-        <input id="ldQ" type="text" maxlength="400" placeholder="Ask it something your team asks you…" autocomplete="off" aria-label="Ask the live agent" />
-        <button type="button" class="btn red" id="ldGo">Ask →</button>
-      </div>
-      <div class="ld-out" id="ldOut" hidden>
-        <div class="ld-trace" id="ldTrace"></div>
-        <p class="ld-answer" id="ldAnswer"></p>
-        <div class="ld-meta mono" id="ldMeta"></div>
-      </div>
-      <div class="ld-foot mono">real endpoint · 8 questions / hour · <a href="demo.html">full page</a> · <a href="https://wa.me/919497243925">whatsapp</a></div>
+<!-- ═══════════ GOVERNANCE ═══════════ -->
+<section class="section" id="governance">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 10 — GOVERNANCE</p>
+    <h2 class="section-title reveal">AGENTS THAT WORK<br /><span class="volt">UNDER RULES.</span></h2>
+    <p class="section-sub reveal">Every framework talks about human-in-the-loop. Babuba ships it built-in — approvals, roles, guardrails and audit in the gateway, not bolted on later.</p>
+  </div>
+
+  <div class="gov-grid">
+    <div class="gov-card reveal">
+      <h3><span class="volt">▸</span> APPROVAL GATES</h3>
+      <p>Nothing ships silently. Payments, supplier adds, any sensitive action lands on your phone — one tap to approve, with full context attached.</p>
     </div>
+    <div class="gov-card reveal" data-delay="80">
+      <h3><span class="volt">▸</span> RBAC SCOPING</h3>
+      <p>Every agent serves the whole team, role-scoped. Finance can't see HR's data. Ops can't approve payments. Each user gets their own scoped view — with an audit trail.</p>
+    </div>
+    <div class="gov-card reveal" data-delay="160">
+      <h3><span class="volt">▸</span> GUARDRAILS</h3>
+      <p>Per-agent allow / deny / warn rules and risk thresholds. The agent knows its boundaries before it acts — and stays inside them.</p>
+    </div>
+    <div class="gov-card reveal" data-delay="240">
+      <h3><span class="volt">▸</span> AUDIT TRAIL</h3>
+      <p>Every LLM call, tool call and decision is logged and searchable. Show auditors, regulators and your own team exactly what happened — and why.</p>
+    </div>
+  </div>
+
+  <div class="hero-ctas reveal" style="margin-top:36px;text-align:center;">
+    <a class="btn btn-ghost btn-lg" href="docs.html">READ THE DOCS ▸</a>
+    <a class="btn btn-ghost btn-lg" href="compare.html">BABUBA VS THE REST</a>
+  </div>
+
+</section>
+
+<!-- ═══════════ CTA BAND ═══════════ -->
+<div class="page-body">
+  <div class="cta-band reveal">
+    <p class="eyebrow">// READY WHEN YOU ARE</p>
+    <h2>TWO PRODUCTS.<br /><span class="volt">ONE ENGINE UNDERNEATH.</span></h2>
+    <p>Own the engine: one license, your whole AI team, your server — no rent, no per-seat fees, no per-agent fees. Or hire the employee: Ghost on WhatsApp from ₹15,000 / agent / month.</p>
+    <a class="btn btn-primary btn-lg" href="pricing.html">SEE THE LICENSE ▸</a>
+    <a class="btn btn-primary btn-lg" href="ghost.html">HIRE GHOST ▸</a>
+    <a class="btn btn-ghost btn-lg" href="security.html">OWNERSHIP &amp; SECURITY</a>
+  </div>
+</div>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="section" id="faq">
+  <div class="section-head">
+    <p class="eyebrow reveal">// 11 — FAQ</p>
+    <h2 class="section-title reveal">BABUBA, <span class="volt">IN PLAIN WORDS.</span></h2>
+    <p class="section-sub reveal">What Babuba is, where your data lives, and how it fits into your team.</p>
+  </div>
+  <div class="faq-list reveal" data-delay="150">
+    <details class="faq-item">
+      <summary><strong>What is Babuba?</strong></summary>
+      <p>Babuba is a self-hosted AI agent platform (agent gateway). You run it on your own server, make one AI agent per department — finance, ops, MIS, admin — and give your whole team access with no per-seat fees.</p>
+    </details>
+    <details class="faq-item">
+      <summary><strong>How is Babuba different from a SaaS chatbot?</strong></summary>
+      <p>SaaS rents you a dashboard in someone else's cloud and bills per seat. Babuba runs on your own hardware, with agents you make yourself and as many users as you need. Zero data leaves your server.</p>
+    </details>
+    <details class="faq-item">
+      <summary><strong>Where does my data stay?</strong></summary>
+      <p>On your server. Not on Babuba's cloud, not on the model vendor's. Babuba is self-hosted, so zero data leaves your machine.</p>
+    </details>
+    <details class="faq-item">
+      <summary><strong>Which channels can I talk to my agents on?</strong></summary>
+      <p>WhatsApp, Telegram, Gmail, and web chat. The Babuba gateway connects to the channels you already use.</p>
+    </details>
+    <details class="faq-item">
+      <summary><strong>How many agents and users can I have?</strong></summary>
+      <p>Priced by server. Create one agent per department — as many as you need — and give each person their own RBAC-scoped login. No per-agent or per-seat fees, ever.</p>
+    </details>
+    <details class="faq-item">
+      <summary><strong>How fast is deployment?</strong></summary>
+      <p>Seconds. <code>babuba agents create --name finance --dept accounts</code> brings an agent online in about 2 seconds. No infra, no deployments.</p>
+    </details>
+    <details class="faq-item">
+      <summary><strong>What governance is built in?</strong></summary>
+      <p>Each agent is an isolated process with its own memory, tools, guardrails and approval rules — auditable and replaceable. RBAC scoping and an approval queue are built in, and agents ask before anything ships.</p>
+    </details>
   </div>
 </section>
 
-<!-- ============ CTA ============ -->
-<section class="cta" id="book">
-  <div class="wrap">
-    <div class="eyebrow" style="justify-content:center"><i></i><span>07 — the ask</span></div>
-    <h2>Bring us one <em>real</em> job</h2>
-    <p>Not a demo script. A task sitting on your desk right now — the shortlist, the overdue invoice, the backlog of enquiries. We'll set the agent up on it and you watch it work.</p>
-    <div class="cta-actions">
-      <a class="btn red" href="https://wa.me/919497243925?text=Hi%20Babuba%2C%20I%20want%20a%20demo">Book a demo</a>
-      <a class="btn" href="#demo">Try the live agent</a>
-      <a class="btn" href="contact.html">Contact us</a>
-    </div>
-    <div class="stamp">free<br>first<br>task</div>
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer" id="footer">
+  <div class="footer-bar">
+    <span><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span> + GHOST<span class="volt">//AI-EMPLOYEE</span> v2.4.0</span>
+    <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
   </div>
-</section>
-
-<footer>
-  <div class="foot-grid">
-    <div>
-      <b>BABUBA</b>
-      <div class="mono">Ghost by Babuba · AI workforce for Indian businesses</div>
-      <div class="mono" style="margin-top:10px">© 2026 THUNA CARE PRIVATE LIMITED · CIN U86900HR2026PTC145488 · GURUGRAM, INDIA</div>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <p class="footer-col-h">Product</p>
+      <a href="platform.html">Babuba</a>
+      <a href="ghost.html">GHOST</a>
+      <a href="demo.html">Demo</a>
+      <a href="agents.html">Agents</a>
+      <a href="compare.html">Compare</a>
     </div>
-    <div class="foot-links">
-      <a href="index.html">Home</a><a href="agents.html">Agents</a><a href="platform.html">Babuba</a><a href="ghost.html">Ghost</a><a href="demo.html">Demo</a><a href="pricing.html">Licenses</a><a href="compare.html">Compare</a><a href="docs.html">Docs</a><a href="roadmap.html">Roadmap</a><a href="security.html">Ownership</a>
+    <div class="footer-col">
+      <p class="footer-col-h">Build</p>
+      <a href="docs.html">Docs</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="security.html">Ownership</a>
+      <a href="redeem.html">Activate licence</a>
     </div>
-    <div class="foot-links">
-      <a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund.html">Refunds</a><a href="redeem.html">Activate</a><a href="mailto:aswin@babuba.in">aswin@babuba.in</a>
+    <div class="footer-col">
+      <p class="footer-col-h">Company</p>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="mailto:aswin@babuba.in">aswin@babuba.in</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-h">Legal</p>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund.html">Refunds</a>
     </div>
   </div>
+  <p class="footer-copy dim">© 2026 THUNA CARE PRIVATE LIMITED · CIN U86900HR2026PTC145488 · GURUGRAM, INDIA · ALL DATA STAYS ON YOUR HARDWARE</p>
 </footer>
 
-<script src="vox.js"></script>
-<script>
-(function(){
-  var b=document.getElementById('menuBtn'), n=document.getElementById('nav');
-  if(!b||!n)return;
-  b.addEventListener('click',function(){
-    var open=n.classList.toggle('open');
-    b.setAttribute('aria-expanded',open?'true':'false');
-  });
-  n.addEventListener('click',function(e){ if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false');} });
-})();
-</script>
-<script>
-(function () {
-  var API = "https://demo.ghostagents.in/demo";
-  var q = document.getElementById("ldQ"),
-      go = document.getElementById("ldGo"),
-      out = document.getElementById("ldOut"),
-      trace = document.getElementById("ldTrace"),
-      answer = document.getElementById("ldAnswer"),
-      meta = document.getElementById("ldMeta");
-  if (!q || !go) return;
+<div class="stickybar">
+  <span class="stickybar-left"><span class="live-dot"></span> 4/4 AGENTS ONLINE · GATEWAY 127.0.0.1:18793</span>
+  <span class="stickybar-right"><a href="mailto:aswin@babuba.in?subject=Book%20a%20Babuba%20demo">BOOK A DEMO ▸</a></span>
+</div>
 
-  function esc(s) {
-    return String(s == null ? "" : s).replace(/[&<>]/g, function (m) {
-      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[m];
-    });
-  }
+<a class="to-top" id="toTop" href="#top" aria-label="Back to top">▲ TOP</a>
 
-  document.querySelectorAll(".ld-chip").forEach(function (c) {
-    c.addEventListener("click", function () {
-      q.value = c.dataset.t;
-      q.focus();
-    });
-  });
+<script src="app.js?v=20261029b"></script>
+<script src="agent-canvas.js?v=20260904"></script>
 
-  var busy = false;
-  function step(txt, done) {
-    return '<div class="ld-step"><span class="tick">' +
-      (done ? "&#10003;" : "&rsaquo;") + '</span><span>' + txt + '</span></div>';
-  }
-
-  async function run() {
-    if (busy) return;
-    var input = (q.value || "").trim();
-    if (!input) { q.focus(); return; }
-    busy = true;
-    go.disabled = true;
-    var label = go.textContent;
-    go.textContent = "THINKING\u2026";
-    out.hidden = false;
-    trace.innerHTML = step("sent to the agent\u2026", false);
-    answer.textContent = "";
-    answer.classList.remove("err");
-    meta.textContent = "";
-    try {
-      var r = await fetch(API, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ input: input })
-      });
-      var d = await r.json().catch(function () { return {}; });
-      if (!r.ok || d.ok === false) {
-        throw new Error(d.error || ("HTTP " + r.status));
-      }
-      trace.innerHTML = (d.steps && d.steps.length
-        ? d.steps.map(function (s) { return step(esc(s.name) + (s.detail ? " &mdash; " + esc(s.detail) : ""), true); }).join("")
-        : step("answered", true));
-      answer.textContent = d.answer || "(no answer)";
-      meta.textContent = (d.ms ? d.ms + " ms" : "") + (d.kind ? " \u00b7 " + d.kind : "");
-    } catch (e) {
-      trace.innerHTML = step("the sandbox did not answer", false);
-      answer.classList.add("err");
-      answer.textContent = e.message || "network error";
-      meta.textContent = "";
-    } finally {
-      busy = false;
-      go.disabled = false;
-      go.textContent = label;
-    }
-  }
-
-  go.addEventListener("click", run);
-  q.addEventListener("keydown", function (e) { if (e.key === "Enter") run(); });
-})();
-</script>
-<script src="assets/live-chat.js" defer></script>
 </body>
 </html>
