@@ -401,11 +401,34 @@ footer{background:var(--paper2);border-top:2px solid var(--ink);padding:54px 0 3
             <marker id="ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#17140E"/></marker>
             <pattern id="dots1" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="1.2" cy="1.2" r="1.2" fill="#17140E" fill-opacity=".15"/></pattern>
           </defs>
+          <style>
+            .c-wa,.c-gm,.c-ans,.c-aud{animation:cardIn .85s cubic-bezier(.16,.84,.28,1) both}
+            .c-wa{animation-delay:.15s}.c-gm{animation-delay:.3s}
+            .c-ans{animation-delay:1.05s}.c-aud{animation-delay:1.35s}
+            .fl-a{animation:floaty 5.5s ease-in-out infinite}.fl-b{animation:floaty 6.4s ease-in-out infinite reverse}
+            .c-gold{animation:breath 4.6s ease-in-out infinite}
+            .c-ar{animation:dash 1.6s linear infinite}
+            .c-ar2{animation-delay:.35s}
+            .dep{animation:chase 3.4s ease-in-out infinite}
+            .d2{animation-delay:.1s}.d3{animation-delay:.2s}.d4{animation-delay:.3s}.d5{animation-delay:.4s}.d6{animation-delay:.5s}
+            .c-pk{animation:pk 1.9s ease-in-out infinite}
+            .c-check{transform-origin:418px 536px;animation:popIn .5s cubic-bezier(.2,1.6,.4,1) 1.9s both}
+            .tdot{animation:tp 1.4s ease-in-out infinite}.t2{animation-delay:.2s}.t3{animation-delay:.4s}
+            @keyframes cardIn{from{opacity:0;translate:0 16px}to{opacity:1;translate:0 0}}
+            @keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -6px}}
+            @keyframes breath{0%,100%{opacity:.34}50%{opacity:.52}}
+            @keyframes dash{to{stroke-dashoffset:-84}}
+            @keyframes chase{0%,66%{opacity:.2}8%,22%{opacity:1}}
+            @keyframes pk{0%{translate:0 0;opacity:0}18%{opacity:1}78%{opacity:1}100%{translate:0 36px;opacity:0}}
+            @keyframes popIn{0%{opacity:0;scale:.8}60%{scale:1.08}100%{opacity:1;scale:1}}
+            @keyframes tp{0%,60%,100%{opacity:.22}28%{opacity:1}}
+            @media (prefers-reduced-motion:reduce){.c-wa,.c-gm,.c-ans,.c-aud,.c-gold,.c-ar,.dep,.c-pk,.c-check,.tdot{animation:none!important;opacity:1!important}}
+          </style>
           <rect width="620" height="600" fill="url(#dots1)"/>
-          <rect x="176" y="212" width="286" height="182" fill="#F2B01E" fill-opacity=".38" transform="rotate(-1.3 319 303)"/>
+          <rect class="c-gold" x="176" y="212" width="286" height="182" fill="#F2B01E" fill-opacity=".38" transform="rotate(-1.3 319 303)"/>
 
           <!-- input: whatsapp -->
-          <g transform="rotate(-1.6 127 98)">
+          <g class="c-wa fl-a" transform="rotate(-1.6 127 98)">
             <rect x="24" y="46" width="206" height="104" rx="10" fill="#FFFDF8" stroke="#17140E" stroke-width="2.5"/>
             <rect x="40" y="62" width="32" height="32" rx="7" fill="#0C7A62" stroke="#17140E" stroke-width="2"/>
             <path d="M49 71h14v10h-9l-4 4v-4h-1z" fill="#FFFDF8"/>
@@ -417,7 +440,7 @@ footer{background:var(--paper2);border-top:2px solid var(--ink);padding:54px 0 3
           <rect x="150" y="38" width="58" height="16" fill="#F2B01E" fill-opacity=".85" transform="rotate(-7 179 46)"/>
 
           <!-- input: gmail -->
-          <g transform="rotate(1.5 484 84)">
+          <g class="c-gm fl-b" transform="rotate(1.5 484 84)">
             <rect x="384" y="34" width="200" height="100" rx="10" fill="#FFFDF8" stroke="#17140E" stroke-width="2.5"/>
             <rect x="400" y="50" width="32" height="32" rx="7" fill="#DE3A1A" stroke="#17140E" stroke-width="2"/>
             <path d="M407 71l9-8 9 8" fill="none" stroke="#FFFDF8" stroke-width="2" stroke-linecap="round"/>
@@ -429,8 +452,8 @@ footer{background:var(--paper2);border-top:2px solid var(--ink);padding:54px 0 3
           </g>
 
           <!-- arrows in -->
-          <path d="M236 116C246 166 246 198 262 232" fill="none" stroke="#17140E" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#ah1)"/>
-          <path d="M466 118C458 168 442 198 412 232" fill="none" stroke="#17140E" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#ah1)"/>
+          <path class="c-ar c-ar1" d="M236 116C246 166 246 198 262 232" fill="none" stroke="#17140E" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#ah1)"/>
+          <path class="c-ar c-ar2" d="M466 118C458 168 442 198 412 232" fill="none" stroke="#17140E" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#ah1)"/>
 
           <!-- router -->
           <rect x="190" y="236" width="240" height="140" rx="12" fill="#17140E"/>
@@ -443,32 +466,33 @@ footer{background:var(--paper2);border-top:2px solid var(--ink);padding:54px 0 3
           <circle cx="210" cy="344" r="3.5" fill="#F8F3E7" fill-opacity=".45"/>
           <text x="222" y="348" font-family="DM Mono, monospace" font-size="10" fill="#C9C0A8">risk · scope</text>
           <rect x="308" y="286" width="102" height="70" rx="6" fill="none" stroke="#F8F3E7" stroke-opacity=".3" stroke-width="1.5"/>
-          <rect x="316" y="294" width="26" height="24" rx="3" fill="#F2B01E"/>
-          <rect x="350" y="294" width="26" height="24" rx="3" fill="#F8F3E7" fill-opacity=".2"/>
-          <rect x="384" y="294" width="18" height="24" rx="3" fill="#F8F3E7" fill-opacity=".2"/>
-          <rect x="316" y="326" width="26" height="22" rx="3" fill="#F8F3E7" fill-opacity=".2"/>
-          <rect x="350" y="326" width="26" height="22" rx="3" fill="#F8F3E7" fill-opacity=".2"/>
-          <rect x="384" y="326" width="18" height="22" rx="3" fill="#F8F3E7" fill-opacity=".2"/>
+          <rect class="dep d1" x="316" y="294" width="26" height="24" rx="3" fill="#F2B01E"/>
+          <rect class="dep d2" x="350" y="294" width="26" height="24" rx="3" fill="#F8F3E7" fill-opacity=".2"/>
+          <rect class="dep d3" x="384" y="294" width="18" height="24" rx="3" fill="#F8F3E7" fill-opacity=".2"/>
+          <rect class="dep d4" x="316" y="326" width="26" height="22" rx="3" fill="#F8F3E7" fill-opacity=".2"/>
+          <rect class="dep d5" x="350" y="326" width="26" height="22" rx="3" fill="#F8F3E7" fill-opacity=".2"/>
+          <rect class="dep d6" x="384" y="326" width="18" height="22" rx="3" fill="#F8F3E7" fill-opacity=".2"/>
 
           <!-- arrow out -->
           <path d="M310 380L310 420" fill="none" stroke="#17140E" stroke-width="3" marker-end="url(#ah1)"/>
+          <circle class="c-pk" cx="310" cy="378" r="4.5" fill="#F2B01E"/>
 
           <!-- answer -->
-          <g>
+          <g class="c-ans">
             <rect x="168" y="424" width="286" height="148" rx="12" fill="#FFFDF8" stroke="#17140E" stroke-width="2.5"/>
-            <circle cx="188" cy="446" r="3.5" fill="#17140E" fill-opacity=".25"/>
-            <circle cx="200" cy="446" r="3.5" fill="#17140E" fill-opacity=".25"/>
-            <circle cx="212" cy="446" r="3.5" fill="#17140E" fill-opacity=".25"/>
+            <circle class="tdot t1" cx="188" cy="446" r="3.5" fill="#17140E" fill-opacity=".25"/>
+            <circle class="tdot t2" cx="200" cy="446" r="3.5" fill="#17140E" fill-opacity=".25"/>
+            <circle class="tdot t3" cx="212" cy="446" r="3.5" fill="#17140E" fill-opacity=".25"/>
             <text x="188" y="482" font-family="DM Mono, monospace" font-size="12" fill="#17140E">Done. Payment queued.</text>
             <text x="188" y="502" font-family="DM Mono, monospace" font-size="9.5" fill="#57503F">note attached to INV-1044</text>
             <rect x="188" y="518" width="180" height="5" rx="2.5" fill="#E2D9C4"/>
             <rect x="188" y="532" width="122" height="5" rx="2.5" fill="#E2D9C4"/>
-            <circle cx="418" cy="536" r="15" fill="#0C7A62"/>
+            <circle class="c-check" cx="418" cy="536" r="15" fill="#0C7A62"/>
             <path d="M411 536l5 5 9-11" fill="none" stroke="#FFFDF8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
           </g>
 
           <!-- audit card -->
-          <g transform="rotate(2 526 486)">
+          <g class="c-aud" transform="rotate(2 526 486)">
             <rect x="452" y="398" width="148" height="176" rx="8" fill="#FFFDF8" stroke="#17140E" stroke-width="2.5"/>
             <text x="466" y="422" font-family="DM Mono, monospace" font-size="9" letter-spacing="2" fill="#57503F">AUDIT TRAIL</text>
             <line x1="466" y1="432" x2="586" y2="432" stroke="#CFC5AC" stroke-width="1.5"/>
