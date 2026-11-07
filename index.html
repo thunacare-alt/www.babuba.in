@@ -421,11 +421,20 @@ html.js .rv.in{opacity:1;animation:rvIn .78s cubic-bezier(.22,.68,.3,1) var(--d,
 #cta::before{content:"";position:absolute;left:50%;top:50%;width:900px;height:900px;margin:-450px 0 0 -450px;border-radius:50%;background:radial-gradient(circle,rgba(242,176,30,.22),transparent 62%);animation:mcta 9s ease-in-out infinite;pointer-events:none}
 @keyframes mcta{0%,100%{opacity:.45;scale:.9}50%{opacity:1;scale:1.08}}
 
-/* ---- buttons: light travels across, faster on hover ---- */
-.btn{position:relative;overflow:hidden}
-.btn::after{content:"";position:absolute;top:0;bottom:0;left:0;width:38%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.42),transparent);translate:-140% 0;animation:msheen 6.4s ease-in-out infinite;pointer-events:none}
-.btn.ghost::after{background:linear-gradient(100deg,transparent,rgba(23,20,14,.09),transparent)}
-.btn:hover::after{animation-duration:1.15s}
+/* ---- buttons: a real gold light passes through, then rests ---- */
+.btn{position:relative;overflow:hidden;
+  --sheen:linear-gradient(100deg,transparent 0%,rgba(242,176,30,.62) 30%,rgba(255,206,92,.98) 44%,#fff3cc 50%,rgba(255,206,92,.98) 56%,rgba(242,176,30,.62) 70%,transparent 100%);
+  --hair:linear-gradient(90deg,transparent,rgba(242,176,30,.95),transparent)}
+.btn.ink,.btn.red{--sheen:linear-gradient(100deg,transparent 0%,rgba(255,196,58,.55) 32%,#ffedb4 44%,#fffdf8 50%,#ffedb4 56%,rgba(255,196,58,.55) 68%,transparent 100%);
+  --hair:linear-gradient(90deg,transparent,#ffd977,transparent)}
+.btn[style*="F2B01E"]{--sheen:linear-gradient(100deg,transparent 0%,rgba(255,250,232,.72) 34%,#fffefb 48%,#fffefb 52%,rgba(255,250,232,.72) 66%,transparent 100%);--hair:linear-gradient(90deg,transparent,#fffefb,transparent)}
+.btn::after{content:"";position:absolute;top:-70%;bottom:-70%;left:-26%;width:26%;border-radius:50%;background:var(--sheen);filter:blur(3px);transform:skewX(-18deg);translate:0 0;animation:mgold 5.8s cubic-bezier(.5,0,.15,1) infinite;pointer-events:none}
+.btn::before{content:"";position:absolute;left:-34%;bottom:0;height:2px;width:34%;background:var(--hair);translate:0 0;animation:mgoldhair 5.8s cubic-bezier(.5,0,.15,1) infinite;pointer-events:none}
+.btn:hover::after,.btn:hover::before{animation-duration:1.7s}
+.btn:hover{box-shadow:var(--sh-sm),0 0 18px -4px rgba(242,176,30,.65),0 0 0 3px rgba(242,176,30,.18)}
+.btn.ink:hover,.btn.red:hover{box-shadow:var(--sh-sm),0 0 22px -4px rgba(255,196,58,.75),0 0 0 3px rgba(242,176,30,.42)}
+@keyframes mgold{0%,64%{translate:0 0}88%,100%{translate:469% 0}}
+@keyframes mgoldhair{0%,64%{translate:0 0}88%,100%{translate:394% 0}}
 
 /* ---- mast / footer / misc ---- */
 .mast{transition:box-shadow .25s ease}
@@ -451,7 +460,7 @@ html.js .rv.in{opacity:1;animation:rvIn .78s cubic-bezier(.22,.68,.3,1) var(--d,
   #prog{transition:none}
   .kick::before{animation:none!important;opacity:1}
   .steps3 .step::before,.steps4 .step::before{animation:none!important;opacity:0}
-  .price::after,.btn::after{animation:none!important}
+  .price,.btn::after,.btn::before{animation:none!important}
   .hero .fig .c-aud,.hero .fig .arow,.hero .fig .c-rt,.hero .fig .c-bg,.hero .fig .lbl{animation:mlive 3.4s ease-in-out infinite!important;opacity:1!important}
   #proof::after,#cta::before,.dept .dept-ic,.fbrand i,.proof-cell .n small{animation:mlive 4.2s ease-in-out infinite!important}
 }
