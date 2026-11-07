@@ -312,6 +312,7 @@ footer{background:var(--paper2);border-top:2px solid var(--ink);padding:54px 0 3
 }
 @media (max-width:860px){
   body{font-size:16.5px}
+  .doors{grid-template-columns:1fr!important}
   .pull-grid{grid-template-columns:1fr;gap:18px;align-items:start}
   .pull .side{display:none}
   .sec{padding:64px 0}
@@ -421,20 +422,8 @@ html.js .rv.in{opacity:1;animation:rvIn .78s cubic-bezier(.22,.68,.3,1) var(--d,
 #cta::before{content:"";position:absolute;left:50%;top:50%;width:900px;height:900px;margin:-450px 0 0 -450px;border-radius:50%;background:radial-gradient(circle,rgba(242,176,30,.22),transparent 62%);animation:mcta 9s ease-in-out infinite;pointer-events:none}
 @keyframes mcta{0%,100%{opacity:.45;scale:.9}50%{opacity:1;scale:1.08}}
 
-/* ---- buttons: a real gold light passes through, then rests ---- */
-.btn{position:relative;overflow:hidden;
-  --sheen:linear-gradient(100deg,transparent 0%,rgba(242,176,30,.62) 30%,rgba(255,206,92,.98) 44%,#fff3cc 50%,rgba(255,206,92,.98) 56%,rgba(242,176,30,.62) 70%,transparent 100%);
-  --hair:linear-gradient(90deg,transparent,rgba(242,176,30,.95),transparent)}
-.btn.ink,.btn.red{--sheen:linear-gradient(100deg,transparent 0%,rgba(255,196,58,.55) 32%,#ffedb4 44%,#fffdf8 50%,#ffedb4 56%,rgba(255,196,58,.55) 68%,transparent 100%);
-  --hair:linear-gradient(90deg,transparent,#ffd977,transparent)}
-.btn[style*="F2B01E"]{--sheen:linear-gradient(100deg,transparent 0%,rgba(255,250,232,.72) 34%,#fffefb 48%,#fffefb 52%,rgba(255,250,232,.72) 66%,transparent 100%);--hair:linear-gradient(90deg,transparent,#fffefb,transparent)}
-.btn::after{content:"";position:absolute;top:-70%;bottom:-70%;left:-26%;width:26%;border-radius:50%;background:var(--sheen);filter:blur(3px);transform:skewX(-18deg);translate:0 0;animation:mgold 5.8s cubic-bezier(.5,0,.15,1) infinite;pointer-events:none}
-.btn::before{content:"";position:absolute;left:-34%;bottom:0;height:2px;width:34%;background:var(--hair);translate:0 0;animation:mgoldhair 5.8s cubic-bezier(.5,0,.15,1) infinite;pointer-events:none}
-.btn:hover::after,.btn:hover::before{animation-duration:1.7s}
-.btn:hover{box-shadow:var(--sh-sm),0 0 18px -4px rgba(242,176,30,.65),0 0 0 3px rgba(242,176,30,.18)}
-.btn.ink:hover,.btn.red:hover{box-shadow:var(--sh-sm),0 0 22px -4px rgba(255,196,58,.75),0 0 0 3px rgba(242,176,30,.42)}
-@keyframes mgold{0%,64%{translate:0 0}88%,100%{translate:469% 0}}
-@keyframes mgoldhair{0%,64%{translate:0 0}88%,100%{translate:394% 0}}
+/* ---- buttons: flat — no travelling gold light ---- */
+.btn{position:relative;overflow:hidden}
 
 /* ---- mast / footer / misc ---- */
 .mast{transition:box-shadow .25s ease}
@@ -559,6 +548,7 @@ html.js .rv.in{opacity:1;animation:rvIn .78s cubic-bezier(.22,.68,.3,1) var(--d,
       <a href="#pricing">Pricing</a>
       <a href="#deploy">Deploy</a>
       <a href="#faq">FAQ</a>
+      <a href="ghost.html">Ghost</a>
     </nav>
     <a href="#cta" class="btn ink sm">Talk to us <span class="ar">→</span></a>
   </div>
@@ -1227,7 +1217,7 @@ html.js .rv.in{opacity:1;animation:rvIn .78s cubic-bezier(.22,.68,.3,1) var(--d,
           <li><svg viewBox="0 0 14 14" fill="none" stroke="#0C7A62" stroke-width="2"><path d="M2 7.5l3.2 3.2L12 3.5" stroke-linecap="round"/></svg> Answers, books, reports</li>
           <li><svg viewBox="0 0 14 14" fill="none" stroke="#0C7A62" stroke-width="2"><path d="M2 7.5l3.2 3.2L12 3.5" stroke-linecap="round"/></svg> Approval on every sensitive action</li>
         </ul>
-        <a href="#cta" class="btn red">Meet Ghost <span class="ar">→</span></a>
+        <a href="ghost.html" class="btn red">Meet Ghost <span class="ar">→</span></a>
         <div class="fine">cancel anytime · keep your data</div>
       </article>
     </div>
@@ -1313,6 +1303,20 @@ html.js .rv.in{opacity:1;animation:rvIn .78s cubic-bezier(.22,.68,.3,1) var(--d,
         <b>Agents boot</b>
         <p>Departments come online one at a time. First invoice, first brief, same afternoon.</p>
         <span class="who">together · 30 min</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px" class="doors">
+      <div style="border:2px solid var(--ink);background:var(--white);padding:22px;box-shadow:var(--sh-sm)">
+        <span class="mono" style="font-size:11px;letter-spacing:.14em;color:var(--teal)">SELF-HOSTED · THIS SITE</span>
+        <b style="display:block;font-size:19px;margin:10px 0 6px">Own the engine</b>
+        <p style="font-size:15px;line-height:1.6;color:#4A4438;margin:0 0 16px">₹5,50,000 once. Your server, unlimited agents, one per department. You install it, we support it.</p>
+        <a href="#cta" class="btn sm">Licence Babuba <span class="ar">→</span></a>
+      </div>
+      <div style="border:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:22px;box-shadow:var(--sh-sm)">
+        <span class="mono" style="font-size:11px;letter-spacing:.14em;color:#F2B01E">HOSTED · GHOSTAGENTS.IN</span>
+        <b style="display:block;font-size:19px;margin:10px 0 6px;color:var(--paper)">Hire the employee</b>
+        <p style="font-size:15px;line-height:1.6;color:#C9C0A8;margin:0 0 16px">₹15,000 a month. We run the same gateway, build one agent for your business and hand him over in two weeks.</p>
+        <a href="ghost.html" class="btn sm" style="background:#F2B01E;border-color:#F2B01E;color:var(--ink)">About Ghost <span class="ar">→</span></a>
       </div>
     </div>
     <p class="hand" style="color:#F2B01E;font-size:17px;margin:30px 0 0">— Ghost, managed: two weeks, start to first brief.</p>
