@@ -352,8 +352,113 @@ footer{background:var(--paper2);border-top:2px solid var(--ink);padding:54px 0 3
   .fgrid{grid-template-columns:1fr}
 }
 </style>
+<script>document.documentElement.classList.add("js");</script>
+<style>
+/* ============ SITE-WIDE MOTION LAYER ============ */
+#prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#F2B01E,#DE3A1A);box-shadow:0 0 10px rgba(242,176,30,.75);pointer-events:none}
+
+/* live dot on every section kicker */
+.kick::before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;vertical-align:middle;background:currentColor;animation:mlive 1.9s ease-in-out infinite}
+@keyframes mlive{0%,100%{opacity:.22;transform:scale(.65)}50%{opacity:1;transform:scale(1)}}
+
+/* ---- scroll reveals ---- */
+html.js .rv{opacity:0}
+html.js .rv.in{opacity:1;animation:rvIn .78s cubic-bezier(.22,.68,.3,1) var(--d,0s) backwards}
+@keyframes rvIn{from{opacity:0;translate:0 26px}to{opacity:1;translate:0 0}}
+
+/* ---- proof: slow gold glow crawling behind the read-outs ---- */
+#proof{position:relative;overflow:hidden}
+#proof>div{position:relative;z-index:1}
+#proof::after{content:"";position:absolute;left:-12%;top:6%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(242,176,30,.17),transparent 66%);animation:mglow 16s ease-in-out infinite alternate;pointer-events:none}
+@keyframes mglow{from{translate:-8% 0;opacity:.55}to{translate:40% 16%;opacity:1}}
+.proof-cell .n{transition:color .25s}
+.proof-cell:hover .n{color:#F2B01E}
+.proof-cell .n small{display:inline-block;animation:msup 3.4s ease-in-out infinite}
+@keyframes msup{0%,100%{translate:0 0}50%{translate:0 -4px}}
+
+/* ---- step cards: a gold light runs along the top edge ---- */
+.steps3 .step::before,.steps4 .step::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,#F2B01E 45%,#F2B01E 55%,transparent);background-size:55% 100%;background-repeat:no-repeat;background-position:-60% 0;animation:mstep 4.6s linear infinite;pointer-events:none}
+.steps3 .step:nth-child(2)::before,.steps4 .step:nth-child(2)::before{animation-delay:.6s}
+.steps3 .step:nth-child(3)::before,.steps4 .step:nth-child(3)::before{animation-delay:1.2s}
+.steps4 .step:nth-child(4)::before{animation-delay:1.8s}
+@keyframes mstep{0%{background-position:-60% 0;opacity:0}12%{opacity:1}88%{opacity:1}100%{background-position:160% 0;opacity:0}}
+.step .no{transition:transform .25s ease}
+.step:hover .no{transform:rotate(-8deg) scale(1.08)}
+
+/* ---- department cards ---- */
+.dept{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.dept .dept-ic{transition:transform .28s ease}
+.dept:hover .dept-ic{transform:rotate(-7deg) scale(1.07)}
+.dept .out{transition:color .22s ease,letter-spacing .22s ease}
+.dept:hover .out{letter-spacing:.085em}
+.dept:nth-child(1) .dept-ic{animation:mfloat 5s ease-in-out infinite}
+.dept:nth-child(2) .dept-ic{animation:mfloat 5.6s ease-in-out .4s infinite}
+.dept:nth-child(3) .dept-ic{animation:mfloat 6.2s ease-in-out .8s infinite}
+.dept:nth-child(4) .dept-ic{animation:mfloat 5.4s ease-in-out 1.2s infinite}
+@keyframes mfloat{0%,100%{translate:0 0}50%{translate:0 -4px}}
+
+/* ---- capability index rows ---- */
+.idx-item{transition:transform .22s ease,background .22s ease,padding .22s ease}
+.idx-item:hover{transform:translateX(5px)}
+.idx-item .num{transition:color .2s ease,transform .2s ease}
+.idx-item:hover .num{color:#F2B01E;transform:translateY(-1px)}
+
+/* ---- pricing cards: a sheen crosses each panel ---- */
+.price{position:relative;transition:transform .22s ease,box-shadow .22s ease;background-image:linear-gradient(105deg,transparent 38%,rgba(23,20,14,.06) 50%,transparent 62%);background-size:52% 100%;background-repeat:no-repeat;background-position:-70% 0;animation:msheenb 7.5s ease-in-out infinite}
+.price.dark{background-image:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.17) 50%,transparent 62%)}
+.price:nth-child(2){animation-delay:2.2s}
+.price:hover{transform:translate(-2px,-3px)}
+@keyframes msheenb{0%,52%{background-position:-70% 0}88%,100%{background-position:170% 0}}
+@keyframes msheen{0%,58%{translate:-130% 0}86%,100%{translate:130% 0}}
+
+/* ---- faq ---- */
+.faq summary .q{transition:color .2s ease}
+.faq summary:hover .q{color:#DE3A1A}
+
+/* ---- cta: breathing gold light ---- */
+#cta{position:relative;overflow:hidden}
+#cta>*{position:relative;z-index:1}
+#cta::before{content:"";position:absolute;left:50%;top:50%;width:900px;height:900px;margin:-450px 0 0 -450px;border-radius:50%;background:radial-gradient(circle,rgba(242,176,30,.22),transparent 62%);animation:mcta 9s ease-in-out infinite;pointer-events:none}
+@keyframes mcta{0%,100%{opacity:.45;scale:.9}50%{opacity:1;scale:1.08}}
+
+/* ---- buttons: light travels across, faster on hover ---- */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:0;width:38%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.42),transparent);translate:-140% 0;animation:msheen 6.4s ease-in-out infinite;pointer-events:none}
+.btn.ghost::after{background:linear-gradient(100deg,transparent,rgba(23,20,14,.09),transparent)}
+.btn:hover::after{animation-duration:1.15s}
+
+/* ---- mast / footer / misc ---- */
+.mast{transition:box-shadow .25s ease}
+.mast.scrolled{box-shadow:0 10px 24px -18px rgba(23,20,14,.55)}
+.fbrand i{animation:mdot 2.6s ease-in-out infinite}
+@keyframes mdot{0%,100%{opacity:.55;scale:.85}50%{opacity:1;scale:1.1}}
+
+/* ---- hero: pushes the amplitude up so the collage reads at a glance ---- */
+@keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -9px}}
+@keyframes breath{0%,100%{opacity:.22}50%{opacity:.6}}
+@keyframes ping{0%{scale:1;opacity:1}70%,100%{scale:3.1;opacity:0}}
+@keyframes wig{0%,100%{rotate:-1.7deg}50%{rotate:1.7deg}}
+.c-bg{animation-duration:7s!important}
+.tape{animation-duration:3.2s!important}
+.c-wa{animation-duration:5.4s!important}
+.c-gm{animation-duration:6.4s!important}
+.c-ans{animation-duration:5.2s!important}
+.c-aud{animation-duration:6.8s!important}
+
+/* ---- reduced motion: no travel, but never a dead page ---- */
+@media (prefers-reduced-motion:reduce){
+  html.js .rv{opacity:1!important;animation:none!important}
+  #prog{transition:none}
+  .kick::before{animation:none!important;opacity:1}
+  .steps3 .step::before,.steps4 .step::before{animation:none!important;opacity:0}
+  .price::after,.btn::after{animation:none!important}
+  .hero .fig .c-aud,.hero .fig .arow,.hero .fig .c-rt,.hero .fig .c-bg,.hero .fig .lbl{animation:mlive 3.4s ease-in-out infinite!important;opacity:1!important}
+  #proof::after,#cta::before,.dept .dept-ic,.fbrand i,.proof-cell .n small{animation:mlive 4.2s ease-in-out infinite!important}
+}
+</style>
 </head>
 <body>
+<div id="prog"></div>
 
 <header class="mast">
   <div class="wrap mast-in">
@@ -1243,6 +1348,60 @@ footer{background:var(--paper2);border-top:2px solid var(--ink);padding:54px 0 3
   document.getElementById('bubClose').addEventListener('click',function(){
     off=true; bub.classList.add('hidden');
   });
+})();
+</script>
+<script>
+(function(){
+  var pr=document.getElementById('prog'), mast=document.querySelector('.mast');
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    var p=h>0?Math.min(1,Math.max(0,window.pageYOffset/h)):0;
+    if(pr) pr.style.width=(p*100).toFixed(2)+'%';
+    if(mast) mast.classList.toggle('scrolled',window.pageYOffset>8);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  onScroll();
+
+  var sel=['.head-l','.head .lead','.proof-cell','.steps3 .step','.steps4 .step','.dept','.idx-item','.price','.faq details','.fgrid > div','.quote .disp','.table-wrap','.cta-grid > *'];
+  var els=[];
+  sel.forEach(function(s){[].forEach.call(document.querySelectorAll(s),function(e){if(els.indexOf(e)<0)els.push(e)})});
+  els.forEach(function(el){
+    el.classList.add('rv');
+    var sibs=[].slice.call(el.parentElement.children).filter(function(c){return c.classList.contains('rv')});
+    var i=sibs.indexOf(el);
+    el.style.setProperty('--d',(Math.min(i,8)*0.07).toFixed(2)+'s');
+  });
+
+  function countUp(el){
+    var tn=null;
+    for(var i=0;i<el.childNodes.length;i++){var n=el.childNodes[i];if(n.nodeType===3&&n.nodeValue.trim()){tn=n;break;}}
+    if(!tn) return;
+    var raw=tn.nodeValue, m=raw.match(/([\d]+(?:\.[\d]+)?)/);
+    if(!m||raw.indexOf(':')>-1) return;
+    var target=parseFloat(m[1]), dec=(m[1].split('.')[1]||'').length;
+    var at=raw.indexOf(m[1]), pre=raw.slice(0,at), post=raw.slice(at+m[1].length), t0=null, dur=1200;
+    function step(ts){
+      if(!t0)t0=ts;
+      var k=Math.min(1,(ts-t0)/dur), e=1-Math.pow(1-k,3);
+      tn.nodeValue=pre+(target*e).toFixed(dec)+post;
+      if(k<1) requestAnimationFrame(step); else tn.nodeValue=raw;
+    }
+    requestAnimationFrame(step);
+  }
+
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(e){e.classList.add('in')});
+    return;
+  }
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px',threshold:.06});
+  els.forEach(function(e){io.observe(e)});
+
+  var nums=document.querySelectorAll('.proof-cell .n');
+  if(nums.length){
+    var io2=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){countUp(e.target);io2.unobserve(e.target)}})},{threshold:.4});
+    [].forEach.call(nums,function(n){io2.observe(n)});
+  }
 })();
 </script>
 </body>
