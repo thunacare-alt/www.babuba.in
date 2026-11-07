@@ -98,12 +98,13 @@ h3{font-weight:700;letter-spacing:-.02em;margin:0}
 .tick{position:absolute;top:0;width:2px;height:14px;background:var(--ink)}
 
 /* ---------- hero ---------- */
-.hero{padding:58px 0 74px;border-top:0}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center}
-.hero-top{margin-bottom:38px}
+.hero{padding:30px 0 42px;border-top:0}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;column-gap:52px;row-gap:24px;align-items:start}
+.hero-top{margin-bottom:0}
 .hero h1{margin:22px 0 0;font-size:clamp(33px,5vw,72px);max-width:19ch}
 .hero .lead{font-size:19.5px;max-width:50ch}
 .hero .btnrow{margin-top:30px}
+.hero .fig{max-width:470px;justify-self:center}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
 .chip{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;border:1.5px solid var(--ink);padding:7px 10px;background:var(--white);border-radius:2px}
 .chip.gold{background:var(--gold)}
@@ -301,8 +302,8 @@ footer{background:var(--paper2);border-top:2px solid var(--ink);padding:54px 0 3
 
 /* ---------- responsive ---------- */
 @media (max-width:1080px){
-  .hero-grid{grid-template-columns:1fr;gap:44px}
-  .hero .fig{max-width:620px}
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero .fig{max-width:560px;justify-self:start}
   .head{grid-template-columns:1fr;gap:20px;align-items:start}
   .idx{grid-template-columns:1fr 1fr;gap:0 32px}
   .proof-grid{grid-template-columns:1fr 1fr}
