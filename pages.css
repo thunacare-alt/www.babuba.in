@@ -43,7 +43,7 @@
 .term-body .prompt { color: var(--volt); }
 .term-body .cmd { color: var(--ink); }
 .term-body .ok { color: var(--ok); }
-.term-body .dim { color: var(--faint); }
+.term-body .dim { color: #9A9A93; } /* was var(--faint) #82827B — 3.94:1 on the #121214 terminal panel */
 .term-body .cursor { display: inline-block; width: 8px; height: 14px; background: var(--volt); vertical-align: -2px; animation: blink 1s steps(1) infinite; }
 
 /* ── Product definition line (hero) ───────────────────────── */
