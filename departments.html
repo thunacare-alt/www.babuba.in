@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Babuba Departments — one agent per desk, nine floors.</title>
+<meta name="description" content="Every department gets its own agent with its own toolbelt, rules and audit trail. Sales, finance, ops, people, marketing, compliance, support, buying — plus a floor you write yourself." />
+<link rel="canonical" href="https://www.babuba.in/departments.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Babuba" />
+<meta property="og:title" content="Babuba Departments — one agent per desk." />
+<meta property="og:description" content="Nine departments, nine agents. Each owns its own workflow, tools and rules — the router picks the floor, and every action lands in the audit trail." />
+<meta property="og:url" content="https://www.babuba.in/departments.html" />
+<meta property="og:image" content="https://www.babuba.in/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Babuba Departments — one agent per desk." />
+<meta name="twitter:description" content="Nine departments, nine agents. Each owns its own workflow, tools and rules." />
+<meta name="twitter:image" content="https://www.babuba.in/og.png" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0B'/><path d='M20 50 H80 M50 20 V80' stroke='%23C9F24B' stroke-width='14'/><rect x='18' y='18' width='64' height='64' fill='none' stroke='%23E8E8E2' stroke-width='4'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=20261029c" />
+<link rel="stylesheet" href="pages.css?v=20261029c" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does every department get its own agent?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each department runs its own agent with its own instructions, toolbelt, rules and audit trail. One agent never edits another department's data." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a message reach the right department?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The router classifies the intent of the message and starts that department's workflow — it does not hand one giant prompt to one agent and hope. Cross-department work is passed as a task between agents with the context attached." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we add a department that does not exist today?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Name it, give it a toolbelt, set the rules it may not cross. It inherits the router, the approval chain and the audit trail on day one — no code, no rebuild." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do approvals happen?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On the channel you already use — WhatsApp, Telegram, Gmail or web chat. Anything above the threshold you set pauses the workflow and asks for one tap before it ships." }
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main">SKIP TO CONTENT</a>
+
+<div class="scanlines" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ═══════════ STATUS BAR / NAV ═══════════ -->
+<nav class="statusbar" id="nav" aria-label="Primary">
+  <a class="logo" href="index.html"><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span></a>
+  <div class="sysinfo" aria-hidden="true">
+    <span class="sys-dot"></span> DEPARTMENTS: 9 ONLINE
+    <span class="sep">▸</span> ROUTER: LANGGRAPH
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="agents.html">Agents</a>
+    <a href="departments.html" class="active">Departments</a>
+    <a href="platform.html" class="nav-prod">Babuba</a>
+    <a href="ghost.html" class="nav-prod">Ghost</a>
+    <a href="docs.html">Docs</a>
+    <a href="compare.html">Compare</a>
+    <a href="security.html">Ownership</a>
+    <a href="pricing.html">Licenses</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn btn-primary nav-cta" href="pricing.html">DEPLOY →</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <p class="eyebrow reveal">// DEPARTMENTS</p>
+    <h1 class="reveal">ONE AGENT<br><span class="volt">PER DESK.</span></h1>
+    <p class="hero-def reveal">A company is not one job. So it is not one agent.</p>
+    <p class="section-sub reveal">Nine floors, each with its own agent — its own instructions, its own toolbelt, its own rules and its own page in the audit trail. The router reads the message and picks the floor. Nobody crosses into another department's data.</p>
+    <a class="btn btn-primary btn-lg" href="pricing.html">DEPLOY ON YOUR SERVER ▸</a>
+    <a class="btn btn-ghost btn-lg" href="demo.html">SEE IT RUN →</a>
+  </div>
+</header>
+
+<div class="page-body">
+
+  <!-- ═══════════ THE ROUTE ═══════════ -->
+  <section class="section">
+    <p class="eyebrow reveal">// THE DESK IT LANDS ON</p>
+    <h2 class="reveal">THE MESSAGE DOESN'T<br><span class="volt">PICK THE AGENT.</span> THE ROUTER DOES.</h2>
+    <p class="section-sub reveal">One inbound line, classified, matched to a workflow, answered on the same channel in seconds. Different departments, same doorway.</p>
+
+    <div class="term reveal">
+      <div class="term-head"><span class="term-title">router · live</span><span class="dim">langgraph ▸ classify ▸ dispatch</span></div>
+      <div class="term-body">
+        <p><span class="dim">[in]</span> <span class="cmd">"The Sharma invoice still not paid, and the truck to Sonipat hasn't left"</span> <span class="dim">← whatsapp</span></p>
+        <p><span class="dim">[route]</span> two intents · <span class="ok">fin.accounts</span> + <span class="ok">ops.logistics</span></p>
+        <p><span class="dim">[fin]</span> INV-2291 · 34 days overdue · reminder #3 <span class="volt">queued</span></p>
+        <p><span class="dim">[ops]</span> dispatch D-881 · pickup pending 4h · driver pinged <span class="volt">sent</span></p>
+        <p><span class="dim">[audit]</span> two sessions · two agents · one thread · <span class="ok">IST 12:04:11</span></p>
+        <p><span class="dim">[out]</span> <span class="cmd">"Sharma: 34 days, reminder going out now. Truck: driver confirmed 6pm, dock slot held."</span> <span class="ok">→ whatsapp</span><span class="cursor"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ THE NINE FLOORS ═══════════ -->
+  <section class="section">
+    <p class="eyebrow reveal">// THE FLOORS</p>
+    <h2 class="reveal">WHAT EACH ONE<br><span class="volt">ACTUALLY OWNS.</span></h2>
+    <p class="section-sub reveal">Not "capabilities". The actual work, the actual files it touches, and the line it will not cross without your tap.</p>
+
+    <div class="grid">
+      <div class="cell reveal">
+        <div class="cell-head"><span class="cell-id">SALES.ENQUIRIES</span><span class="cell-status"><span class="sys-dot"></span> ONLINE</span></div>
+        <ul>
+          <li>Answers every enquiry in under a minute — 11pm the same as 11am</li>
+          <li>Qualifies, quotes from your price list, books the slot</li>
+          <li>Chases the one that went quiet, hands you the one that needs a human</li>
+        </ul>
+        <p class="cell-log dim">reads: price list · calendar · past orders</p>
+      </div>
+
+      <div class="cell reveal" data-delay="60">
+        <div class="cell-head"><span class="cell-id">FIN.ACCOUNTS</span><span class="cell-status"><span class="sys-dot"></span> ONLINE</span></div>
+        <ul>
+          <li>Invoice capture and validation, GST reconciliation against filings</li>
+          <li>Who owes what, how long, and the polite reminder on schedule</li>
+          <li>Daily cash close; every payment above threshold waits for your approval</li>
+        </ul>
+        <p class="cell-log dim">writes: ledger · reminder queue · approval requests</p>
+      </div>
+
+      <div class="cell reveal" data-delay="120">
+        <div class="cell-head"><span class="cell-id">OPS.LOGISTICS</span><span class="cell-status"><span class="sys-dot"></span> ONLINE</span></div>
+        <ul>
+          <li>Dispatch tracking, freight bills checked line by line</li>
+          <li>Pending pickups chased on WhatsApp, reorder alerts before the shelf is empty</li>
+          <li>Escalates the job that sat too long instead of logging it twice</li>
+        </ul>
+        <p class="cell-log dim">reads: dispatch board · vendor POs · stock levels</p>
+      </div>
+
+      <div class="cell reveal" data-delay="180">
+        <div class="cell-head"><span class="cell-id">HR.PEOPLE</span><span class="cell-status"><span class="sys-dot"></span> ONLINE</span></div>
+        <ul>
+          <li>Attendance on WhatsApp, leave requests, approvals and balances</li>
+          <li>Shift and duty reminders, monthly salary statement</li>
+          <li>New-joiner document checklist; flags a pattern before it becomes a resignation</li>
+        </ul>
+        <p class="cell-log dim">writes: register · leave ledger · payroll pack</p>
+      </div>
+
+      <div class="cell reveal" data-delay="60">
+        <div class="cell-head"><span class="cell-id">MARKETING</span><span class="cell-status"><span class="sys-dot"></span> ONLINE</span></div>
+        <ul>
+          <li>Win-backs, festival and quiet-hour offers targeted by buying history</li>
+          <li>Review requests, birthdays and anniversaries, never a blast to everyone</li>
+          <li>Reports which offer actually brought money back</li>
+        </ul>
+        <p class="cell-log dim">reads: customer history · campaign results</p>
+      </div>
+
+      <div class="cell reveal" data-delay="120">
+        <div class="cell-head"><span class="cell-id">ADMIN.COMPLIANCE</span><span class="cell-status"><span class="sys-dot"></span> ONLINE</span></div>
+        <ul>
+          <li>Contract and renewal reminders, regulatory deadlines tracked</li>
+          <li>Filing dates handed to the accountant on time, every time</li>
+          <li>Audit trail searchable by session, tool and cost</li>
+        </ul>
+        <p class="cell-log dim">writes: deadline register · filing pack · audit index</p>
+      </div>
+
+      <div class="cell reveal" data-delay="180">
+        <div class="cell-head"><span class="cell-id">SUPPORT.CARE</span><span class="cell-status"><span class="sys-dot"></span> ONLINE</span></div>
+        <ul>
+          <li>Triages what comes in, answers the known ones from your own material</li>
+          <li>Escalates with the full thread and what it already tried</li>
+          <li>Never invents a policy, a price or a promise</li>
+        </ul>
+        <p class="cell-log dim">reads: knowledge base · open tickets</p>
+      </div>
+
+      <div class="cell reveal" data-delay="240">
+        <div class="cell-head"><span class="cell-id">BUY.PROCUREMENT</span><span class="cell-status"><span class="sys-dot"></span> ONLINE</span></div>
+        <ul>
+          <li>Three quotes, compared on the terms that matter, not the headline price</li>
+          <li>Raises the PO, chases delivery, matches the bill to the PO</li>
+          <li>Nothing gets ordered without the approval you set</li>
+        </ul>
+        <p class="cell-log dim">writes: quote sheet · PO · GRN match</p>
+      </div>
+
+      <div class="cell reveal" data-delay="300">
+        <div class="cell-head"><span class="cell-id">YOUR.DEPARTMENT</span><span class="cell-status"><span class="sys-dot"></span> ONLINE</span></div>
+        <ul>
+          <li>Name it, describe the job in a sentence, give it a toolbelt</li>
+          <li>Set the rules it may not cross — it obeys them at the gate, not in the prompt</li>
+          <li>Inherits the router, the approvals and the audit trail on day one</li>
+        </ul>
+        <p class="cell-log dim">$ babuba dept add --name "Tenders" --owns bids</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ THE HANDOFF ═══════════ -->
+  <section class="section">
+    <p class="eyebrow reveal">// BETWEEN FLOORS</p>
+    <h2 class="reveal">ONE AGENT FINISHES.<br><span class="volt">ANOTHER PICKS IT UP.</span></h2>
+    <p class="section-sub reveal">The work does not stop at a department boundary and neither does the thread. A handoff is a task with the context attached — not a message forwarded to a human.</p>
+
+    <div class="flow reveal">
+      <div class="flow-step"><span class="dim">01</span><h3>Enquiry lands</h3><p>sales.enquiries answers, quotes, and takes the booking.</p></div>
+      <div class="flow-step"><span class="dim">02</span><h3>Money is involved</h3><p>It hands fin.accounts the order, the amount and the customer's history.</p></div>
+      <div class="flow-step"><span class="dim">03</span><h3>Threshold crossed</h3><p>fin.accounts stops and asks you — one tap on WhatsApp, from your phone.</p></div>
+      <div class="flow-step"><span class="dim">04</span><h3>It ships, or it doesn't</h3><p>Approved: invoice out, dispatch told. Refused: the reason is written down.</p></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ WHAT EVERY FLOOR INHERITS ═══════════ -->
+  <section class="section">
+    <p class="eyebrow reveal">// UNDER EVERY DESK</p>
+    <h2 class="reveal">THE SAME FOUR THINGS,<br><span class="volt">ON EVERY FLOOR.</span></h2>
+    <div class="stat-grid reveal">
+      <div class="stat reveal">
+        <div class="stat-id">RULES</div>
+        <div class="stat-num">GATE<small> NOT PROMPT</small></div>
+        <div class="stat-label">What it may say, what it may touch, what it must never promise. Enforced before the action ships — not trusted to the model to remember.</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-id">AUDIT</div>
+        <div class="stat-num">100<small>% LOGGED</small></div>
+        <div class="stat-label">Every session, tool call, rupee and approval with an IST timestamp. Searchable months later, by session or by cost.</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-id">PERMISSIONS</div>
+        <div class="stat-num">1<small> FLOOR EACH</small></div>
+        <div class="stat-label">Roles decide who may read a floor and who may approve on it. One agent never opens another department's data.</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-id">LOCATION</div>
+        <div class="stat-num">YOUR<small> SERVER</small></div>
+        <div class="stat-label">Every floor runs inside your hardware. Nothing leaves the building to be answered, and nothing needs our cloud to stay up.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA ═══════════ -->
+  <div class="cta-band reveal">
+    <h2 class="reveal">START WITH THE FLOOR<br><span class="volt">THAT HURTS MOST.</span></h2>
+    <p class="section-sub">You do not have to switch on nine departments. Pick the one that is costing you the most this month — enquiries, receivables, dispatch — and put one agent on it. The rest of the building is already wired.</p>
+    <a class="btn btn-primary btn-lg" href="pricing.html">DEPLOY ▸</a>
+    <a class="btn btn-ghost btn-lg" href="contact.html">TALK TO ASWIN →</a>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer" id="footer">
+  <div class="footer-bar">
+    <span><span class="logo-mark">◉</span> BABUBA<span class="volt">//GATEWAY</span> + GHOST<span class="volt">//AI-EMPLOYEE</span> v2.4.0</span>
+    <span class="footer-status"><span class="sys-dot"></span> RUNNING ON YOUR SERVER</span>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a><a href="agents.html">Agents</a><a href="departments.html">Departments</a><a href="platform.html">Babuba</a><a href="ghost.html">Ghost</a><a href="docs.html">Docs</a><a href="demo.html">Demo</a><a href="compare.html">Compare</a><a href="roadmap.html">Roadmap</a><a href="security.html">Ownership</a><a href="pricing.html">Licenses</a><a href="redeem.html">Activate</a>
+  </div>
+  <div class="footer-links footer-legal">
+    <a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund.html">Refunds</a><a href="contact.html">Contact</a><a href="mailto:aswin@babuba.in">aswin@babuba.in</a>
+  </div>
+  <p class="footer-copy dim">© 2026 THUNA CARE PRIVATE LIMITED · CIN U86900HR2026PTC145488 · GURUGRAM, INDIA · ALL DATA STAYS ON YOUR HARDWARE</p>
+</footer>
+
+<a class="to-top" id="toTop" href="#top" aria-label="Back to top">▲ TOP</a>
+
+<script src="app.js?v=20261029b"></script>
+</body>
+</html>
